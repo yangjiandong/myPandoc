@@ -14,6 +14,15 @@ docx:${f}
 docx2:${f}
 	pandoc -r markdown -w docx -s -S --bibliography=Thesis.bib --csl=csl/chicago-author-date.csl ${f} --output=out/out.docx
 
+bootstrap:${f}
+	pandoc ${f} -o out/out.html --template templates/bootstrap-template/template.html --css templates/bootstrap-template/template.css --self-contained --toc --toc-depth 2
+
+html:${f}
+	pandoc ${f} -o out/out.html --template templates/default.html --self-contained --toc --toc-depth 2
+
+html5:${f}
+	pandoc ${f} -o out/out.html --template templates/default.html5 --self-contained --toc --toc-depth 2
+
 
 all:${f} slide pdf reveal
 	echo "ok"

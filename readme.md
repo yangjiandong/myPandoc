@@ -1,6 +1,17 @@
 pandoc - docs
 ===
 
+2016.06.24
+---
+
+## reveal
+
+输出需引用 `out/demo` 下 `css,js`
+
+## html template: bootstrap
+
+`make bootstrap f=xx`
+
 create
 ---
 
