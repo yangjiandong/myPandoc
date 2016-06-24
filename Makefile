@@ -3,10 +3,10 @@ slide:${f}
 
 
 pdf:${f}
-	pandoc ${f} -o out/${f}.pdf  --latex-engine=xelatex --template=./mytemplate.tex
+	pandoc ${f} -o out/out.pdf  --latex-engine=xelatex --template=./mytemplate.tex
 
 reveal:${f}
-	pandoc ${f} -o out/${f}.html -t revealjs -s -V theme=night --template=template-revealjs.html
+	pandoc ${f} -o out/out_reveal.html -t revealjs -s -V theme=night --template=template-revealjs.html
 
 docx:${f}
 	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl ${f} --output=out/out.docx
@@ -23,6 +23,8 @@ html:${f}
 html5:${f}
 	pandoc ${f} -o out/out.html --template templates/default.html5 --self-contained --toc --toc-depth 2
 
+epub:${f}
+	pandoc -o out/out.epub title.txt ${f} --epub-cover-image=cover.jpg --epub-metadata=metadata.xml --toc --toc-depth=2 --epub-stylesheet=style/epub.css
 
 all:${f} slide pdf reveal
 	echo "ok"

@@ -4,6 +4,10 @@ pandoc - docs
 2016.06.24
 ---
 
+## epub
+
+`make epub f=xx`
+
 ## reveal
 
 输出需引用 `out/demo` 下 `css,js`
