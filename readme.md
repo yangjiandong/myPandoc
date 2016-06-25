@@ -1,8 +1,41 @@
 pandoc - docs
 ===
 
+pandoc to docx,html,pdf
+
+```
+make docx(pdf) f=xx
+```
+
+06.25
+---
+
+## md.css
+
+另一个html 样式
+
+```
+make html_md f=xx
+```
+
+## 参考一介布衣的样式
+
+左侧带大纲菜单
+
+```
+make html_yi f=xx
+```
+
 2016.06.24
 ---
+
+## latex pdf
+
+不指定文件，需更改文件配置
+
+```
+make latex
+```
 
 ## epub
 

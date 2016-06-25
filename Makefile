@@ -1,3 +1,17 @@
+BUILD = build
+BOOKNAME = my-book
+TITLE = title.txt
+METADATA = metadata.xml
+CHAPTERS2 = ch01.md ch02.md
+CHAPTERS = demo/my.md
+TOC = --toc --toc-depth=2
+COVER_IMAGE = cover.jpg
+LATEX_CLASS = book
+# report
+
+latex: 
+	pandoc $(TOC) $(TITLE) $(CHAPTERS) --latex-engine=xelatex -V documentclass=$(LATEX_CLASS) -o out/latex.pdf --template=./mytemplate.tex
+
 slide:${f}
 	pandoc ${f} -o out/${f}.pdf -t beamer --latex-engine=xelatex --template=./mytemplate.tex
 
@@ -20,11 +34,17 @@ bootstrap:${f}
 html:${f}
 	pandoc ${f} -o out/out.html --template templates/default.html --self-contained --toc --toc-depth 2
 
+html_md:${f}
+	pandoc ${f} -o out/out.html -c style/md.css --template templates/default.html --self-contained --toc --toc-depth 2
+
 html5:${f}
 	pandoc ${f} -o out/out.html --template templates/default.html5 --self-contained --toc --toc-depth 2
 
 epub:${f}
 	pandoc -o out/out.epub title.txt ${f} --epub-cover-image=cover.jpg --epub-metadata=metadata.xml --toc --toc-depth=2 --epub-stylesheet=style/epub.css
+
+html_yi:${f}
+	pandoc ${f} -t html5 -o out/out.html --toc --toc-depth 2 --template=templates/template
 
 all:${f} slide pdf reveal
 	echo "ok"
