@@ -7,6 +7,18 @@ pandoc to docx,html,pdf
 make docx(pdf) f=xx
 ```
 
+06.27
+--
+
+## 增加 sdcamp 示例
+
+```
+cd sdcamp
+./mmd2bok
+```
+
+[参考](https://github.com/larrycai/kaiyuanbook/wiki)
+
 06.25
 ---
 

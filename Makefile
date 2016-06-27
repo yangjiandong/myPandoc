@@ -12,18 +12,20 @@ LATEX_CLASS = book
 latex: 
 	pandoc $(TOC) $(TITLE) $(CHAPTERS) --latex-engine=xelatex -V documentclass=$(LATEX_CLASS) -o out/latex.pdf --template=./mytemplate.tex
 
+docx:${f}
+	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl ${f} --output=out/out.docx
+
+html_yi:${f}
+	pandoc ${f} -t html5 -o out/out.html --toc --toc-depth 2 --template=templates/template
+
 slide:${f}
 	pandoc ${f} -o out/${f}.pdf -t beamer --latex-engine=xelatex --template=./mytemplate.tex
-
 
 pdf:${f}
 	pandoc ${f} -o out/out.pdf  --latex-engine=xelatex --template=./mytemplate.tex
 
 reveal:${f}
 	pandoc ${f} -o out/out_reveal.html -t revealjs -s -V theme=night --template=template-revealjs.html
-
-docx:${f}
-	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl ${f} --output=out/out.docx
 
 docx2:${f}
 	pandoc -r markdown -w docx -s -S --bibliography=Thesis.bib --csl=csl/chicago-author-date.csl ${f} --output=out/out.docx
@@ -43,12 +45,8 @@ html5:${f}
 epub:${f}
 	pandoc -o out/out.epub title.txt ${f} --epub-cover-image=cover.jpg --epub-metadata=metadata.xml --toc --toc-depth=2 --epub-stylesheet=style/epub.css
 
-html_yi:${f}
-	pandoc ${f} -t html5 -o out/out.html --toc --toc-depth 2 --template=templates/template
-
 all:${f} slide pdf reveal
 	echo "ok"
-
 
 print:${f}
 	echo ${f}
