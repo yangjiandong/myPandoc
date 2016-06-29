@@ -7,6 +7,15 @@ pandoc to docx,html,pdf
 make docx(pdf) f=xx
 ```
 
+06.29
+---
+
+## pnadoc to docx style
+
+[参考](https://github.com/jgm/pandoc-templates/issues/20)
+
+templates/reference.docx
+
 06.27
 --
 
