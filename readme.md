@@ -20,6 +20,10 @@ brew install pandoc-crossref
 
 demo/workflow-paper
 
+## sdcamp
+
+增加 docx, html 输出
+
 06.29
 ---
 
