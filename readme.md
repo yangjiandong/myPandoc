@@ -16,6 +16,8 @@ make docx(pdf) f=xx
 
 templates/reference.docx
 
+docx 样式主要通过 reference 控制
+
 06.27
 --
 
