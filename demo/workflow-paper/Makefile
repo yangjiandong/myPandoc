@@ -1,0 +1,71 @@
+## Put this Makefile in your project directory---i.e., the directory
+## containing the paper you are writing. Assuming you are using the
+## rest of the toolchain here, you can use it to create .html, .tex,
+## and .pdf output files (complete with bibliography, if present) from
+## your markdown file. 
+## -	Change the paths at the top of the file as needed.
+## -	Using `make` without arguments will generate html, tex, and pdf 
+## 	output files from all of the files with the designated markdown
+##	extension. The default is `.md` but you can change this. 
+## -	You can specify an output format with `make tex`, `make pdf` or 
+## - 	`make html`. 
+## -	Doing `make clean` will remove all the .tex, .html, and .pdf files 
+## 	in your working directory. Make sure you do not have files in these
+##	formats that you want to keep!
+
+## Extension (e.g. md, markdown, mdown).
+## for all markdown files in the directory
+MEXT = md
+
+## Variable for all markdown files in the working directory
+SRC = $(wildcard *.$(MEXT))
+
+## Location of Pandoc support files.
+PREFIX = ./
+
+## Location of your working bibliography file
+BIB = bibs/socbib.bib
+
+## CSL stylesheet (located in the csl folder of the PREFIX directory).
+CSL = apsa
+
+
+## Dependencies: .pdf depends on .md, .html depends on .md, etc
+PDFS=$(SRC:.md=.pdf)
+HTML=$(SRC:.md=.html)
+TEX=$(SRC:.md=.tex)
+DOCX=$(SRC:.md=.docx)
+
+## Rules -- make all, make pdf, make html: first call the `clean` rule (see below),
+## then the filetype rule.
+all:	$(PDFS) $(HTML) $(TEX) $(DOCX)
+
+pdf:	clean $(PDFS)
+html:	clean $(HTML)
+tex:	clean $(TEX)
+docx:	clean $(DOCX)
+
+## The actual commands.
+## How to produce a .html file corresponding to each .md in the directory. Run when
+## `make html` is the command.
+%.html:	%.md
+	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -w html -S --template=templates/html.template --css=marked/kultiad-serif.css --filter pandoc-crossref --filter pandoc-citeproc --csl=csl/$(CSL).csl --bibliography=$(BIB) -o $@ $<
+
+
+## Same goes for the other file types
+%.tex:	%.md
+	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block --listings -w latex -s -S --latex-engine=pdflatex --template=templates/latex.template --filter pandoc-crossref --filter pandoc-citeproc --csl=csl/ajps.csl --filter pandoc-citeproc-preamble --bibliography=$(BIB) -o $@ $<
+
+
+%.pdf:	%.md
+	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block --listings -s -S --latex-engine=pdflatex --template=templates/latex.template --filter pandoc-crossref --filter pandoc-citeproc --csl=csl/$(CSL).csl --filter pandoc-citeproc-preamble --bibliography=$(BIB) -o $@ $<
+
+%.docx:	%.md
+	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S --filter pandoc-crossref --csl=csl/$(CSL).csl  --bibliography=$(BIB) -o $@ $<
+
+# 
+
+clean:
+	rm -f *.html *.pdf *.tex *.aux *.log *.docx
+
+.PHONY: clean

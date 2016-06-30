@@ -7,6 +7,19 @@ pandoc to docx,html,pdf
 make docx(pdf) f=xx
 ```
 
+06.30
+---
+
+## [plain text, papers, pandoc](https://kieranhealy.org/blog/archives/2014/01/23/plain-text/)
+
+[github](https://github.com/kjhealy/workflow-paper)
+
+```
+brew install pandoc-crossref
+```
+
+demo/workflow-paper
+
 06.29
 ---
 

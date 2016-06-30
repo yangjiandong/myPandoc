@@ -18,6 +18,9 @@ docx:${f}
 docx_re:${f}
 	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl --reference-docx=templates/reference.docx ${f} --output=out/out.docx
 
+docx_re2:${f}
+	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl --reference-docx=templates/my.docx ${f} --output=out/out.docx
+
 html_re:${f}
 	pandoc ${f} -t html5 -o out/out.html --toc --toc-depth 2 --template=templates/pm-template
 
