@@ -15,6 +15,9 @@ latex:
 docx:${f}
 	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl ${f} --output=out/out.docx
 
+docx_base:${f}
+	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl --reference-docx=templates/base.docx ${f} --output=out/out.docx
+
 docx_re:${f}
 	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl --reference-docx=templates/reference.docx ${f} --output=out/out.docx
 

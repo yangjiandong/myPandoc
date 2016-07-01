@@ -22,6 +22,10 @@ https://github.com/geekcompany/DeerResume.git
 ```
 sed -i '' 's/<table>/<table class="table table-bordered table-condensed">/' out/out.html
 ```
+## 增加docx 标准模版
+```
+make docx_base f=xxx
+```
 
 06.30
 ---
