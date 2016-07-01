@@ -7,6 +7,22 @@ pandoc to docx,html,pdf
 make docx(pdf) f=xx
 ```
 
+07.01
+---
+
+## markdown 人员简历模板
+
+https://github.com/geekcompany/ResumeSample.git
+
+## DeerResume：在线MarkDown简历工具
+
+https://github.com/geekcompany/DeerResume.git
+
+## make html_re 增加 html table 样式处理
+```
+sed -i '' 's/<table>/<table class="table table-bordered table-condensed">/' out/out.html
+```
+
 06.30
 ---
 

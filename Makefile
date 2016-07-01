@@ -23,6 +23,8 @@ docx_re2:${f}
 
 html_re:${f}
 	pandoc ${f} -t html5 -o out/out.html --toc --toc-depth 2 --template=templates/pm-template
+	# add style to table
+	sed -i '' 's/<table>/<table class="table table-bordered table-condensed">/' out/out.html
 
 bootstrap:${f}
 	pandoc ${f} -o out/out.html --template templates/bootstrap-template/template.html --css templates/bootstrap-template/template.css --self-contained --toc --toc-depth 2
