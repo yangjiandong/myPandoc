@@ -22,8 +22,14 @@ latex:
 	pandoc $(TOC) $(TITLE) $(CHAPTERS) --latex-engine=xelatex -V documentclass=$(LATEX_CLASS) -o out/latex.pdf --template=templates/mytemplate.tex
 
 docx:
-	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl $(TOC) $(CHAPTERS) --output=out/out.docx
-
+	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl $(CHAPTERS) \
+	    --output=out/out.docx
+		# --filter filter-pagebreak.hs \
+		
+docx_twocolumn:
+	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl $(CHAPTERS) \
+	    --reference-docx=templates/twocolumns.docx --output=out/out.docx
+	
 html:
 	pandoc $(TOC) $(CHAPTERS) -t html5 -o out/out.html --toc --toc-depth 2 --template=templates/pm-template
 

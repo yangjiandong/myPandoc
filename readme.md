@@ -7,6 +7,28 @@ pandoc to docx,html,pdf
 make docx(pdf) f=xx
 ```
 
+07.02
+---
+
+## docx pagebreak
+
+[use haskell for mac](https://ghcformacosx.github.io)
+
+[参考](http://permalink.gmane.org/gmane.text.pandoc/12833)
+[google group](https://groups.google.com/forum/#!topic/pandoc-discuss/FzLrhk0vVbU)
+
+另外的方式是通过`reference.docx` 设计分页,还没测试
+
+## Converting a web page to markdown:
+
+```
+pandoc -s -r html http://www.gnu.org/software/make/ -o example12.text
+```
+
+[pandoc demo](http://pandoc.org/demos.html)
+
+## sdcamp 增加双列docx
+
 07.01
 ---
 
