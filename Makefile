@@ -29,8 +29,15 @@ html_re:${f}
 	# add style to table
 	sed -i '' 's/<table>/<table class="table table-bordered table-condensed">/' out/out.html
 
+html_report:${f}
+	pandoc ${f} -t html5 -o out/out.html --toc --toc-depth 2 --template=templates/report
+	# add style to table
+	# sed -i '' 's/<table>/<table class="table table-bordered table-condensed">/' out/out.html
+
+
 bootstrap:${f}
-	pandoc ${f} -o out/out.html --template templates/bootstrap-template/template.html --css templates/bootstrap-template/template.css --self-contained --toc --toc-depth 2
+	pandoc ${f} -o out/out.html --template templates/bootstrap-template/template.html --css templates/bootstrap-template/template.css --self-contained --toc --toc-depth 2 
+	sed -i '' 's/<table>/<table class="table table-bordered table-condensed">/' out/out.html
 
 html_yi:${f}
 	pandoc ${f} -t html5 -o out/out.html --toc --toc-depth 2 --template=templates/template
