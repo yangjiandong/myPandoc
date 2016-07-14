@@ -34,6 +34,10 @@ html_report:${f}
 	# add style to table
 	# sed -i '' 's/<table>/<table class="table table-bordered table-condensed">/' out/out.html
 
+html_mark:${f}
+	pandoc ${f} -r markdown+simple_tables+table_captions+yaml_metadata_block -w html -S \
+		--template=templates/html.template --css=style/marked/kultiad-serif.css \
+		--filter pandoc-citeproc --csl=csl/apsa.csl --bibliography=bib/socbib-pandoc.bib -o out/out.html
 
 bootstrap:${f}
 	pandoc ${f} -o out/out.html --template templates/bootstrap-template/template.html --css templates/bootstrap-template/template.css --self-contained --toc --toc-depth 2 

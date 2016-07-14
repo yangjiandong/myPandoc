@@ -7,6 +7,15 @@ pandoc to docx,html,pdf
 make docx(pdf) f=xx
 ```
 
+07.14
+---
+
+[1](https://github.com/kjhealy/pandoc-templates)
+
+```
+make html_mark f=xx
+```
+
 07.02
 ---
 
