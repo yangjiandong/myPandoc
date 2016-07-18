@@ -7,6 +7,11 @@ pandoc to docx,html,pdf
 make docx(pdf) f=xx
 ```
 
+07.16
+---
+
+[letter](http://mrzool.cc/writing/typesetting-automation/) `demo/letter`
+
 07.14
 ---
 
