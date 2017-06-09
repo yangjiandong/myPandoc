@@ -2,7 +2,6 @@
 % 胡浩源 haoyuan.huhy@gmail.com
 % 2015年1月16
 
-# Mac下用markdown+markdown写slide
 
 ## WHY
 写一份markdown文件， 根据需要可以生成:
@@ -67,15 +66,18 @@ pandoc test.md -o test.pdf -t beamer
 - reveal.js
 
 ## reveal.js
+
 ```shell
 git clone https://github.com/hakimel/reveal.js
 
 pandoc slides.md -o slides.html -t revealjs 
 -s -V theme=beige
 ```
+
 这样是执行不成功的
 
-### fix
+## fix
+
 不要用reveal 3.0， 用reveal.js 2.6
 
 ## reveal.js背景
@@ -89,6 +91,7 @@ pandoc slides.md -o slides.html -t revealjs
 - solarized：奶油色背景，深青色文字
 
 ## Makefile
+
 利用makefile来自动化构建
 ```shell
 slide:${f}
@@ -108,6 +111,7 @@ print:${f}
 ```
 
 ## make usage
+
 ```shell
 make slide f=pandoc_setup.md 
 make pdf f=pandoc_setup.md 

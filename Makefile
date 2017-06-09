@@ -53,7 +53,7 @@ pdf:${f}
 	pandoc ${f} -o out/out.pdf  --latex-engine=xelatex --template=./mytemplate.tex
 
 reveal:${f}
-	pandoc ${f} -o out/out_reveal.html -t revealjs -s -V theme=night --template=template-revealjs.html
+	pandoc ${f} -o out/demo/out_reveal.html -t revealjs -s -V theme=night --template=template-revealjs.html
 
 docx2:${f}
 	pandoc -r markdown -w docx -s -S --bibliography=Thesis.bib --csl=csl/chicago-author-date.csl ${f} --output=out/out.docx
