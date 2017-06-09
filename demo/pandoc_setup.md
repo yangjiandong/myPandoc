@@ -2,13 +2,24 @@
 % 胡浩源 haoyuan.huhy@gmail.com
 % 2015年1月16
 
+# GOTO slider
 
 ## WHY
+
 写一份markdown文件， 根据需要可以生成:
 
 - slide pdf
 - document pdf
 - slide html
+
+<aside class="notes">
+
+  * 这里是提示1
+  * 这里是提示2
+
+</aside>
+
+# Begin
 
 ## 安装
 
@@ -17,6 +28,7 @@ brew install pandoc
 ```
 
 ## 源码
+
 ```markdown
 # today
 

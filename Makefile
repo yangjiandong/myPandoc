@@ -9,6 +9,10 @@ COVER_IMAGE = cover.jpg
 LATEX_CLASS = book
 # report
 
+dzslide:
+	pandoc ${f} -o out/demo/out_dzslide.html \
+		-t dzslides -s
+
 latex: 
 	pandoc $(TOC) $(TITLE) $(CHAPTERS) --latex-engine=xelatex \
 	-V documentclass=$(LATEX_CLASS) \
@@ -19,6 +23,19 @@ latex_bysj:
 	pandoc $(TOC) $(TITLE) $(CHAPTERS) --latex-engine=xelatex  \
 	-o out/latex.pdf \
 	--template=templates/bysj.latex
+
+reveal:${f}
+	pandoc ${f} -o out/demo/out_reveal.html \
+		-t revealjs -s -V theme=night \
+		--template=template-revealjs.html \
+		-i
+
+reveal2:${f}
+	pandoc -t html5 -s --template=template-revealjs-2.html \
+    	--standalone --section-divs \
+    	--variable theme="night" \
+    	--variable transition="page" \
+    	-o out/demo/out_reveal.html ${f}
 
 docx:${f}
 	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl ${f} --output=out/out.docx
@@ -65,18 +82,6 @@ slide:${f}
 
 pdf:${f}
 	pandoc ${f} -o out/out.pdf  --latex-engine=xelatex --template=./mytemplate.tex
-
-reveal:${f}
-	pandoc ${f} -o out/demo/out_reveal.html \
-	-t revealjs -s -V theme=night \
-	--template=template-revealjs.html
-
-reveal2:${f}
-	pandoc -t html5 -s --template=template-revealjs-2.html \
-    	--standalone --section-divs \
-    	--variable theme="night" \
-    	--variable transition="page" \
-    	-o out/demo/out_reveal.html ${f}
 
 docx2:${f}
 	pandoc -r markdown -w docx -s -S --bibliography=Thesis.bib --csl=csl/chicago-author-date.csl ${f} --output=out/out.docx
