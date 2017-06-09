@@ -7,6 +7,12 @@ pandoc to docx,html,pdf
 make docx(pdf) f=xx
 ```
 
+推荐方案
+- make latex
+- make docx_code
+- make html_re
+- make reveal
+
 2017.06.09
 ---
 
@@ -41,6 +47,17 @@ templates/code.docx
 ```
 docx_code:${f}
     pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl --reference-docx=templates/code.docx ${f} --output=out/out.docx
+```
+
+### 一个毕业设计模版
+
+pandoc-LaTeX.docx or bysj.latex
+
+```
+latex_bysj: 
+    pandoc $(TOC) $(TITLE) $(CHAPTERS) --latex-engine=xelatex  \
+    -o out/latex.pdf\
+    --template=templates/bysj.latex
 ```
 
 07.16
@@ -91,10 +108,13 @@ https://github.com/geekcompany/ResumeSample.git
 https://github.com/geekcompany/DeerResume.git
 
 ## make html_re 增加 html table 样式处理
+
 ```
 sed -i '' 's/<table>/<table class="table table-bordered table-condensed">/' out/out.html
 ```
+
 ## 增加docx 标准模版
+
 ```
 make docx_base f=xxx
 ```
@@ -169,6 +189,8 @@ make html_yi f=xx
 make latex
 ```
 
+可以生成效果不错的排版书
+
 ## epub
 
 `make epub f=xx`
@@ -191,6 +213,7 @@ make reveal f=pandoc_setup.md
 ```
 
 error:
+
 ```
 ! Undefined control sequence.
 l.196 \tightlist
@@ -199,6 +222,7 @@ pandoc: Error producing PDF from TeX source
 ```
 
 解决, mytemplate.tex
+
 ```
 \newcommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}

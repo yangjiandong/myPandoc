@@ -3,20 +3,31 @@ BOOKNAME = my-book
 TITLE = title.txt
 METADATA = metadata.xml
 CHAPTERS2 = ch01.md ch02.md
-CHAPTERS = demo/my.md
+CHAPTERS = demo/SpringBootwithRedis.md
 TOC = --toc --toc-depth=2
 COVER_IMAGE = cover.jpg
 LATEX_CLASS = book
 # report
 
 latex: 
-	pandoc $(TOC) $(TITLE) $(CHAPTERS) --latex-engine=xelatex -V documentclass=$(LATEX_CLASS) -o out/latex.pdf --template=./mytemplate.tex
+	pandoc $(TOC) $(TITLE) $(CHAPTERS) --latex-engine=xelatex \
+	-V documentclass=$(LATEX_CLASS) \
+	-o out/latex.pdf \
+	--template=./mytemplate.tex
+
+latex_bysj: 
+	pandoc $(TOC) $(TITLE) $(CHAPTERS) --latex-engine=xelatex  \
+	-o out/latex.pdf \
+	--template=templates/bysj.latex
 
 docx:${f}
 	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl ${f} --output=out/out.docx
 
 docx_code:${f}
-	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl --reference-docx=templates/code.docx ${f} --output=out/out.docx
+	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl \
+	--reference-docx=templates/code.docx \
+	${f} \
+	--output=out/out.docx
 
 docx_base:${f}
 	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl --reference-docx=templates/base.docx ${f} --output=out/out.docx
@@ -56,7 +67,9 @@ pdf:${f}
 	pandoc ${f} -o out/out.pdf  --latex-engine=xelatex --template=./mytemplate.tex
 
 reveal:${f}
-	pandoc ${f} -o out/demo/out_reveal.html -t revealjs -s -V theme=night --template=template-revealjs.html
+	pandoc ${f} -o out/demo/out_reveal.html \
+	-t revealjs -s -V theme=night \
+	--template=template-revealjs.html
 
 reveal2:${f}
 	pandoc -t html5 -s --template=template-revealjs-2.html \
