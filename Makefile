@@ -10,7 +10,10 @@ LATEX_CLASS = book
 # report
 
 html_re:${f}
-	pandoc ${f} -t html5 -o out/out.html --toc --toc-depth 2 --template=templates/pm-template
+	pandoc ${f} -t html5 -o out/out.html \
+	--toc --toc-depth 2 \
+	-s --self-contained \
+	--template=templates/pm-template
 	# add style to table
 	sed -i '' 's/<table>/<table class="table table-bordered table-condensed">/' out/out.html
 
