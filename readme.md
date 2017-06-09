@@ -32,6 +32,17 @@ make reveal2 f=demo/pandoc_setup.md
 
 transition: default/cube/page/concave/zoom/linear/fade/none
 
+如果slides里有公式，需要在编译命令里加上--mathml选项
+
+### 技术docx 样式
+
+templates/code.docx
+
+```
+docx_code:${f}
+    pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl --reference-docx=templates/code.docx ${f} --output=out/out.docx
+```
+
 07.16
 ---
 
