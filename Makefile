@@ -9,9 +9,10 @@ COVER_IMAGE = cover.jpg
 LATEX_CLASS = book
 # report
 
-dzslide:
-	pandoc ${f} -o out/demo/out_dzslide.html \
-		-t dzslides -s
+html_re:${f}
+	pandoc ${f} -t html5 -o out/out.html --toc --toc-depth 2 --template=templates/pm-template
+	# add style to table
+	sed -i '' 's/<table>/<table class="table table-bordered table-condensed">/' out/out.html
 
 latex: 
 	pandoc $(TOC) $(TITLE) $(CHAPTERS) --latex-engine=xelatex \
@@ -55,11 +56,6 @@ docx_re:${f}
 docx_re2:${f}
 	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl --reference-docx=templates/my.docx ${f} --output=out/out.docx
 
-html_re:${f}
-	pandoc ${f} -t html5 -o out/out.html --toc --toc-depth 2 --template=templates/pm-template
-	# add style to table
-	sed -i '' 's/<table>/<table class="table table-bordered table-condensed">/' out/out.html
-
 html_report:${f}
 	pandoc ${f} -t html5 -o out/out.html --toc --toc-depth 2 --template=templates/report
 	# add style to table
@@ -100,6 +96,10 @@ html_re2:${f}
 
 epub:${f}
 	pandoc -o out/out.epub title.txt ${f} --epub-cover-image=cover.jpg --epub-metadata=metadata.xml --toc --toc-depth=2 --epub-stylesheet=style/epub.css
+
+dzslide:
+	pandoc ${f} -o out/demo/out_dzslide.html \
+		-t dzslides -s
 
 all:${f} slide pdf reveal
 	echo "ok"
