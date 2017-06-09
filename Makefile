@@ -55,6 +55,13 @@ pdf:${f}
 reveal:${f}
 	pandoc ${f} -o out/demo/out_reveal.html -t revealjs -s -V theme=night --template=template-revealjs.html
 
+reveal2:${f}
+	pandoc -t html5 -s --template=template-revealjs-2.html \
+    	--standalone --section-divs \
+    	--variable theme="night" \
+    	--variable transition="page" \
+    	-o out/demo/out_reveal.html ${f}
+
 docx2:${f}
 	pandoc -r markdown -w docx -s -S --bibliography=Thesis.bib --csl=csl/chicago-author-date.csl ${f} --output=out/out.docx
 

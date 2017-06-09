@@ -7,6 +7,31 @@ pandoc to docx,html,pdf
 make docx(pdf) f=xx
 ```
 
+2017.06.09
+---
+
+### 另外一套 reveal.js
+
+[参考](https://gist.github.com/aaronwolen/5017084)
+
+template-revealjs-2.html
+
+````
+pandoc -t html5 -s --template=template-revealjs-2.html \
+    --standalone --section-divs \
+    --variable theme="sky" \
+    --variable transition="linear" \
+    -o slides.html slides.md
+```
+
+or
+
+```
+make reveal2 f=demo/pandoc_setup.md
+```
+
+transition: default/cube/page/concave/zoom/linear/fade/none
+
 07.16
 ---
 
