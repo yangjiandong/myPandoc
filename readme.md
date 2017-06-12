@@ -70,6 +70,17 @@ example
 
 所以1级标题渲染为水平方向的幻灯片，2级标题渲染为竖直方向的幻灯片
 
+### mac xetaex
+
+```
+/Library/TeX/Distributions/Programs/texbin
+```
+
+```
+export PATH=$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin
+```
+
+
 2017.06.12
 ---
 
@@ -80,6 +91,31 @@ example
 ```
 make resume.pdf
 make resume.html
+```
+
+### 重庆大学论文
+
+[Academia-Writing-with-Markdown-Using-Pandoc](https://github.com/zl810881283/Academia-Writing-with-Markdown-Using-Pandoc)
+
+demo/Academia-Writing-with-Markdown-Using-Pandoc
+
+install
+
+```
+brew install pandoc-crossref 
+brew install pandoc-citeproc
+```
+
+pdf
+
+```
+pandoc --filter pandoc-crossref --filter pandoc-citeproc --biblio reference.bib --csl chinese-gb7714-2005-numeric.csl --latex-engine=xelatex --template=cqu.latex main.md -o main.pdf
+```
+
+docx
+
+```
+pandoc --filter pandoc-crossref --filter pandoc-citeproc --biblio reference.bib --csl chinese-gb7714-2005-numeric.csl --latex-engine=xelatex  main.md -o main.docx
 ```
 
 2017.06.09
