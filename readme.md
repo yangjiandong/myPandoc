@@ -70,6 +70,18 @@ example
 
 所以1级标题渲染为水平方向的幻灯片，2级标题渲染为竖直方向的幻灯片
 
+2017.06.12
+---
+
+### 一个不错的样式
+
+[mszep pandoc resume](https://github.com/mszep/pandoc_resume)
+
+```
+make resume.pdf
+make resume.html
+```
+
 2017.06.09
 ---
 

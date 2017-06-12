@@ -104,6 +104,24 @@ dzslide:
 	pandoc ${f} -o out/demo/out_dzslide.html \
 		-t dzslides -s
 
+resume.pdf: 
+	pandoc --standalone --template style/style_chmduquesne.tex \
+	--from markdown --to context \
+	-V papersize=A4 \
+	-o out/resume.tex demo/resume.md; \
+	context out/resume.tex
+
+resume.html: 
+	pandoc --standalone -H style/style_chmduquesne.css \
+        --from markdown --to html \
+        -o out/resume.html demo/resume.md
+
+resume.docx: resume.md
+	pandoc -s -S resume.md -o resume.docx
+
+resume.rtf: resume.md
+	pandoc -s -S resume.md -o resume.rtf
+
 all:${f} slide pdf reveal
 	echo "ok"
 
