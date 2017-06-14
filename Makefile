@@ -6,7 +6,7 @@ CHAPTERS2 = ch01.md ch02.md
 CHAPTERS = demo/SpringBootwithRedis.md
 TOC = --toc --toc-depth=2
 COVER_IMAGE = cover.jpg
-LATEX_CLASS = book
+LATEX_CLASS = article
 # report
 
 html_re:${f}
