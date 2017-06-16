@@ -127,9 +127,7 @@ example:
 
 [phd_thesis_markdown](https://github.com/tompollard/phd_thesis_markdown)
 
-demo/phd_thesis_markdown
-
-可以用
+demo/phd_thesis_markdown, 可以用
 
 2017.06.12
 ---
