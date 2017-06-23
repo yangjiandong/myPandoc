@@ -119,6 +119,14 @@ example:
 - Inline mode $e=mc^2$
 - Display mode: $$\frac{df(x)}{dt}=lim_{x \to 0}{\frac{f(x+h)-f(x)}{h}}$$
 ```
+06.16
+---
+
+### [pandoc demo](http://pandoc.org/demos.html)
+
+### simple.md
+
+[完整的template](https://github.com/lauritzsh/pandoc-markdown-template)
 
 06.14
 ---
