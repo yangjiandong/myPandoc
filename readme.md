@@ -140,14 +140,17 @@ demo/phd_thesis_markdown, 可以用
 2017.06.12
 ---
 
-### 一个不错的样式
+### 一个不错的样式, 个人简历
 
-[mszep pandoc resume](https://github.com/mszep/pandoc_resume)
+- [mszep pandoc resume](https://github.com/mszep/pandoc_resume)
+- `demo/mszep.pandoc-templates`
 
 ```
 make resume.pdf
 make resume.html
 ```
+
+> 中文字体问题没解决
 
 ### 重庆大学论文
 
