@@ -119,6 +119,22 @@ example:
 - Inline mode $e=mc^2$
 - Display mode: $$\frac{df(x)}{dt}=lim_{x \to 0}{\frac{f(x+h)-f(x)}{h}}$$
 ```
+
+07.19
+---
+
+### 中文pandoc
+
+demo/pandoc
+
+- 提供 html
+- 提供 latex to pdf， 需安装
+
+```
+sudo tlmgr install titling
+sudo tlmgr install lastpage
+```
+
 06.16
 ---
 
@@ -151,6 +167,17 @@ make resume.html
 ```
 
 > 中文字体问题没解决
+
+install context
+
+- install basicTex,install dir:`cd /usr/local/texlive/2017basic/`
+- install
+
+  ````
+  sudo tlmgr update --self --all
+  ## install context
+  sudo tlmgr install collection-context
+  ```
 
 ### 重庆大学论文
 
