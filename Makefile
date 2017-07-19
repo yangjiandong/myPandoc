@@ -3,11 +3,12 @@ BOOKNAME = my-book
 TITLE = title.txt
 METADATA = metadata.xml
 CHAPTERS2 = ch01.md ch02.md
-CHAPTERS = demo/SpringBootwithRedis.md
+CHAPTERS = demo/pandoc/pandoc.markdown
+#demo/SpringBootwithRedis.md
 TOC = --toc --toc-depth=2
 COVER_IMAGE = cover.jpg
-LATEX_CLASS = article
-# report
+LATEX_CLASS = book
+# report, article
 
 html_re:${f}
 	pandoc ${f} -t html5 -o out/out.html \
@@ -21,7 +22,9 @@ latex:
 	pandoc $(TOC) $(TITLE) $(CHAPTERS) --latex-engine=xelatex \
 	-V documentclass=$(LATEX_CLASS) \
 	-o out/latex.pdf \
-	--template=./mytemplate.tex
+	--template=templates/my.tex
+
+# --template=./mytemplate.tex
 
 latex_bysj: 
 	pandoc $(TOC) $(TITLE) $(CHAPTERS) --latex-engine=xelatex  \

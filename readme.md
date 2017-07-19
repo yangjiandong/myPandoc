@@ -135,6 +135,49 @@ sudo tlmgr install titling
 sudo tlmgr install lastpage
 ```
 
+### 导出pandoc默认tex
+
+[参考](http://www.latexstudio.net/archives/9026
+)
+```
+pandoc -D latex > my.tex
+```
+
+调整：定位到 % if luatex or xelatex，在 \fi 的下一行（下图白色箭头处）插入如下语句
+
+```
+% SUPPORT for Chinese
+\usepackage[boldfont,slantfont,CJKchecksingle]{xeCJK}
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+\punctstyle{quanjiao}
+\setCJKmainfont{WenQuanYi Micro Hei}
+\setCJKsansfont{KaiTi}
+\setCJKmonofont{SimSun}
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+```
+
+run
+
+```
+# --template=./mytemplate.tex
+make latex
+```
+
+### fc-list show fonts
+
+```
+brew install fontconfig
+```
+
+use
+
+```
+fc-list :lang=zh-cn
+or
+fc-list :outline -f "%{family}\n"
+```
+
 06.16
 ---
 
