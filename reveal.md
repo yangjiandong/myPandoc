@@ -6,6 +6,14 @@ reveal
 
 打包输出路径 `out\demo`, reveal 样式 `reveal.js`, 拷贝到 `out\demo`
 
+### font
+
+no use google font `https://fonts.googleapis.com`
+
+```
+http://fonts.useso.com
+```
+
 ### TeX公式渲染方式
 
 控制TeX公式渲染方式的选项有`--mathml，--webtex，--mathjax和--latexmathml`。（Chrome和Firefox均支持MathML）
