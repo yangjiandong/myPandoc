@@ -14,7 +14,7 @@ CHAPTERS = 0-preface1-preface.markdown 0-preface2-changes.markdown \
 		   2-appendix1-sample.markdown \
 		   2-appendix2-cc2git.markdown
 TOC = --toc --toc-depth=2
-COVER_IMAGE = latex/img/cover.pdf
+COVER_IMAGE = img/cover.pdf
 LATEX_CLASS = book
 # report
 

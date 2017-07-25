@@ -98,3 +98,9 @@ make latex
   ## install context
   sudo tlmgr install collection-context
   ```
+
+- other
+
+  ```
+  sudo tlmgr cjk
+  ```
