@@ -8,7 +8,7 @@ CHAPTERS = demo/pandoc/pandoc.markdown
 TOC = --toc --toc-depth=2
 COVER_IMAGE = cover.jpg
 LATEX_CLASS = book
-# report, article
+# report, article, book, memoir
 
 html_re:${f}
 	pandoc ${f} -t html5 -o out/out.html \
@@ -28,7 +28,7 @@ latex:
 
 latex_bysj: 
 	pandoc $(TOC) $(TITLE) $(CHAPTERS) --latex-engine=xelatex  \
-	-o out/latex.pdf \
+	-o out/latex_bysj.pdf \
 	--template=templates/bysj.latex
 
 reveal:${f}
@@ -41,7 +41,7 @@ reveal2:${f}
 	pandoc -t html5 -s --template=template-revealjs-2.html \
     	--standalone --section-divs \
     	--variable theme="night" \
-    	--variable transition="page" \
+    	--variable transition="cube" \
     	-o out/demo/out_reveal.html ${f}
 
 docx:${f}

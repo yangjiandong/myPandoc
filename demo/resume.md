@@ -1,4 +1,4 @@
-Johnny Coder
+程序员简历
 ============
 
 ----
@@ -9,7 +9,7 @@ Johnny Coder
 
 ----
 
-Education
+教育
 ---------
 
 2010-2014 (expected)
