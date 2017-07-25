@@ -8,10 +8,11 @@ make docx(pdf) f=xx
 ```
 
 推荐方案
-- make latex
+- make latex(latex_bysj)
 - make docx_code
 - make html_re
-- make reveal
+- make reveal(reveal2)
+- sdcamp latex
 
 参考 reveal.js
 

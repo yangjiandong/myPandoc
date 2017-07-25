@@ -1,2 +1,2 @@
-% My Magnum Opus
-% J. Random Author
+% 敏捷开发
+% one 开发人员

@@ -2,6 +2,15 @@
 latex
 ---
 
+### example
+
+sdcamp
+
+```
+cd sdcamp/contents
+make latex
+```
+
 ### mac xetaex
 
 ```
