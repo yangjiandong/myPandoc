@@ -19,7 +19,7 @@ LATEX_CLASS = book
 # report
 
 latex: 
-	pandoc $(TOC) $(TITLE) $(CHAPTERS) --latex-engine=xelatex -V documentclass=$(LATEX_CLASS) -o out/latex.pdf --template=templates/mytemplate.tex
+	pandoc $(TOC) $(TITLE) $(CHAPTERS) --latex-engine=xelatex -V documentclass=$(LATEX_CLASS) -o out/latex_zh.pdf --template=templates/mytemplate.tex
 
 docx:
 	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl $(CHAPTERS) \
