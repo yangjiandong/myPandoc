@@ -14,6 +14,17 @@ $if(mainlang)$
 \mainlanguage[$mainlang$]
 $endif$
 
+\usemodule[simplefonts]
+\setupsimplefonts[size=11pt]
+ 
+\setcjkmainfont[AdobeSongStd][regularfont={* Light},italicfont={AdobeKaitiStd Regular},boldfont={AdobeHeitiStd Regular},bolditalicfont={AdobeHeitiStd Regular}]
+\setcjksansfont[AdobeKaitiStd][boldfont={AdobeHeitiStd Regular},bolditalicfont={AdobeHeitiStd Regular}]
+\setcjkmonofont[SimFang][boldfont={AdobeHeitiStd Regular},bolditalicfont={AdobeHeitiStd Regular}]
+ 
+% 启用中文断行
+ 
+\setscript[hanzi]
+
 \setupcolor[hex]
 \definecolor[titlegrey][h=757575]
 \definecolor[sectioncolor][h=397249]
@@ -30,7 +41,7 @@ $endif$
 
 %\setuppagenumbering[location={footer,center}]
 
-\setupbodyfont[11pt, helvetica]
+\setupbodyfont[11pt, AdobeHeitiStd]
 
 \setupwhitespace[medium]
 

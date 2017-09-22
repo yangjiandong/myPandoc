@@ -84,11 +84,9 @@ Programming Languages
 Extra Section, Call it Whatever You Want
 ----------------------------------------
 
-* Human Languages:
+* 外语:
 
-     * English (native speaker)
-     * ???
-     * This is what a nested list looks like.
+     * 英文，能查阅英文资料
 
 * Random tidbit
 

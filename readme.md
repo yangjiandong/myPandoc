@@ -92,7 +92,26 @@ make resumepdf
 make resumehtml
 ```
 
-> 中文字体问题没解决
+> 中文字体问题解决
+
+- [参考](http://www.annhe.net/article-3169.html)
+
+```
+\usemodule[simplefonts]
+\setupsimplefonts[size=11pt]
+ 
+\setcjkmainfont[AdobeSongStd][regularfont={* Light},italicfont={AdobeKaitiStd Regular},boldfont={AdobeHeitiStd Regular},bolditalicfont={AdobeHeitiStd Regular}]
+\setcjksansfont[AdobeKaitiStd][boldfont={AdobeHeitiStd Regular},bolditalicfont={AdobeHeitiStd Regular}]
+\setcjkmonofont[SimFang][boldfont={AdobeHeitiStd Regular},bolditalicfont={AdobeHeitiStd Regular}]
+ 
+% 启用中文断行
+ 
+\setscript[hanzi]
+
+...
+
+\setupbodyfont[11pt, AdobeHeitiStd]
+```
 
 install context
 
