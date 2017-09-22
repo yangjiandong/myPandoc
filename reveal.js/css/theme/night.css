@@ -1,5 +1,6 @@
-@import url(http://fonts.lug.ustc.edu.cn/css?family=Montserrat:700);
-@import url(http://fonts.lug.ustc.edu.cn/css?family=Open+Sans:400,700,400italic,700italic);
+@import url(night_font.css);
+@import url(night_font2.css);
+
 /**
  * Black theme for reveal.js.
  *

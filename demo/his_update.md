@@ -2,22 +2,17 @@
 % 杨建东
 % 2017年9月22
 
-# 现状
+# 公司his产品现状
 
-## WHY
+## 技术资源
 
-写一份markdown文件， 根据需要可以生成:
+- pb 开发人员很难找
+- 现有开发人员对自己的技术发展不是很乐观
 
-- slide pdf
-- document pdf
-- slide html
+## 产品
 
-<aside class="notes">
+- 很难适应新的应用场景，区域医疗、云部署等等
 
-  * 这里是提示1
-  * 这里是提示2
-
-</aside>
 
 # Begin
 

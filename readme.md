@@ -32,6 +32,8 @@ reveal.js/theme
 - sky.css
 - solarized.css
 
+直接改造 night.css 引用的字体，下载到本地
+
 07.19
 ---
 
