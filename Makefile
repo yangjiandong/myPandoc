@@ -10,6 +10,12 @@ COVER_IMAGE = cover.jpg
 LATEX_CLASS = book
 # report, article, book, memoir
 
+hisupdate:
+	pandoc demo/his_update.md -o out/demo/his_update_reveal.html \
+	-t revealjs -s -V theme=night \
+	--template=template-revealjs.html \
+	-i
+
 html_re:${f}
 	pandoc ${f} -t html5 -o out/out.html \
 	--toc --toc-depth 2 \
@@ -107,22 +113,22 @@ dzslide:
 	pandoc ${f} -o out/demo/out_dzslide.html \
 		-t dzslides -s
 
-resume.pdf: 
+resumepdf:
 	pandoc --standalone --template style/style_chmduquesne.tex \
 	--from markdown --to context \
 	-V papersize=A4 \
 	-o out/resume.tex demo/resume.md; \
 	context out/resume.tex
 
-resume.html: 
+resumehtml:
 	pandoc --standalone -H style/style_chmduquesne.css \
         --from markdown --to html \
         -o out/resume.html demo/resume.md
 
-resume.docx: resume.md
+resumedocx: resume.md
 	pandoc -s -S resume.md -o resume.docx
 
-resume.rtf: resume.md
+resumertf: resume.md
 	pandoc -s -S resume.md -o resume.rtf
 
 all:${f} slide pdf reveal

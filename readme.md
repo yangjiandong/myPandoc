@@ -16,6 +16,22 @@ make docx(pdf) f=xx
 
 参考 reveal.js
 
+09.22
+---
+
+### reveal font
+
+updat `fonts.useso.com` to `fonts.lug.ustc.edu.cn`
+
+reveal.js/theme
+- begin.css
+- default.css
+- moon.css
+- night.css
+- simple.css
+- sky.css
+- solarized.css
+
 07.19
 ---
 
@@ -72,8 +88,8 @@ demo/phd_thesis_markdown, 可以用
 - `demo/mszep.pandoc-templates`
 
 ```
-make resume.pdf
-make resume.html
+make resumepdf
+make resumehtml
 ```
 
 > 中文字体问题没解决
