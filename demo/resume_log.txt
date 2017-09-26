@@ -1,0 +1,102 @@
+open source     > 1 > 1 > /usr/local/texlive/2015/texmf-dist/tex/context/base/cont-yes.mkiv
+
+ConTeXt  ver: 2015.05.18 12:26 MKIV current  fmt: 2017.6.12  int: english/english
+
+system          > 'cont-new.mkiv' loaded
+open source     > 2 > 2 > /usr/local/texlive/2015/texmf-dist/tex/context/base/cont-new.mkiv
+close source    > 2 > 2 > /usr/local/texlive/2015/texmf-dist/tex/context/base/cont-new.mkiv
+system          > files > jobname 'resume', input 'out/resume', result 'resume'
+fonts           > latin modern fonts are not preloaded
+languages       > language 'en' is active
+open source     > 2 > 3 > out/resume.tex
+resolvers       > modules > 'simplefonts' is loaded
+open source     > 3 > 4 > /usr/local/texlive/2015/texmf-dist/tex/context/third/simplefonts/t-simplefonts.mkiv
+loading         > ConTeXt User Module / Simplefonts
+resolvers       > lua > loading file '/usr/local/texlive/2015/texmf-dist/tex/context/third/simplefonts/t-simplefonts.lua' succeeded
+close source    > 3 > 4 > /usr/local/texlive/2015/texmf-dist/tex/context/third/simplefonts/t-simplefonts.mkiv
+colors          > defining > unknown library 'hex'
+fonts           > typescripts > unknown library 'AdobeHeitiStd'
+structure       > sectioning > section @ level 3 : 0.0.1 -> 程序员简历
+structure       > sectioning > subsection @ level 4 : 0.0.1.1 -> 教育
+structure       > sectioning > subsection @ level 4 : 0.0.1.2 -> Experience
+structure       > sectioning > subsection @ level 4 : 0.0.1.3 -> Technical Experience
+structure       > sectioning > subsection @ level 4 : 0.0.1.4 -> Extra Section, Call it Whatever You Want
+backend         > xmp > using file '/usr/local/texlive/2015/texmf-dist/tex/context/base/lpdf-pdx.xml'
+pages           > flushing realpage 1, userpage 1
+pages           > flushing realpage 2, userpage 2
+close source    > 2 > 4 > out/resume.tex
+close source    > 1 > 4 > /usr/local/texlive/2015/texmf-dist/tex/context/base/cont-yes.mkiv
+
+system          > structure > start used structure
+
+used structure  > text: resume
+
+system          > structure > stop used structure
+
+
+system          > files > start used files
+
+used file       >    1: filename=cont-yes.mkiv filetype=tex foundname=/usr/local/texlive/2015/texmf-dist/tex/context/base/cont-yes.mkiv usedmethod=database
+used file       >    2: filename=publ-imp-default.lua filetype=lua foundname=/usr/local/texlive/2015/texmf-dist/tex/context/base/publ-imp-default.lua usedmethod=database
+used file       >    3: filename=cont-new.mkiv filetype=tex foundname=/usr/local/texlive/2015/texmf-dist/tex/context/base/cont-new.mkiv usedmethod=database
+used file       >    4: filename=lang-us.lua filetype=lua foundname=/usr/local/texlive/2015/texmf-dist/tex/context/patterns/lang-us.lua usedmethod=database
+used file       >    5: filename=out/resume.tex foundname=out/resume.tex usedmethod=direct
+used file       >    6: filename=t-simplefonts.mkiv filetype=tex foundname=/usr/local/texlive/2015/texmf-dist/tex/context/third/simplefonts/t-simplefonts.mkiv usedmethod=database
+used file       >    7: filename=t-simplefonts.lua filetype=tex format=tex foundname=/usr/local/texlive/2015/texmf-dist/tex/context/third/simplefonts/t-simplefonts.lua usedmethod=database
+used file       >    8: filename=lm.lfg filetype=tex foundname=/usr/local/texlive/2015/texmf-dist/tex/context/fonts/lm.lfg usedmethod=database
+used file       >    9: filename=lmroman10-regular.otf filetype=otf format=otf foundname=/usr/local/texlive/2015/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf usedmethod=database
+used file       >   10: filename=latinmodern-math.otf filetype=opentypefonts foundname=/usr/local/texlive/2015/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf usedmethod=database
+used file       >   11: filename=/Users/yangjiandong/Library/Fonts/AdobeSongStd-Light.otf format=otf foundname=/Users/yangjiandong/Library/Fonts/AdobeSongStd-Light.otf usedmethod=direct
+used file       >   12: filename=simfang filetype=ttf format=ttf foundname=/Users/yangjiandong/Library/Fonts/simfang.ttf usedmethod=filesystem
+used file       >   13: filename=lmroman10-bold.otf filetype=otf format=otf foundname=/usr/local/texlive/2015/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf usedmethod=database
+used file       >   14: filename=/Users/yangjiandong/Library/Fonts/AdobeHeitiStd-Regular.otf format=otf foundname=/Users/yangjiandong/Library/Fonts/AdobeHeitiStd-Regular.otf usedmethod=direct
+used file       >   15: filename=lmromanslant10-regular.otf filetype=otf format=otf foundname=/usr/local/texlive/2015/texmf-dist/fonts/opentype/public/lm/lmromanslant10-regular.otf usedmethod=database
+used file       >   16: filename=lpdf-pdx.xml filetype=tex foundname=/usr/local/texlive/2015/texmf-dist/tex/context/base/lpdf-pdx.xml usedmethod=database
+
+system          > files > stop used files
+
+
+system          > options > start commandline options
+
+used option     > currentrun="3"
+used option     > fulljobname="out/resume.tex"
+used option     > input="out/resume.tex"
+used option     > kindofrun="2"
+used option     > maxnofruns="9"
+used option     > no-parse-first-line="true"
+
+system          > options > stop commandline options
+
+system          > options > start commandline files
+
+used file       >    1: out/resume.tex
+
+system          > options > stop commandline files
+
+
+mkiv lua stats  > used config file: selfautoparent:/texmfcnf.lua;selfautoparent:/texmf-dist/web2c/texmfcnf.lua
+mkiv lua stats  > used cache path: readable+writable: '/usr/local/texlive/2015/texmf-var/luatex-cache/context/a86c089b384a3076dc514ba966a1fac9'
+mkiv lua stats  > resource resolver: loadtime 0.087 seconds, 0 scans with scantime 0.000 seconds, 0 shared scans, 16 found files, scanned paths: <none>
+mkiv lua stats  > stored bytecode data: 371 modules (0.287 sec), 78 tables (0.008 sec), 449 chunks (0.295 sec)
+mkiv lua stats  > traced context: maxstack: 1139, freed: 7, unreachable: 1132
+mkiv lua stats  > running in nuts mode: yes
+mkiv lua stats  > cleaned up reserved nodes: 53 nodes, 439 lists of 438
+mkiv lua stats  > node memory usage: 2 glue, 2 penalty, 14 attribute, 45 glue_spec, 3 attribute_list, 2 temp
+mkiv lua stats  > node list callback tasks: 6 unique task lists, 7 instances (re)created, 349 calls
+mkiv lua stats  > used backend: pdf (backend for directly generating pdf output)
+mkiv lua stats  > loaded tex modules: 1 requested, all found (*-simplefonts)
+mkiv lua stats  > loaded patterns: en::2, load time: 0.000
+mkiv lua stats  > jobdata time: 0.002 seconds saving, 0.001 seconds loading
+mkiv lua stats  > callbacks: 1744 direct, 1248 indirect, 2992 total
+mkiv lua stats  > randomizer: resumed with value 0.48755412478352
+mkiv lua stats  > interactive elements: 4 references, 10 destinations
+mkiv lua stats  > result saved in file: resume.pdf, compresslevel 3, objectcompresslevel 3
+mkiv lua stats  > loaded fonts: 6 files: adobeheitistd-regular.otf (this font is part of acrobat), adobesongstd-light.otf, latinmodern-math.otf, lmroman10-bold.otf, lmroman10-regular.otf, lmromanslant10-regular.otf
+mkiv lua stats  > fonts load time: 1.122 seconds for 16 fonts, 8 shared in backend, 0 common vectors, 8 common hashes
+mkiv lua stats  > pdf annotations: 4 links (4 unique), 0 special
+mkiv lua stats  > used platform: osx-64, type: unix, binary subtree: bin
+mkiv lua stats  > luatex banner: this is luatex, version beta-0.80.0 (tex live 2015) (rev 5238)
+mkiv lua stats  > control sequences: 49765 of 65536 + 100000
+mkiv lua stats  > lua properties: engine: lua, used memory: 212 MB (ctx: 212 MB), hash type: lua, hash chars: min(64,40), symbol mask: utf (τεχ)
+mkiv lua stats  > runtime: 2.189 seconds, 2 processed pages, 2 shipped pages, 0.914 pages/second
+
