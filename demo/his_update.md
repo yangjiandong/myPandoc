@@ -6,141 +6,69 @@
 
 ## 技术资源
 
-- pb 开发人员很难找
-- 现有开发人员对自己的技术发展不是很乐观
+- `pb` 开发人员很难找
+- `pb` 技术出现老化
 
 ## 产品
 
+- 传统 `c/s` 架构
 - 很难适应新的应用场景，区域医疗、云部署等等
 
+# 改造方案
 
-# Begin
+## 三层架构
 
-## 安装
+- 面向服务
+- 所有业务通过服务发布，客户端只负责展现界面，原则上不处理业务
+- 按业务划分成多个服务，如
+    - 挂号
+    - 门诊
+    - 住院
+    - 手术
 
-```shell
-brew install pandoc
-```
+## 服务端方案
 
-## 源码
+- 就业界和我们公司的现状，`Java` 是最好的选择
 
-```markdown
-# today
+## 客户端方案
 
-## morning
-- I want to have breakfast
+- 浏览器
+- 桌面程序
+- 移动端
 
-## afternoon
-- I want to have lunch
-```
+## 浏览器
 
-## PDF
+- 对操作易用性、操作响应时间等有较高要求，实现需要花费的代价很大，并且不一定能满足要求
+- 第三方接口，一般以PC端DLL方式接入，或者需要访问本地硬件，主要包括医保、身份证读卡器、报价器、打印机等等，浏览器支持比较差
 
-```shell
-pandoc -D latex > mytemplate.tex
-```
+## 桌面程序
 
-```shell
-pandoc test.md -o test.pdf -t beamer 
---latex-engine=xelatex 
---template=mytemplate.tex
-```
+- 选择很明确，就目前IDE和软件生态系统而言，目前唯一可选择开发工具是 `C#`
 
-直接执行是不成功的。
+## 最终方案
 
-## 增加中文字体配置
-修改mytemplate.tex
-```tex
-\ifxetex
-\usepackage{hyperref}
-\usepackage{fontspec,xltxtra,xunicode}
-\defaultfontfeatures{Mapping=tex-text}
-\usepackage{xeCJK}
-\setCJKmainfont[BoldFont = Hiragino Sans GB W6]{Hiragino Sans GB W3}
-\setCJKsansfont[BoldFont=SimHei]{SimHei}
-\setCJKmonofont{SimHei}
-\else
-\usepackage[unicode=true]{hyperref}
-\fi
-```
+- `Java` 实现后台服务
+- `C#` 实现`his` 客户端
 
-## html5
+# 需解决的问题
 
-- DZSlides
-- Slidy
-- S5
-- Slideous
-- reveal.js
+## 开发
 
-## reveal.js
+- 开发模式: 前后端分离
+- `C#` 开发人员
 
-```shell
-git clone https://github.com/hakimel/reveal.js
+## 测试
 
-pandoc slides.md -o slides.html -t revealjs 
--s -V theme=beige
-```
+- 服务端必须测试
+    - 程序员 `JUnit` 测试
+    - 用例测试，集成测试
+    - 性能测试
+- 客户端测试
+- 解决测试基本靠手的问题，形成自动化测试
 
-这样是执行不成功的
+## 困难
 
-## fix
-
-不要用reveal 3.0， 用reveal.js 2.6
-
-## reveal.js背景
-
-- default：（默认）深灰色背景，白色文字
-- beige：米色背景，深色文字
-- sky：天蓝色背景，白色细文字
-- night：黑色背景，白色粗文字
-- serif：浅色背景，灰色衬线文字
-- simple：白色背景，黑色文字
-- solarized：奶油色背景，深青色文字
-
-## Makefile
-
-利用makefile来自动化构建
-```shell
-slide:${f}
-    pandoc ${f} -o pdf_slide/${f}.pdf -t beamer --latex-engine=xelatex --template=./mytemplate.tex
-
-pdf:${f}
-    pandoc ${f} -o pdf_doc/${f}.pdf  --latex-engine=xelatex --template=./mytemplate.tex
-
-reveal:${f}
-    pandoc ${f} -o html_slide/${f}.html -t revealjs -s -V theme=beige
-
-all:${f} slide pdf reveal
-    echo "ok"
-
-print:${f}
-    echo ${f}
-```
-
-## make usage
-
-```shell
-make slide f=pandoc_setup.md 
-make pdf f=pandoc_setup.md 
-make reveal f=pandoc_setup.md 
-```
+- 增加产品运维难度、成本
+- 面临性能大考验
 
 
-## 文件结构
-```shell
-.
-├── Makefile
-├── html_slide
-│   ├── pandoc_setup.md.html
-│   └── reveal.js
-├── mytemplate.tex
-├── pandoc_setup.md
-├── pdf_doc
-│   └── pandoc_setup.md.pdf
-└── pdf_slide
-    └── pandoc_setup.md.pdf
-```
-
-## thanks
-
-[gitlab地址](https://github.com/haoyuan-hu/markdown_slide.git)
