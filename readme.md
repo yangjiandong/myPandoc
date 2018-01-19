@@ -49,6 +49,10 @@ sudo tlmgr install titling
 sudo tlmgr install lastpage
 ```
 
+# tlmgr update --self --repository http://mirrors.aliyun.com/CTAN/systems/texlive/tlnet/
+# tlmgr update --all --repository http://mirrors.aliyun.com/CTAN/systems/texlive/tlnet/
+
+
 ### fc-list show fonts
 
 ```
@@ -125,6 +129,11 @@ install context
   ## install context
   sudo tlmgr install collection-context
   ```
+- 字体
+  - Adobe 的四款字体(AdobeFangsongStd-Regular.otf AdobeHeitiStd-Regular.otf AdobeKaitiStd-Regular.otf AdobeSongStd-Light.otf)
+  - `luatools --generate`
+  - ? export OSFONTDIR=
+  `OSFONTDIR=/Library/Fonts:/System/Library/Fonts:~/Library/Fonts`
 
 ### 重庆大学论文
 
