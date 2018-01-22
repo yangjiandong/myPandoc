@@ -16,6 +16,15 @@ make docx(pdf) f=xx
 
 参考 reveal.js
 
+2018.01.22
+---
+
+### 历史重现评说
+
+ls.md
+
+自动增加回车行 `awk '{print $0 "\n"}' ls.md>ls2.md`
+
 09.22
 ---
 

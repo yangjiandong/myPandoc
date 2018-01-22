@@ -5,10 +5,21 @@ METADATA = metadata.xml
 CHAPTERS2 = ch01.md ch02.md
 CHAPTERS = demo/pandoc/pandoc.markdown
 #demo/SpringBootwithRedis.md
-TOC = --toc --toc-depth=2
+TOC = --toc --toc-depth=3
 COVER_IMAGE = cover.jpg
 LATEX_CLASS = book
 # report, article, book, memoir
+
+ls: 
+	pandoc --toc --toc-depth=3 demo/ls.txt demo/ls.md --latex-engine=xelatex \
+	-V documentclass=$(LATEX_CLASS) \
+	-o out/ls.pdf \
+	-V fontsize=16pt \
+	--template=templates/my.tex
+
+ls_epub:
+	pandoc -o out/ls.epub --toc --toc-depth=3 demo/ls.txt demo/ls.md \
+	--epub-metadata=metadata.xml --epub-stylesheet=style/epub.css
 
 hisupdate:
 	pandoc demo/his_update.md -o out/demo/his_update_reveal.html \
