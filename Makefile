@@ -12,9 +12,7 @@ LATEX_CLASS = book
 
 ls: 
 	pandoc --toc --toc-depth=3 demo/ls.txt demo/ls.md --latex-engine=xelatex \
-	-V documentclass=$(LATEX_CLASS) \
 	-o out/ls.pdf \
-	-V fontsize=16pt \
 	--template=templates/my.tex
 
 ls_epub:
