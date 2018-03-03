@@ -16,6 +16,13 @@ make docx(pdf) f=xx
 
 参考 reveal.js
 
+02.10
+---
+
+### rfc 草稿文档制作
+
+[](https://github.com/miekg/pandoc2rfc)
+
 2018.01.22
 ---
 
@@ -114,13 +121,13 @@ make resumehtml
 ```
 \usemodule[simplefonts]
 \setupsimplefonts[size=11pt]
- 
+
 \setcjkmainfont[AdobeSongStd][regularfont={* Light},italicfont={AdobeKaitiStd Regular},boldfont={AdobeHeitiStd Regular},bolditalicfont={AdobeHeitiStd Regular}]
 \setcjksansfont[AdobeKaitiStd][boldfont={AdobeHeitiStd Regular},bolditalicfont={AdobeHeitiStd Regular}]
 \setcjkmonofont[SimFang][boldfont={AdobeHeitiStd Regular},bolditalicfont={AdobeHeitiStd Regular}]
- 
+
 % 启用中文断行
- 
+
 \setscript[hanzi]
 
 ...
@@ -153,7 +160,7 @@ demo/Academia-Writing-with-Markdown-Using-Pandoc
 install
 
 ```
-brew install pandoc-crossref 
+brew install pandoc-crossref
 brew install pandoc-citeproc
 ```
 
@@ -192,7 +199,7 @@ docx_code:${f}
 pandoc-LaTeX.docx or bysj.latex
 
 ```
-latex_bysj: 
+latex_bysj:
     pandoc $(TOC) $(TITLE) $(CHAPTERS) --latex-engine=xelatex  \
     -o out/latex.pdf\
     --template=templates/bysj.latex
@@ -345,8 +352,8 @@ create
 ---
 
 ```
-make slide f=pandoc_setup.md 
-make pdf f=pandoc_setup.md 
+make slide f=pandoc_setup.md
+make pdf f=pandoc_setup.md
 make reveal f=pandoc_setup.md
 ```
 

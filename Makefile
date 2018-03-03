@@ -10,7 +10,7 @@ COVER_IMAGE = cover.jpg
 LATEX_CLASS = book
 # report, article, book, memoir
 
-ls: 
+ls:
 	pandoc --toc --toc-depth=3 demo/ls.txt demo/ls.md --latex-engine=xelatex \
 	-o out/ls.pdf \
 	--template=templates/my.tex
@@ -18,6 +18,12 @@ ls:
 ls_epub:
 	pandoc -o out/ls.epub --toc --toc-depth=3 demo/ls.txt demo/ls.md \
 	--epub-metadata=metadata.xml --epub-stylesheet=style/epub.css
+
+hisnew:
+	pandoc demo/his_new.md -o out/demo/his_new_reveal.html \
+	-t revealjs -s -V theme=night \
+	--template=template-revealjs.html \
+	-i
 
 hisupdate:
 	pandoc demo/his_update.md -o out/demo/his_update_reveal.html \
@@ -33,7 +39,7 @@ html_re:${f}
 	# add style to table
 	sed -i '' 's/<table>/<table class="table table-bordered table-condensed">/' out/out.html
 
-latex: 
+latex:
 	pandoc $(TOC) $(TITLE) $(CHAPTERS) --latex-engine=xelatex \
 	-V documentclass=$(LATEX_CLASS) \
 	-o out/latex.pdf \
@@ -41,7 +47,7 @@ latex:
 
 # --template=./mytemplate.tex
 
-latex_bysj: 
+latex_bysj:
 	pandoc $(TOC) $(TITLE) $(CHAPTERS) --latex-engine=xelatex  \
 	-o out/latex_bysj.pdf \
 	--template=templates/bysj.latex
@@ -88,7 +94,7 @@ html_mark:${f}
 		--filter pandoc-citeproc --csl=csl/apsa.csl --bibliography=bib/socbib-pandoc.bib -o out/out.html
 
 bootstrap:${f}
-	pandoc ${f} -o out/out.html --template templates/bootstrap-template/template.html --css templates/bootstrap-template/template.css --self-contained --toc --toc-depth 2 
+	pandoc ${f} -o out/out.html --template templates/bootstrap-template/template.html --css templates/bootstrap-template/template.css --self-contained --toc --toc-depth 2
 	sed -i '' 's/<table>/<table class="table table-bordered table-condensed">/' out/out.html
 
 html_yi:${f}
