@@ -2,14 +2,6 @@
 % 杨建东
 % 2018年2月
 
-# 新版his 是什么  ??
-
-## 新技术的引入
-
-- 语音
-- 人脸识别
-- 多种物联网设备、终端
-
 # 开发准备工作
 
 ## 前后端分离
@@ -18,8 +10,20 @@
     - 数据处理
     - 高性能高并发
 - 前端
-    - 用户体验
+    - 用户体验，流畅性
     - 操作性
+
+## 服务端
+
+- SpringBoot or Spring Cloud (微服务)
+    - Spring Cloud or nginx or dubbo
+- Redis
+- fastdfs or other, 分布式存储
+- elk, 搜索
+- logstash, 日志
+- RabbitMQ
+- 工作流
+- 自动任务
 
 ## 开发规范
 
@@ -36,7 +40,7 @@
 - 服务端必须测试
     - 程序员 `JUnit` 测试
     - 用例测试，集成测试
-    - 性能测试
+    - 性能测试, jmeter
 - 前端测试
     - 自动化测试，待定
 
@@ -52,5 +56,27 @@
 - 虚机Docker 的应用
     - 解决搭建开发环境、测试环境问题
     - 解决产品部署问题
+
+## Java 服务开发工具
+
+- java8
+- intelliJ IDEA 2018
+- git
+- checkstyle
+- mvn 3.5
+
+## JavaScript
+
+- webstorm or sublime Text3
+- webpack
+
+## .net
+
+- vs
+
+## tool
+
+- 手册文档 gitbook
+- 资料 jekyll
 
 

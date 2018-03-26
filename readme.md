@@ -7,7 +7,7 @@ pandoc to docx,html,pdf
 make docx(pdf) f=xx
 ```
 
-推荐方案
+## 推荐方案
 - make latex(latex_bysj)
 - make docx_code
 - make html_re
@@ -16,12 +16,16 @@ make docx(pdf) f=xx
 
 参考 reveal.js
 
+## other markdown tools
+
+- [git book](https://github.com/liuhui998/gitbook), use `rake`, `price` create pdf
+
 02.10
 ---
 
 ### rfc 草稿文档制作
 
-[](https://github.com/miekg/pandoc2rfc)
+[pandoc2rfc](https://github.com/miekg/pandoc2rfc)
 
 2018.01.22
 ---
@@ -63,11 +67,9 @@ demo/pandoc
 ```
 sudo tlmgr install titling
 sudo tlmgr install lastpage
-```
-
 # tlmgr update --self --repository http://mirrors.aliyun.com/CTAN/systems/texlive/tlnet/
 # tlmgr update --all --repository http://mirrors.aliyun.com/CTAN/systems/texlive/tlnet/
-
+```
 
 ### fc-list show fonts
 
@@ -155,6 +157,8 @@ install context
 
 [Academia-Writing-with-Markdown-Using-Pandoc](https://github.com/zl810881283/Academia-Writing-with-Markdown-Using-Pandoc)
 
+[参考](http://www.zale.site/articles/2016/05/Academia-Writing-Using-Markdown-and-Pandoc.html)
+
 demo/Academia-Writing-with-Markdown-Using-Pandoc
 
 install
@@ -162,6 +166,11 @@ install
 ```
 brew install pandoc-crossref
 brew install pandoc-citeproc
+sudo tlmgr  install epstopdf
+sudo tlmgr install bbding
+sudo tlmgr install mathcomp
+sudo tlmgr install multirow
+sudo tlmgr install zhspacing
 ```
 
 pdf
@@ -175,6 +184,8 @@ pandoc --filter pandoc-crossref --filter pandoc-citeproc --biblio reference.bib 
 ```
 l.68 ...bold\zhttfont{[simfang.ttf]}{[simkai.ttf]}
 ```
+
+[参考](https://github.com/CTeX-org/ctex-kit/blob/master/zhspacing/zhfont.sty)
 
 docx
 
