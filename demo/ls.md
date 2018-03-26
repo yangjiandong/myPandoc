@@ -1,3 +1,8 @@
+---
+fontsize: 20pt
+documentclass: book
+---
+
 历 史 重 新 评 说
 
 ——毛泽东、邓小平重大过错与决策失误
