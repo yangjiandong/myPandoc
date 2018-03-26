@@ -171,6 +171,7 @@ sudo tlmgr install bbding
 sudo tlmgr install mathcomp
 sudo tlmgr install multirow
 sudo tlmgr install zhspacing
+sudo tlmgr install footnpag
 ```
 
 pdf
@@ -185,6 +186,24 @@ pandoc --filter pandoc-crossref --filter pandoc-citeproc --biblio reference.bib 
 l.68 ...bold\zhttfont{[simfang.ttf]}{[simkai.ttf]}
 ```
 
+edit:
+```
+/usr/local/texlive/2017basic/texmf-dist/tex/xelatex/zhspacing
+```
+
+暂时注释掉
+```
+\ifzhfont@fakebold
+  \newfontfamilywithslant\zhrmfont{SimSun}
+  \newfontfamilywithslant\zhsffont{SimHei}
+  % \newfontfamilywithslant\zhttfont{[simfang.ttf]}
+\else
+  \newfontfamilywithslantandbold\zhrmfont{SimSun}{SimHei}
+  \newfontfamilywithslant\zhsffont{SimHei}
+  % \newfontfamilywithslantandbold\zhttfont{[simfang.ttf]}{[simkai.ttf]}
+\fi
+```
+
 [参考](https://github.com/CTeX-org/ctex-kit/blob/master/zhspacing/zhfont.sty)
 
 docx
@@ -192,6 +211,9 @@ docx
 ```
 pandoc --filter pandoc-crossref --filter pandoc-citeproc --biblio reference.bib --csl chinese-gb7714-2005-numeric.csl --latex-engine=xelatex  main.md -o main.docx
 ```
+
+2018.03.26 解决以上问题, ok
+
 
 2017.06.09
 ---
