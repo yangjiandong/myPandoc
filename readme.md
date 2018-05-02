@@ -20,6 +20,14 @@ make docx(pdf) f=xx
 
 - [git book](https://github.com/liuhui998/gitbook), use `rake`, `price` create pdf
 
+05.02
+---
+
+### NUDT硕士博士论文Latex模板
+
+- [github](https://github.com/TomHeaven/nudt_thesis)
+- word 模版, demo/nudt/word
+
 02.10
 ---
 
@@ -203,8 +211,6 @@ edit:
   % \newfontfamilywithslantandbold\zhttfont{[simfang.ttf]}{[simkai.ttf]}
 \fi
 ```
-
-[参考](https://github.com/CTeX-org/ctex-kit/blob/master/zhspacing/zhfont.sty)
 
 docx
 
