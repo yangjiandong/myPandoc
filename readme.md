@@ -212,6 +212,10 @@ edit:
 \fi
 ```
 
+[参考](https://github.com/CTeX-org/ctex-kit/blob/master/zhspacing/zhfont.sty)
+
+>个别环境下报 `The font "文泉驿等宽正黑" cannot be found.`, 替换 cqu.cls 中所有相关字体，比如 `冬青黑体简体中文`，有可能只能用系统字体，用户安装的字体总是报找不到
+
 docx
 
 ```

@@ -76,7 +76,7 @@
   \RequirePackage{fontspec,xltxtra,xunicode}% 这里使用 xetex 相应的宏包
    \RequirePackage{zhfont,zhmath}        % 中文支持使用zhspacing
    \zhspacing
-   \setzhmainfont[BoldFont=文泉驿等宽正黑]{SimSun}%这里设置中文粗体和普通字体
+   \setzhmainfont[BoldFont=冬青黑体简体中文]{SimSun}%这里设置中文粗体和普通字体
    \setmainfont{Times New Roman}       %这里设置英文衬线字体
    \setmonofont{FreeMono}              %英文等宽字体
    \setsansfont{FreeMono}              %英文无衬线字体
@@ -87,11 +87,11 @@
      \RequirePackage[CJKnumber,CJKtextspaces,CJKmathspaces]{xeCJK}
      \punctstyle{kaiming} %标点格式 or kaiming
      \defaultfontfeatures{Mapping=tex-text} % after fontspec
-     \setCJKmainfont[BoldFont={文泉驿等宽正黑}]{SimSun}
-     \setCJKsansfont{文泉驿等宽正黑}
+     \setCJKmainfont[BoldFont={冬青黑体简体中文}]{SimSun}
+     \setCJKsansfont{冬青黑体简体中文}
      \setCJKmonofont{AR PL KaitiM GB}
      \setCJKfamilyfont{song}{SimSun}
-     \setCJKfamilyfont{hei}{文泉驿等宽正黑}
+     \setCJKfamilyfont{hei}{冬青黑体简体中文}
      \setCJKfamilyfont{kai}{AR PL KaitiM GB}
      \setmainfont{Times New Roman}
      \setsansfont{FreeMono}
@@ -110,7 +110,7 @@
    \fi
 \fi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%字体设置%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%文档正文主字体为宋体（simsun），粗体和黑体为（文泉驿等宽正黑），另有楷体
+%文档正文主字体为宋体（simsun），粗体和黑体为（冬青黑体简体中文），另有楷体
 %定义了几种常用的字号：二号、小二号、三号、小三号、四号、小四号五号和小五号等
 %正文小四号，固定行距为20磅
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -197,7 +197,7 @@
 %%%脚注按页编号
 \RequirePackage{footnpag}
 \renewcommand{\thefootnote}{%
-     \scriptsize\textcircled{\tiny\arabic{footnote}}} 
+     \scriptsize\textcircled{\tiny\arabic{footnote}}}
 %%%章节标题设置
 \renewcommand\section{\@startsection {section}{1}{\z@}%
        {-3.5ex \@plus -1ex \@minus -.2ex}%
@@ -265,7 +265,7 @@
 \renewcommand\tableofcontents{\newpage%
    \if@bachelor \vspace*{-2\hangju}
      \else \vspace*{-\hangju}
-   \fi % 
+   \fi %
    \section*{\contentsname\@mkboth{目录}{}}%
     \@starttoc{toc}%
 }
@@ -273,7 +273,7 @@
 \renewcommand\listoffigures{\newpage%
    \if@bachelor \vspace*{-2\hangju}
      \else \vspace*{-\hangju}
-   \fi % 
+   \fi %
    \section*{\listfigurename}%
     \@starttoc{lof}}
 \renewcommand\listoftables{%
@@ -332,7 +332,7 @@
                      aboveskip={12bp-\intextsep}}%% 表格的caption样式
 \newcommand{\tabcaptionwithen}[2]{%\vspace*{-0.8em} %
         \addtocounter{table}{1}\centering\wuhao %
-        \tablename ~ \thetable\quad #1% 
+        \tablename ~ \thetable\quad #1%
         \\\entablename ~ \thetable ~ #2%
         \\} %%中英文表格标题
 
@@ -384,7 +384,7 @@
 \newtoks\cnxueyuan %%学院
 \newtoks\enxueyuan
 
-\newtoks\enzlteacher 
+\newtoks\enzlteacher
 \newtoks\cndate   %%日期
 \newtoks\endate
 \newtoks\cnkind  %%学科门类
@@ -393,7 +393,7 @@
 \if@bachelor
 \def\makecntitle{\null %
     \thispagestyle{empty}
-    \begin{center}\vspace*{-3em}\bf\sanhao 
+    \begin{center}\vspace*{-3em}\bf\sanhao
       \renewcommand{\arraystretch}{1.5}
       \begin{tabular}{p{\linewidth}}
        \multicolumn{1}{c}{\xiaoerhao\cntitlename}\\
@@ -416,15 +416,15 @@
                学\qquad 号：\the\xuehao  \\
                指导教师：\the\cnteacher  \\
            % 助理指导教师：\the\cnzlteacher  \\
-               专\qquad 业：\the\cnmajor 
+               专\qquad 业：\the\cnmajor
          \end{tabular}}
-      \end{tabular} \vfill 
+      \end{tabular} \vfill
        {\xiaoerhao 重庆大学\the\cnxueyuan}\\[1em]
        {\the\cndate}
     \end{center}\newpage}
 \def\makeentitle{\null %
     \thispagestyle{empty}
-    \begin{center}\vspace*{-3em}\bf\sanhao 
+    \begin{center}\vspace*{-3em}\bf\sanhao
       \renewcommand{\arraystretch}{1.5}
       \begin{tabular}{p{\linewidth}}
        \multicolumn{1}{c}{\entitlename}\\
@@ -446,9 +446,9 @@
            Undergraduate：\the\enauthor  \\
            Supervisor：\the\enteacher  \\
            % 助理指导教师：\the\enzlteacher  \\
-           Major：\the\enmajor 
+           Major：\the\enmajor
          \end{tabular}}
-      \end{tabular} \vfill 
+      \end{tabular} \vfill
        {\xiaoerhao\the\enxueyuan}\\[1em]
        {\xiaoerhao Chongqing University}\\[1em]
        {\the\endate}
@@ -456,7 +456,7 @@
 \else
 \def\makecntitle{\null %
     \thispagestyle{empty}
-    \begin{center}\vspace*{-3em}\bf\sanhao 
+    \begin{center}\vspace*{-3em}\bf\sanhao
       \renewcommand{\arraystretch}{2}
       \begin{tabular}{p{\linewidth}}
        \begin{minipage}{\textwidth}\centering %
@@ -470,12 +470,12 @@
              \includegraphics[scale=1.0]{pic/cqu.jpg}
              \else
              \includegraphics[scale=1.0]{pic/cqu.eps}\fi}\\
-       \tabularnewline 
+       \tabularnewline
        \multicolumn{1}{c}{\xiaoerhao%
            \if@master 重庆大学硕士学位论文
                 \else 重庆大学博士学位论文
            \fi}\\
-        \tabularnewline       
+        \tabularnewline
         \multicolumn{1}{c}{%
           \begin{tabular}{l}
                学生姓名：\the\cnauthor  \\
@@ -484,20 +484,20 @@
                专\qquad 业：\the\cnmajor \\
                学科门类：\the\cnkind
          \end{tabular}}
-      \end{tabular} \vfill 
+      \end{tabular} \vfill
        {\xiaoerhao 重庆大学\the\cnxueyuan}\\[1em]
        {\the\cndate}
     \end{center}\newpage}
 \def\makeentitle{\null %
     \thispagestyle{empty}
-    \begin{center}\vspace*{-3em}\bf\sanhao 
+    \begin{center}\vspace*{-3em}\bf\sanhao
       \renewcommand{\arraystretch}{1.5}
       \begin{tabular}{p{\linewidth}}
         \begin{minipage}{\textwidth}\centering %
            \begin{spacing}{2}
            {\erhao\the\entitle}
            \end{spacing}
-        \end{minipage}\\ 
+        \end{minipage}\\
         \tabularnewline
         \multicolumn{1}{c}{%
           \if@pdftex
@@ -509,8 +509,8 @@
               Chongqing University}\\
         \multicolumn{1}{c}{\xiaoerhao in Partial Fulfillment %
                of the Requirement for the}\\
-        \multicolumn{1}{c}{\xiaoerhao Degree of 
-            \if@master {Master} \else  {Doctor}\fi of \the\enkind 
+        \multicolumn{1}{c}{\xiaoerhao Degree of
+            \if@master {Master} \else  {Doctor}\fi of \the\enkind
          }\\
         \multicolumn{1}{c}{by}\\
         \multicolumn{1}{c}{\the\enauthor}\\
@@ -519,14 +519,14 @@
           \begin{tabular}{c}
            Supervisor：\the\enteacher  \\
            % 助理指导教师：\the\enzlteacher  \\
-           Major：\the\enmajor 
+           Major：\the\enmajor
          \end{tabular}}
-      \end{tabular} \vfill 
+      \end{tabular} \vfill
        {\xiaoerhao\the\enxueyuan}\\[1em]
        {\xiaoerhao Chongqing University,~Chongqing,~China.}\\[1em]
        {\the\endate}
     \end{center}}
-\fi 
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%定义摘要环境%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%cnabstract:中文摘要环境，cnkeywords：中文关键词
@@ -596,7 +596,7 @@
 \renewcommand\theappsection{\Alph{appsection}}
 \stepcounter{appsection}
 \newcommand{\apptitle}[1]{%
-    {\newpage 
+    {\newpage
      \@mkboth{\appendixname\theappsection :~#1}{}%
      \centering \vspace*{-0.2ex}
      \interlinepenalty \@M
@@ -607,7 +607,7 @@
      \stepcounter{appsection}\stepcounter{section}}
 \newenvironment{cnappendix}{\par%
      \setcounter{section}{0}%
-     \setcounter{subsection}{0}%   
+     \setcounter{subsection}{0}%
      \def\thesection{\@Alph\c@section}}{}
 %%简单的附录环境
 \let\simappendix\appendix
@@ -730,7 +730,7 @@
     \catcode\count@=\active
     \lowercase{\def~{\kern1ex}}}}
 \AtEndOfClass{\ifxetex\else\@active@cjk\fi}
-% \pkg{caption} 宏包会调用 \pkg{ragged2e}，\pkg{ragged2e} 又调用 
+% \pkg{caption} 宏包会调用 \pkg{ragged2e}，\pkg{ragged2e} 又调用
 %\pkg{everysel}。而 \pkg{everysel} 宏包和 \pkg{CJK}
 % 宏包都要修改 \cs{selectfont}，一个是给 \cs{selectfont} 加 hook，一个是让
 %  \cs{selectfont} 支持 \cs{CJKbold}。幸好两者本质上并不冲突，把他们源文件中对
@@ -756,7 +756,7 @@
        \enc@update}
   \fi}
 % 把 CJK 环境放到合适的位置，以免导致其它宏包的命令位于 CJK 环境中而出现问题（比
-% 如 natbib 的``Multiple-defined labels''，同时自动开启 CJK。 
+% 如 natbib 的``Multiple-defined labels''，同时自动开启 CJK。
 \ifxetex
   \AtBeginDocument{}
 \else
