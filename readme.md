@@ -1,7 +1,7 @@
 pandoc - docs
 ===
 
-pandoc to docx,html,pdf
+pandoc to docx, html, pdf
 
 ```
 make docx(pdf) f=xx
@@ -19,6 +19,30 @@ make docx(pdf) f=xx
 ## other markdown tools
 
 - [git book](https://github.com/liuhui998/gitbook), use `rake`, `price` create pdf
+
+05.18
+---
+
+### error
+
+- `--latex-engine has been removed.  Use --pdf-engine instead`
+
+    是 pandoc 升级到 2.2 后发生的问题
+
+- `sudo tlmgr update --self --all`, 提示升级 2018
+
+    ```
+    tlmgr: Remote repository is newer than local (2017 < 2018)
+    Cross release updates are only supported with
+    update-tlmgr-latest(.sh/.exe) --update
+    Please see https://tug.org/texlive/upgrade.html for details.
+    ```
+
+    误删除，只能重新安装 2018 版
+
+### markdown-latex-boilerplate
+
+- [github](https://github.com/davecap/markdown-latex-boilerplate)
 
 05.02
 ---
@@ -150,11 +174,12 @@ install context
 - install basicTex,install dir:`cd /usr/local/texlive/2017basic/`
 - install
 
-  ````
+  ```
   sudo tlmgr update --self --all
   ## install context
   sudo tlmgr install collection-context
   ```
+
 - 字体
   - Adobe 的四款字体(AdobeFangsongStd-Regular.otf AdobeHeitiStd-Regular.otf AdobeKaitiStd-Regular.otf AdobeSongStd-Light.otf)
   - `luatools --generate`
@@ -196,7 +221,7 @@ l.68 ...bold\zhttfont{[simfang.ttf]}{[simkai.ttf]}
 
 edit:
 ```
-/usr/local/texlive/2017basic/texmf-dist/tex/xelatex/zhspacing
+/usr/local/texlive/2017basic/texmf-dist/tex/xelatex/zhspacing/zhfont.sty
 ```
 
 暂时注释掉

@@ -11,7 +11,7 @@ LATEX_CLASS = book
 # report, article, book, memoir
 
 ls:
-	pandoc --toc --toc-depth=3 demo/ls.txt demo/ls.md --latex-engine=xelatex \
+	pandoc --toc --toc-depth=3  demo/ls.md --pdf-engine=xelatex \
 	-o out/ls.pdf \
 	--template=templates/my.tex
 
