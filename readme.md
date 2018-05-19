@@ -20,6 +20,15 @@ make docx(pdf) f=xx
 
 - [git book](https://github.com/liuhui998/gitbook), use `rake`, `price` create pdf
 
+05.19
+---
+
+### resume 个人简历中文字体问题
+
+### pandoc-latex-template
+
+几套模版
+
 05.18
 ---
 
@@ -51,6 +60,11 @@ make docx(pdf) f=xx
 
 - [github](https://github.com/TomHeaven/nudt_thesis)
 - word 模版, demo/nudt/word
+
+03.26
+----
+
+解决重庆论文中文字体问题
 
 02.10
 ---
