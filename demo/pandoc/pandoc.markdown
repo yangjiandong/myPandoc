@@ -5,7 +5,7 @@
 
 前言
 --------
-這份文件是 [Pandoc][] 版本 Markdown 語法的中文翻譯。Pandoc 本身是由 [John MacFarlane][] 所開發的文件轉換工具，可以在 HTML, Markdown, PDF, TeX...等等格式之間進行轉換。有許多喜歡純文字編輯的人，利用 Pandoc 來進行論文的撰寫或投影片製作。但除了轉換的功能外，Pandoc 所定義的 Markdown 擴充語法也是這套工具的一大亮點，在 Pandoc 的官方使用說明文件中，光是其針對 Markdown 格式的擴充就佔了整整一半左右的篇幅。 
+這份文件是 [Pandoc][] 版本 Markdown 語法的中文翻譯。Pandoc 本身是由 [John MacFarlane][] 所開發的文件轉換工具，可以在 HTML, Markdown, PDF, TeX...等等格式之間進行轉換。有許多喜歡純文字編輯的人，利用 Pandoc 來進行論文的撰寫或投影片製作。但除了轉換的功能外，Pandoc 所定義的 Markdown 擴充語法也是這套工具的一大亮點，在 Pandoc 的官方使用說明文件中，光是其針對 Markdown 格式的擴充就佔了整整一半左右的篇幅。
 
 本文件翻譯自 [Pandoc - Pandoc User’s Guide][userguide] 中的 "Pandoc's markdown" 一節。你可以看看[這份文件的原始檔][source]、產生文件[所使用的 HTML 範本][template]，以及[轉換時的命令參數][script]。
 
@@ -21,7 +21,7 @@
 ----
 
 Pandoc's markdown
-=================
+==================
 
 與 John Gruber 的 原始 [markdown] 相比，Pandoc 版本的 markdown 在語法上有額外的擴充與些許的修正。這份文件解釋了這些語法，並指出其與原始 markdown 的差異所在。除非特別提到，不然這些差異均可藉由使用 `markdown_strict` 而非 `markdown` 的格式來關閉。單獨一項擴充也可透過 `+EXTENSION` 或 `-EXTENSION` 的方式來開啟或關閉。例如，`markdown_strict+footnotes` 表示加上腳註擴充的原始 markdown，而 `markdown-footnotes-pipe_tables` 則是拿掉了腳註與管線表格擴充的 pandoc markdown。
 
@@ -401,7 +401,7 @@ Markdown 使用 email 的習慣來建立引言區塊。一個引言區塊可以�
         (C) 2007 Joe Smith
 
     這樣的敘述被解釋成清單項目。在這情形下，可以使用反斜線：
-    
+
         (C\) 2007 Joe Smith
 
 **Extension: `startnum`**
@@ -866,19 +866,19 @@ Markdown, LaTeX, Org-Mode, ConTeXt
 
 reStructuredText
   ~ 公式會使用 [此處](http://www.american.edu/econ/itex2mml/mathhack.rst) 所描述的 `:math:` 這個 "interpreted text role" 來進行演算編排。
-  
+
 AsciiDoc
   ~ 公式會以 `latexmath:[...]` 演算編排。
 
 Texinfo
   ~ 公式會在 `@math` 指令中演算編排。
-  
+
 groff man
   ~ 公式會以去掉 `$` 後的字面文字演算編排。
 
 MediaWiki
   ~ 公式會在 `<math>` 標籤中演算編排。
-  
+
 Textile
   ~ 公式會在 `<span class="math">` 標籤中演算編排。
 
@@ -890,15 +890,15 @@ Docbook
 
 Docx
   ~ 公式會以 OMML 數學標記的方式演算編排。
-  
+
 FictionBook2
   ~ 如果有使用 `--webtex` 選項，公式會以 Google Charts 或其他相容的網路服務演算編排為圖片，並下載嵌入於電子書中。否則就會以字面文字顯示。
-  
+
 HTML, Slidy, DZSlides, S5, EPUB
   ~ 公式會依照以下命令列選項的設置，以不同的方法演算編排為 HTML 代碼。
 
     1.  預設方式是將 TeX 數學公式盡可能地以 unicode 字元演算編排，如同 RTF、DocBook 以及 OpenDocument 的輸出。公式會被放在附有屬性 `class="math"` 的 `span` 標籤內，所以可以在需要時給予不同的樣式，使其突出於周遭的文字內容。
-    
+
     2.  如果使用了 `--latexmathml` 選項，TeX 數學公式會被顯示於 `$` 或 `$$` 字元中，並放在附帶 `LaTeX` 類別的 `<span>` 標籤裡。這段內容會用 [LaTeXMathML] script 演算編排為數學公式。（這個方法無法適用於所有瀏覽器，但在 Firefox 中是有效的。在不支援 LaTeXMathML 的瀏覽器中，TeX 數學公式會單純的以兩個 `$` 字元間的字面文字呈現。）
 
     3.  如果使用了 `--jsmath` 選項，TeX數學公式會放在 `<span>` 標籤（用於行內數學公式）或 `<div>` 標籤（用於區塊數學公式）中，並附帶類別屬性 `math`。這段內容會使用 [jsMath] script 來演算編排。
@@ -912,7 +912,7 @@ HTML, Slidy, DZSlides, S5, EPUB
             # produces myfile.html and images in myfile-images
 
     6.  如果使用了 `--webtex` 選項，TeX 數學公式會被轉換為 `<img>` 標籤並連結到一個用以轉換公式為圖片的外部 script。公式將會編碼為 URL 可接受格式並且與指定的 URL 參數串接。如果沒有指定 URL，那麼將會使用 Google Chart API (`http://chart.apis.google.com/chart?cht=tx&chl=`)。
-    
+
     7.  如果使用了 `--mathjax` 選項，TeX 數學公式將會被包在 `\(...\)`（用於行內數學公式）或 `\[...\]`（用於區塊數學公式）之間顯示，並且放在附帶類別 `math` 的 `<span>` 標籤之中。這段內容會使用 [MathJax] script 演算編排為頁面上的數學公式。
 
 [LaTeXMathML]: http://math.etsu.edu/LaTeXMathML/
@@ -985,7 +985,7 @@ LaTeX 巨集
 
 **Extension: `latex_macros`**
 
-當輸出格式不是 LaTeX 時，pandoc 會分析 LaTeX 的 `\newcommand` 和 `\renewcommand` 定義，並套用其產生的巨集到所有 LaTeX 數學公式中。所以，舉例來說，下列指令對於所有的輸出格式均有作用，而非僅僅作用於 LaTeX 格式： 
+當輸出格式不是 LaTeX 時，pandoc 會分析 LaTeX 的 `\newcommand` 和 `\renewcommand` 定義，並套用其產生的巨集到所有 LaTeX 數學公式中。所以，舉例來說，下列指令對於所有的輸出格式均有作用，而非僅僅作用於 LaTeX 格式：
 
     \newcommand{\tuple}[1]{\langle #1 \rangle}
 
