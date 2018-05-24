@@ -284,8 +284,7 @@ pdf
 pandoc --filter pandoc-crossref --filter pandoc-citeproc --biblio reference.bib --csl chinese-gb7714-2005-numeric.csl --latex-engine=xelatex --template=cqu.latex main.md -o main.pdf
 ```
 
-> 字体问题没解决,已安装了windows字体
-
+error:
 ```
 l.68 ...bold\zhttfont{[simfang.ttf]}{[simkai.ttf]}
 ```
@@ -318,7 +317,9 @@ docx
 pandoc --filter pandoc-crossref --filter pandoc-citeproc --biblio reference.bib --csl chinese-gb7714-2005-numeric.csl --latex-engine=xelatex  main.md -o main.docx
 ```
 
-2018.03.26 解决以上问题, ok
+>2018.03.26 解决以上问题, ok
+
+针对 2015版 texlatex, use `tlmgr option repository ftp://tug.org/historic/systems/texlive/2015/tlnet-final` 升级
 
 
 2017.06.09
