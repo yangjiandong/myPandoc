@@ -26,6 +26,8 @@ make docx(pdf) f=xx
 05.23
 ---
 
+### [中文竖排](https://www.zhihu.com/question/20544732/answer/376414732)
+
 ### [清华大学论文模版 latex](https://github.com/xueruini/thuthesis)
 
 暂时不知道怎么进行 pandoc 处理
