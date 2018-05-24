@@ -11,13 +11,13 @@ LATEX_CLASS = book
 # report, article, book, memoir
 
 ls:
-	pandoc --toc --toc-depth=3 demo/ls.txt demo/ls.md --latex-engine=xelatex \
+	pandoc --toc --toc-depth=3  demo/ls.md --pdf-engine=xelatex \
 	-o out/ls.pdf \
 	--template=templates/my.tex
 
 ls_epub:
-	pandoc -o out/ls.epub --toc --toc-depth=3 demo/ls.txt demo/ls.md \
-	--epub-metadata=metadata.xml --epub-stylesheet=style/epub.css
+	pandoc -o out/ls.epub --toc --toc-depth=3 demo/ls.md \
+	--epub-metadata=metadata.xml --css=style/epub.css
 
 hisnew:
 	pandoc demo/his_new.md -o out/demo/his_new_reveal.html \
@@ -40,7 +40,7 @@ html_re:${f}
 	sed -i '' 's/<table>/<table class="table table-bordered table-condensed">/' out/out.html
 
 latex:
-	pandoc $(TOC) $(TITLE) $(CHAPTERS) --latex-engine=xelatex \
+	pandoc $(TOC) $(TITLE) $(CHAPTERS) --pdf-engine=xelatex \
 	-V documentclass=$(LATEX_CLASS) \
 	-o out/latex.pdf \
 	--template=templates/my.tex
@@ -48,7 +48,7 @@ latex:
 # --template=./mytemplate.tex
 
 latex_bysj:
-	pandoc $(TOC) $(TITLE) $(CHAPTERS) --latex-engine=xelatex  \
+	pandoc $(TOC) $(TITLE) $(CHAPTERS) --pdf-engine=xelatex  \
 	-o out/latex_bysj.pdf \
 	--template=templates/bysj.latex
 
@@ -101,10 +101,10 @@ html_yi:${f}
 	pandoc ${f} -t html5 -o out/out.html --toc --toc-depth 2 --template=templates/template
 
 slide:${f}
-	pandoc ${f} -o out/${f}.pdf -t beamer --latex-engine=xelatex --template=./mytemplate.tex
+	pandoc ${f} -o out/${f}.pdf -t beamer --pdf-engine=xelatex --template=./mytemplate.tex
 
 pdf:${f}
-	pandoc ${f} -o out/out.pdf  --latex-engine=xelatex --template=./mytemplate.tex
+	pandoc ${f} -o out/out.pdf  --pdf-engine=xelatex --template=./mytemplate.tex
 
 docx2:${f}
 	pandoc -r markdown -w docx -s -S --bibliography=Thesis.bib --csl=csl/chicago-author-date.csl ${f} --output=out/out.docx

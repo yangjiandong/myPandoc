@@ -1,24 +1,115 @@
 pandoc - docs
 ===
 
-pandoc to docx,html,pdf
+pandoc to docx, html, pdf
 
 ```
 make docx(pdf) f=xx
 ```
 
 ## 推荐方案
+
 - make latex(latex_bysj)
 - make docx_code
 - make html_re
 - make reveal(reveal2)
 - sdcamp latex
+- 中文pandoc
+    - demo/pandoc
 
 参考 reveal.js
 
 ## other markdown tools
 
 - [git book](https://github.com/liuhui998/gitbook), use `rake`, `price` create pdf
+
+05.23
+---
+
+### [中文竖排](https://www.zhihu.com/question/20544732/answer/376414732)
+
+### [清华大学论文模版 latex](https://github.com/xueruini/thuthesis)
+
+暂时不知道怎么进行 pandoc 处理
+
+```
+sudo tlmgl install thuthesis, ctex, environ, trimspaces, zhnumber, newtx, fontaxes, enumitem, cjk-ko, cjk, ntheorem, notoccite
+```
+
+没成功
+
+### [国科大学位论文 LaTeX 模板](https://github.com/mohuangrui/ucasthesis)
+
+```
+sudo tlmgr install cjkpunct, algorithmicx, algorithms, boondox
+```
+
+run: `sh artratex.sh xa`
+
+
+05.19
+---
+
+### resume 个人简历中文字体问题
+
+### demo/pandoc-latex-template
+
+几套模版
+
+### 个人简历的 docker 方案
+
+- [github markdown-resume](https://github.com/there4/markdown-resume)
+- docker run
+    ```
+    docker run \
+        -v ${PWD}:/resume \
+        there4/markdown-resume \
+        md2resume html demo/markdown-resume/sample.md out/
+    ```
+
+    - pdf 有点问题，暂时采用进入 docker 容器
+
+    ```
+    xvfb-run md2resume pdf demo/markdown-resume/sample.md out/
+    ```
+- pdf 中文有问题
+
+05.18
+---
+
+### error
+
+- `--latex-engine has been removed.  Use --pdf-engine instead`
+
+    是 pandoc 升级到 2.2 后发生的问题
+
+- `sudo tlmgr update --self --all`, 提示升级 2018
+
+    ```
+    tlmgr: Remote repository is newer than local (2017 < 2018)
+    Cross release updates are only supported with
+    update-tlmgr-latest(.sh/.exe) --update
+    Please see https://tug.org/texlive/upgrade.html for details.
+    ```
+
+    误删除，只能重新安装 2018 版
+
+### markdown-latex-boilerplate
+
+- [github](https://github.com/davecap/markdown-latex-boilerplate)
+
+05.02
+---
+
+### NUDT硕士博士论文Latex模板
+
+- [github](https://github.com/TomHeaven/nudt_thesis)
+- word 模版, demo/nudt/word
+
+03.26
+----
+
+解决重庆论文中文字体问题
 
 02.10
 ---
@@ -142,16 +233,16 @@ install context
 - install basicTex,install dir:`cd /usr/local/texlive/2017basic/`
 - install
 
-  ````
+  ```
   sudo tlmgr update --self --all
   ## install context
   sudo tlmgr install collection-context
   ```
+
 - 字体
   - Adobe 的四款字体(AdobeFangsongStd-Regular.otf AdobeHeitiStd-Regular.otf AdobeKaitiStd-Regular.otf AdobeSongStd-Light.otf)
   - `luatools --generate`
-  - ? export OSFONTDIR=
-  `OSFONTDIR=/Library/Fonts:/System/Library/Fonts:~/Library/Fonts`
+  - ? `export OSFONTDIR=/Library/Fonts:/System/Library/Fonts:~/Library/Fonts`
 
 ### 重庆大学论文
 
@@ -187,7 +278,7 @@ l.68 ...bold\zhttfont{[simfang.ttf]}{[simkai.ttf]}
 
 edit:
 ```
-/usr/local/texlive/2017basic/texmf-dist/tex/xelatex/zhspacing
+/usr/local/texlive/2017basic/texmf-dist/tex/xelatex/zhspacing/zhfont.sty
 ```
 
 暂时注释掉
@@ -202,6 +293,8 @@ edit:
   % \newfontfamilywithslantandbold\zhttfont{[simfang.ttf]}{[simkai.ttf]}
 \fi
 ```
+
+[参考](https://github.com/CTeX-org/ctex-kit/blob/master/zhspacing/zhfont.sty)
 
 >个别环境下报 `The font "文泉驿等宽正黑" cannot be found.`, 替换 cqu.cls 中所有相关字体，比如 `冬青黑体简体中文`，有可能只能用系统字体，用户安装的字体总是报找不到
 
