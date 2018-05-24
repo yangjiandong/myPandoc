@@ -23,6 +23,19 @@ make docx(pdf) f=xx
 
 - [git book](https://github.com/liuhui998/gitbook), use `rake`, `price` create pdf
 
+05.24
+---
+
+### ieee-pandoc-template, IEEE latex模板
+
+- [github](https://github.com/stsewd/ieee-pandoc-template)
+- demo/ieee-pandoc-template
+
+### pandoc-academic-publication, IEEE latex模板
+
+- [github](https://github.com/claymcleod/pandoc-academic-publication)
+- demo/pandoc-academic-publication
+
 05.23
 ---
 
