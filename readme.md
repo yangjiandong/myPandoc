@@ -36,6 +36,16 @@ make docx(pdf) f=xx
 - [github](https://github.com/claymcleod/pandoc-academic-publication)
 - demo/pandoc-academic-publication
 
+### 手工安装 IEEEtran
+
+```
+download `https://www.ctan.org/pkg/ieeetran?lang=en`
+unzip
+sudo cp -R ./IEEEtran /usr/local/texlive/2017basic/texmf-dist/tex/latex
+# 更新模板
+sudo texhash
+```
+
 05.23
 ---
 
