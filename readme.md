@@ -23,6 +23,25 @@ make docx(pdf) f=xx
 
 - [git book](https://github.com/liuhui998/gitbook), use `rake`, `price` create pdf
 
+
+05.28
+---
+
+### 字体
+
+```
+sudo tlmgr install collection-fontsrecommended
+brew install fontconfig
+fc-list :lang=zh-cn
+```
+
+### 更新 pandoc2.x template
+
+### mac下利用Pandoc、LaTeX 转换markdown成html,pdf
+
+- [参考](https://my.oschina.net/u/923974/blog/495733)
+- `make md22pdf f=demo/pandoc.md`
+
 05.24
 ---
 
@@ -30,6 +49,7 @@ make docx(pdf) f=xx
 
 - [github](https://github.com/stsewd/ieee-pandoc-template)
 - demo/ieee-pandoc-template
+- 支持中文，专门设置 `-V CJKmainfont=SimSun`
 
 ### pandoc-academic-publication, IEEE latex模板
 

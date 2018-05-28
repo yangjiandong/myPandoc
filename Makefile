@@ -10,6 +10,11 @@ COVER_IMAGE = cover.jpg
 LATEX_CLASS = book
 # report, article, book, memoir
 
+#cat 00*.md > xxx.md
+
+md22pdf:${f}
+	./md2pdf ${f} -o out/md2.pdf
+
 ls:
 	pandoc --toc --toc-depth=3  demo/ls.md --pdf-engine=xelatex \
 	-o out/ls.pdf \
