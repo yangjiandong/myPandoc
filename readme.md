@@ -42,6 +42,13 @@ fc-list :lang=zh-cn
 - [参考](https://my.oschina.net/u/923974/blog/495733)
 - `make md22pdf f=demo/pandoc.md`
 
+效果一般
+
+### devs
+
+- 仿 pandoc 文档
+- demo/devs
+
 05.24
 ---
 
