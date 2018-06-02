@@ -13,7 +13,9 @@ make docx(pdf) f=xx
 - make docx_code
 - make html_re
 - make reveal(reveal2)
-- sdcamp latex
+- sdcamp
+    - ./mmd2bok
+    - or use contents/make
 - 中文pandoc
     - demo/pandoc
 
@@ -23,6 +25,21 @@ make docx(pdf) f=xx
 
 - [git book](https://github.com/liuhui998/gitbook), use `rake`, `price` create pdf
 
+06.02
+---
+
+### 傲慢与偏见
+
+demo/pandoc-ebook
+
+### 重新整理 sdcamp
+
+- `brew intall multimarkdown`
+- 保持原有 文鼎ＰＬ简报宋 字体
+
+    ```
+    \setromanfont[Mapping=tex-text,BoldFont=WenQuanYi Micro Hei]{AR PL SungtiL GB}
+    ```
 
 05.28
 ---

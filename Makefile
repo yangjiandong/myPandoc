@@ -3,7 +3,8 @@ BOOKNAME = my-book
 TITLE = title.txt
 METADATA = metadata.xml
 CHAPTERS2 = ch01.md ch02.md
-CHAPTERS = demo/pandoc/pandoc.markdown
+CHAPTERS = demo/devs/devs.md
+#demo/pandoc/pandoc.markdown
 #demo/SpringBootwithRedis.md
 TOC = --toc --toc-depth=3
 COVER_IMAGE = cover.jpg
@@ -18,6 +19,7 @@ md22pdf:${f}
 ls:
 	pandoc --toc --toc-depth=3  demo/ls.md --pdf-engine=xelatex \
 	-o out/ls.pdf \
+	-V CJKmainfont='PingFang SC' \
 	--template=templates/my.tex
 
 ls_epub:

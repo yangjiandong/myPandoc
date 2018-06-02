@@ -18,25 +18,28 @@ COVER_IMAGE = img/cover.pdf
 LATEX_CLASS = book
 # report
 
-latex: 
-	pandoc $(TOC) $(TITLE) $(CHAPTERS) --latex-engine=xelatex -V documentclass=$(LATEX_CLASS) -o out/latex_zh.pdf --template=templates/mytemplate.tex
+pdf:
+	pandoc $(TOC) $(TITLE) $(CHAPTERS) --pdf-engine=xelatex \
+	-V documentclass=$(LATEX_CLASS) \
+	-o out/latex_zh.pdf \
+	--template=templates/mytemplate.tex
+
+epub:
+	pandoc -o out/out.epub title.txt \
+	$(TOC) $(TITLE) $(CHAPTERS) \
+	--epub-cover-image=cover.jpg \
+	--epub-metadata=metadata.xml \
+	--css=style/epub.css
 
 docx:
 	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl $(CHAPTERS) \
 	    --output=out/out.docx
 		# --filter filter-pagebreak.hs \
-		
+
 docx_twocolumn:
 	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl $(CHAPTERS) \
 	    --reference-docx=templates/twocolumns.docx --output=out/out.docx
-	
+
 html:
 	pandoc $(TOC) $(CHAPTERS) -t html5 -o out/out.html --toc --toc-depth 2 --template=templates/pm-template
-
-pdf:${f}
-	pandoc $(TOC) $(TITLE) $(CHAPTERS)  -o out/out.pdf  --latex-engine=xelatex --template=templates/mytemplate.tex
-
-epub:
-	pandoc -o out/out.epub title.txt $(TOC) $(TITLE) $(CHAPTERS) --epub-cover-image=cover.jpg --epub-metadata=metadata.xml --epub-stylesheet=style/epub.css
-
 
