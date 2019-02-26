@@ -25,6 +25,17 @@ make docx(pdf) f=xx
 
 - [git book](https://github.com/liuhui998/gitbook), use `rake`, `price` create pdf
 
+2019.02.26
+---
+
+### use one/pandoc:2.0
+
+- use `run-docker.sh`
+- 取消 `PingFang` 字体
+- 中文字体
+    - `WenQuanYi Zen Hei` - zhhei
+    - `AR PL UMing CN` - zhsong
+    - `AR PL UKai CN` - zhkai
 06.02
 ---
 

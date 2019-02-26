@@ -19,8 +19,7 @@ md22pdf:${f}
 ls:
 	pandoc --toc --toc-depth=3  demo/ls.md --pdf-engine=xelatex \
 	-o out/ls.pdf \
-	-V CJKmainfont='PingFang SC' \
-	--template=templates/my.tex
+	--template=templates/my2.tex
 
 ls_epub:
 	pandoc -o out/ls.epub --toc --toc-depth=3 demo/ls.md \
@@ -50,14 +49,14 @@ latex:
 	pandoc $(TOC) $(TITLE) $(CHAPTERS) --pdf-engine=xelatex \
 	-V documentclass=$(LATEX_CLASS) \
 	-o out/latex.pdf \
-	--template=templates/my.tex
+	--template=templates/my2.tex
 
 # --template=./mytemplate.tex
 
 latex_bysj:
 	pandoc $(TOC) $(TITLE) $(CHAPTERS) --pdf-engine=xelatex  \
 	-o out/latex_bysj.pdf \
-	--template=templates/bysj.latex
+	--template=templates/bysj2.latex
 
 reveal:${f}
 	pandoc ${f} -o out/demo/out_reveal.html \
