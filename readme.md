@@ -25,10 +25,23 @@ make docx(pdf) f=xx
 
 - [git book](https://github.com/liuhui998/gitbook), use `rake`, `price` create pdf
 
+## use phantomjs and price
+
+- from html to pdf
+- ? 还做不到 markdown to html 的工具
+
+02.28
+---
+
+### github html template
+
+- [Pandoc-Goodies](https://github.com/tajmone/pandoc-goodies)
+- run, `make html_github f=demo/my.md`
+
 2019.02.26
 ---
 
-### use one/pandoc:2.0
+### use docker, one/pandoc:2.0
 
 - use `run-docker.sh`
 - 取消 `PingFang` 字体
@@ -36,6 +49,7 @@ make docx(pdf) f=xx
     - `WenQuanYi Zen Hei` - zhhei
     - `AR PL UMing CN` - zhsong
     - `AR PL UKai CN` - zhkai
+
 06.02
 ---
 

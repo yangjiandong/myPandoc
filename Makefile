@@ -37,6 +37,12 @@ hisupdate:
 	--template=template-revealjs.html \
 	-i
 
+html_github:${f}
+	pandoc ${f} -t html5 -o out/out_github.html \
+	--toc --toc-depth 2 \
+	-s --self-contained \
+	--template=templates/GitHub.html5
+
 html_re:${f}
 	pandoc ${f} -t html5 -o out/out.html \
 	--toc --toc-depth 2 \
