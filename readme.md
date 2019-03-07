@@ -1,4 +1,4 @@
-pandoc - docs
+pandoc2.x - docs
 ===
 
 pandoc to docx, html, pdf
@@ -11,7 +11,7 @@ make docx(pdf) f=xx
 
 - make latex(latex_bysj)
 - make docx_code
-- make html_re
+- make html_re(html_github)
 - make reveal(reveal2)
 - sdcamp
     - ./mmd2bok
