@@ -40,7 +40,7 @@ hisupdate:
 
 html_github:${f}
 	pandoc ${f} -t html5 -o out/out_github.html \
-	--toc --toc-depth 2 \
+	--toc --toc-depth 4 \
 	-s --self-contained \
 	--metadata pagetitle="github" \
 	--template=templates/GitHub.html5

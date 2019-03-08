@@ -30,6 +30,13 @@ make docx(pdf) f=xx
 - from html to pdf
 - ? 还做不到 markdown to html 的工具
 
+03.07
+---
+
+### pandoc to docx
+
+- [](https://zhuanlan.zhihu.com/p/49530707)
+
 02.28
 ---
 
