@@ -27,6 +27,8 @@ make docx(pdf) f=xx
 
 ## use phantomjs and price
 
+- [cssprint-sample's github](https://github.com/Shyujikou/cssprint-sample)
+    - use [han.js](https://github.com/ethantw/Han)
 - from html to pdf
 - ? 还做不到 markdown to html 的工具
 
