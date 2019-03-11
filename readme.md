@@ -1,4 +1,4 @@
-pandoc - docs
+pandoc2.x - docs
 ===
 
 pandoc to docx, html, pdf
@@ -11,7 +11,7 @@ make docx(pdf) f=xx
 
 - make latex(latex_bysj)
 - make docx_code
-- make html_re
+- make html_re(html_github)
 - make reveal(reveal2)
 - sdcamp
     - ./mmd2bok
@@ -31,6 +31,13 @@ make docx(pdf) f=xx
     - use [han.js](https://github.com/ethantw/Han)
 - from html to pdf
 - ? 还做不到 markdown to html 的工具
+
+03.07
+---
+
+### pandoc to docx
+
+- [](https://zhuanlan.zhihu.com/p/49530707)
 
 02.28
 ---

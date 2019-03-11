@@ -1,3 +1,4 @@
+# use pandoc 2.x
 BUILD = build
 BOOKNAME = my-book
 TITLE = title.txt
@@ -39,8 +40,9 @@ hisupdate:
 
 html_github:${f}
 	pandoc ${f} -t html5 -o out/out_github.html \
-	--toc --toc-depth 2 \
+	--toc --toc-depth 4 \
 	-s --self-contained \
+	--metadata pagetitle="github" \
 	--template=templates/GitHub.html5
 
 html_re:${f}
@@ -78,19 +80,19 @@ reveal2:${f}
     	-o out/demo/out_reveal.html ${f}
 
 docx:${f}
-	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl ${f} --output=out/out.docx
+	pandoc -r markdown -w docx --csl=csl/chicago-author-date.csl ${f} --output=out/out.docx
 
 docx_code:${f}
-	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl \
-	--reference-docx=templates/code.docx \
+	pandoc -r markdown -w docx --csl=csl/chicago-author-date.csl \
+	--reference-doc=templates/code.docx \
 	${f} \
-	--output=out/out.docx
+	--output=out/out_code.docx
 
 docx_base:${f}
-	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl --reference-docx=templates/base.docx ${f} --output=out/out.docx
+	pandoc -r markdown -w docx --csl=csl/chicago-author-date.csl --reference-doc=templates/base.docx ${f} --output=out/out_base.docx
 
 docx_re:${f}
-	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl --reference-docx=templates/reference.docx ${f} --output=out/out.docx
+	pandoc -r markdown -w docx --csl=csl/chicago-author-date.csl --reference-doc=templates/reference.docx ${f} --output=out/out_re.docx
 
 docx_re2:${f}
 	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl --reference-docx=templates/my.docx ${f} --output=out/out.docx
