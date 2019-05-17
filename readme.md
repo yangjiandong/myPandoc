@@ -30,6 +30,18 @@ make docx(pdf) f=xx
 - from html to pdf
 - ? 还做不到 markdown to html 的工具
 
+03.10
+---
+
+- `demo/academic_test.txt`, 采用引用
+
+  make html_github demo/academic_test.txt
+
+- TeX to markdown
+
+  ```
+  pandoc -s --bibliography "/home/sd44/xueshu/dingjia/ref/refs.bib" --filter pandoc-citeproc --csl "/home/sd44/.cls/chinese-gb7714-2005-numeric.csl" --metadata link-citations=true --metadata reference-section-title="参考文献" test.tex -o test.md
+  ```
 03.07
 ---
 
@@ -50,7 +62,14 @@ make docx(pdf) f=xx
 
 ### use docker, one/pandoc:2.0
 
-- use `run-docker.sh`
+- use
+
+  ```
+  sh run-docker.sh
+  cd source
+  make html_github f=demo/xx.md
+  ```
+
 - 取消 `PingFang` 字体
 - 中文字体
     - `WenQuanYi Zen Hei` - zhhei
