@@ -32,6 +32,13 @@ make docx(pdf) f=xx
 - from html to pdf
 - ? 还做不到 markdown to html 的工具
 
+05.17
+---
+
+- relaxedjs
+  - install Chromium, edit .npmrc, `puppeteer_download_host=https://npm.taobao.org/mirrors`
+  - install `npm i -g relaxedjs`
+
 03.10
 ---
 
