@@ -29,13 +29,13 @@ ls_epub:
 hisnew:
 	pandoc demo/his_new.md -o out/demo/his_new_reveal.html \
 	-t revealjs -s -V theme=night \
-	--template=template-revealjs.html \
+	--template=templates/reveal/template-revealjs.html \
 	-i
 
 hisupdate:
 	pandoc demo/his_update.md -o out/demo/his_update_reveal.html \
 	-t revealjs -s -V theme=night \
-	--template=template-revealjs.html \
+	--template=templates/reveal/template-revealjs.html \
 	-i
 
 html_github:${f}
@@ -66,14 +66,22 @@ latex_bysj:
 	-o out/latex_bysj.pdf \
 	--template=templates/bysj2.latex
 
+#
+reveal3:${f}
+	pandoc ${f} -o out/demo/out_reveal3.html \
+		-t revealjs -s -V theme=night \
+		-V transition=slide \
+		--template=templates/reveal/reveal.js-3.8.0/template.html \
+		-i
+
 reveal:${f}
 	pandoc ${f} -o out/demo/out_reveal.html \
 		-t revealjs -s -V theme=night \
-		--template=template-revealjs.html \
+		--template=templates/reveal/template-revealjs.html \
 		-i
 
 reveal2:${f}
-	pandoc -t html5 -s --template=template-revealjs-2.html \
+	pandoc -t html5 -s --template=templates/reveal/template-revealjs-2.html \
     	--standalone --section-divs \
     	--variable theme="night" \
     	--variable transition="cube" \
@@ -103,7 +111,7 @@ html_report:${f}
 	# sed -i '' 's/<table>/<table class="table table-bordered table-condensed">/' out/out.html
 
 html_mark:${f}
-	pandoc ${f} -r markdown+simple_tables+table_captions+yaml_metadata_block -w html -S \
+	pandoc ${f} -r markdown+simple_tables+table_captions+yaml_metadata_block -w html \
 		--template=templates/html.template --css=style/marked/kultiad-serif.css \
 		--filter pandoc-citeproc --csl=csl/apsa.csl --bibliography=bib/socbib-pandoc.bib -o out/out.html
 
@@ -133,7 +141,7 @@ html5:${f}
 	pandoc ${f} -o out/out.html --template templates/default.html5 --self-contained --toc --toc-depth 2
 
 html_re2:${f}
-	pandoc ${f} -t html5 -o out/out.html --toc --smart --template=templates/pm2-template
+	pandoc ${f} -t html5 -o out/out.html --toc --template=templates/pm2-template
 
 epub:${f}
 	pandoc -o out/out.epub title.txt ${f} --epub-cover-image=cover.jpg --epub-metadata=metadata.xml --toc --toc-depth=2 --epub-stylesheet=style/epub.css

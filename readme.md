@@ -19,11 +19,15 @@ make docx(pdf) f=xx
 - 中文pandoc
     - demo/pandoc
 
-参考 reveal.js
+## ppt, reveal
+
+- reveal.md
 
 ## other markdown tools
 
 - [git book](https://github.com/liuhui998/gitbook), use `rake`, `price` create pdf
+- [distsysbook](https://github.com/mixu/distsysbook/
+), 比较简洁
 
 ## use phantomjs and price
 
@@ -38,6 +42,8 @@ make docx(pdf) f=xx
 - relaxedjs
   - install Chromium, edit .npmrc, `puppeteer_download_host=https://npm.taobao.org/mirrors`
   - install `npm i -g relaxedjs`
+  - 可以采用 docker 方案
+  - 主要解决 html 演示文档，其他支持的格式不多
 
 03.10
 ---
@@ -258,19 +264,6 @@ ls.md
 ---
 
 ### reveal font
-
-updat `fonts.useso.com` to `fonts.lug.ustc.edu.cn`
-
-reveal.js/theme
-- begin.css
-- default.css
-- moon.css
-- night.css
-- simple.css
-- sky.css
-- solarized.css
-
-直接改造 night.css 引用的字体，下载到本地
 
 07.19
 ---
@@ -602,14 +595,8 @@ make latex
 
 `make bootstrap f=xx`
 
-create
+q
 ---
-
-```
-make slide f=pandoc_setup.md
-make pdf f=pandoc_setup.md
-make reveal f=pandoc_setup.md
-```
 
 error:
 
