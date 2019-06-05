@@ -3,15 +3,12 @@
 
 	<head>
 		<meta charset="utf-8">
-
 		<title>$title$</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
-
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<link rel="stylesheet" href="css/reset.css">
@@ -46,8 +43,8 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-          <h1>$title$</h1>
-            $for(author)$<h3>$author$</h3>$endfor$
+          <h2>$title$</h2>
+            $for(author)$<h4>$author$</h4>$endfor$
           <p>
             <h4>$date$</h4>
           </p>
@@ -65,7 +62,6 @@
         $body$
 
 			</div>
-
 		</div>
 
 		<script src="js/reveal.js"></script>
@@ -74,21 +70,15 @@
 
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: true,
-				progress: true,
-        history: true,
-				center: true,
-				hash: true,
 
         theme: Reveal.getQueryHash().theme $if(theme)$|| "$theme$" $endif$, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || $if(transition)$"$transition$"$else$"slide"$endif$, // none/fade/slide/convex/concave/zoom
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/highlight/highlight.js', async: true },
-					{ src: 'plugin/search/search.js', async: true },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true }
 				]

@@ -54,8 +54,10 @@ pandoc test.md -o test.pdf -t beamer
 直接执行是不成功的。
 
 ## 增加中文字体配置
+
 修改mytemplate.tex
-```tex
+
+```
 \ifxetex
 \usepackage{hyperref}
 \usepackage{fontspec,xltxtra,xunicode}
@@ -81,7 +83,6 @@ pandoc test.md -o test.pdf -t beamer
 
 ```shell
 git clone https://github.com/hakimel/reveal.js
-
 pandoc slides.md -o slides.html -t revealjs
 -s -V theme=beige
 ```

@@ -9,6 +9,17 @@
   make reveal3 f=demo/reveal/demo.md
   ```
 
+  pandoc -t revealjs -s \
+	   -V revealjs-url=https://cdn.jsdelivr.net/reveal.js/3.0.0 \
+       ./demo/reveal/demo.md  -o my_slides.html
+		
+
+  pandoc -t revealjs -s \
+	   -V revealjs-url=https://cdn.bootcss.com/reveal.js/3.8.0 \
+       ./demo/reveal/demo.md  -o my_slides.html
+	   
+
+
 ### style
 
 copy templates/reveal/reveal.js to out dir

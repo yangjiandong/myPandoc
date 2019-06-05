@@ -68,7 +68,7 @@ latex_bysj:
 
 #
 reveal3:${f}
-	pandoc ${f} -o out/demo/out_reveal3.html \
+	pandoc ${f} -o out/reveal.js-3.8.0/out_reveal3.html \
 		-t revealjs -s -V theme=night \
 		-V transition=slide \
 		--template=templates/reveal/reveal.js-3.8.0/template.html \
@@ -85,7 +85,7 @@ reveal2:${f}
     	--standalone --section-divs \
     	--variable theme="night" \
     	--variable transition="cube" \
-    	-o out/demo/out_reveal.html ${f}
+    	-o out/demo/out_reveal2.html ${f}
 
 docx:${f}
 	pandoc -r markdown -w docx --csl=csl/chicago-author-date.csl ${f} --output=out/out.docx
