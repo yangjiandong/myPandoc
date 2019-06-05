@@ -2,7 +2,7 @@
 # ppt, reveal 方案
 
 - [中文参考](https://vxhly.github.io/archives/8bdf06de.html)
-- demo
+- demo, reveal3 效果不是很好
 
   ```
   make reveal f=demo/reveal/demo.md
@@ -12,12 +12,13 @@
   pandoc -t revealjs -s \
 	   -V revealjs-url=https://cdn.jsdelivr.net/reveal.js/3.0.0 \
        ./demo/reveal/demo.md  -o my_slides.html
-		
+
 
   pandoc -t revealjs -s \
 	   -V revealjs-url=https://cdn.bootcss.com/reveal.js/3.8.0 \
+     -V theme=beige \
        ./demo/reveal/demo.md  -o my_slides.html
-	   
+
 
 
 ### style
