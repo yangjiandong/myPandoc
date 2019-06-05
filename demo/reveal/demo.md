@@ -2,9 +2,10 @@
 % 胡浩源 haoyuan.huhy@gmail.com
 % 2015年1月16
 
+
 # GOTO slider
 
-## WHY
+## Why
 
 写一份markdown文件， 根据需要可以生成:
 
@@ -12,12 +13,29 @@
 - document pdf
 - slide html
 
-<aside class="notes">
+::: notes
 
-  * 这里是提示1
-  * 这里是提示2
+小抄提示.
 
-</aside>
+- It can contain Markdown
+- like this list
+- 技术架构方案，需验证
+
+:::
+
+## 同一页显示多列
+
+:::::::::::::: {.columns}
+::: {.column width="40%"}
+contents...xxxxcdafdfadfadfadfa,comdafdf
+- x
+- d
+
+:::
+::: {.column width="60%"}
+contents...
+:::
+::::::::::::::
 
 # Begin
 
@@ -131,6 +149,14 @@ make pdf f=pandoc_setup.md
 make reveal f=pandoc_setup.md
 ```
 
+## 逐条显示
+
+::: incremental
+
+- Eat spaghetti
+- Drink wine
+
+:::
 
 ## 文件结构
 ```shell

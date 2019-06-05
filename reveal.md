@@ -19,6 +19,10 @@
      -V theme=beige \
        ./demo/reveal/demo.md  -o my_slides.html
 
+  pandoc demo/reveal/demo.md -o out/demo/out_reveal.html \
+		-t revealjs -s -V theme=night \
+		--template=templates/reveal/template-revealjs.html \
+		-i
 
 
 ### style
@@ -83,4 +87,35 @@ reveal.js/theme
 
 直接改造 night.css 引用的字体，下载到本地
 
+### run in http server
 
+```
+python3 -m http.server
+```
+
+in http server mode, use note, key `s`
+
+### tip
+
+逐条显示
+
+```
+::: incremental
+
+- Eat spaghetti
+- Drink wine
+
+:::
+```
+
+小抄提示
+
+```
+::: notes
+
+- It can contain Markdown
+- like this list
+- 技术架构方案，需验证
+
+:::
+```
