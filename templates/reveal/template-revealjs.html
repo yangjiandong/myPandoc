@@ -12,16 +12,16 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">   
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
-		
+
     $if(theme)$
       <link rel="stylesheet" href="css/theme/$theme$.css" id="theme">
     $else$
       <link rel="stylesheet" href="css/theme/default.css" id="theme">
     $endif$
-    
+
     <!-- For syntax highlighting -->
     $if(highlight-style)$
       <link rel="stylesheet" href="lib/css/$highlight-style$.css">
@@ -31,7 +31,7 @@
 
     <!-- For Customized Design-->
     <link rel="stylesheet" href="css/custom.css">
-    
+
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
 			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
@@ -40,18 +40,18 @@
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
-    
+
     <script type="text/javascript">/*<![CDATA[*/
-  /* 
+  /*
   March 19, 2004 MathHTML (c) Peter Jipsen http://www.chapman.edu/~jipsen
   Released under the GNU General Public License version 2 or later.
   See the GNU General Public License (at http://www.gnu.org/copyleft/gpl.html)
   for more details.
   */
-  
+
   function convertMath(node) {// for Gecko
     if (node.nodeType==1) {
-      var newnode = 
+      var newnode =
         document.createElementNS("http://www.w3.org/1998/Math/MathML",
           node.nodeName.toLowerCase());
       for(var i=0; i < node.attributes.length; i++)
@@ -59,14 +59,14 @@
           node.attributes[i].nodeValue);
       for (var i=0; i<node.childNodes.length; i++) {
         var st = node.childNodes[i].nodeValue;
-        if (st==null || st.slice(0,1)!=" " && st.slice(0,1)!="\n") 
+        if (st==null || st.slice(0,1)!=" " && st.slice(0,1)!="\n")
           newnode.appendChild(convertMath(node.childNodes[i]));
       }
       return newnode;
     }
     else return node;
   }
-  
+
   function convert() {
     var mmlnode = document.getElementsByTagName("math");
     var st,str,node,newnode;
@@ -81,7 +81,7 @@
           if (st=="#text") str += node.nodeValue;
           else {
             str += (st.slice(0,1)=="/" ? "</m:"+st.slice(1) : "<m:"+st);
-            if (st.slice(0,1)!="/") 
+            if (st.slice(0,1)!="/")
                for(var j=0; j < node.attributes.length; j++)
                  if (node.attributes[j].nodeValue!="italic" &&
                    node.attributes[j].nodeValue!="" &&
@@ -100,7 +100,7 @@
         newnode.innerHTML = str;
       }
   }
-  
+
   if (document.createElementNS==null) {
     document.write("<object id=\"mathplayer\"\
     classid=\"clsid:32F66A20-7614-11D4-BD11-00104BD3F987\"></object>");
@@ -114,7 +114,7 @@
   }
   /*]]>*/
   </script>
-    
+
 	</head>
 
 	<body>
@@ -130,8 +130,8 @@
         <p>
           <h4>$date$</h4>
         </p>
-      </section> 
-      
+      </section>
+
       $if(toc)$
         <section>
           <h2>Outline</h2>
@@ -170,9 +170,9 @@
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
 					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
-					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
 

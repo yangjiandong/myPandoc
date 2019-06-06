@@ -1,7 +1,12 @@
 
 # ppt, reveal 方案
 
+- keynote
+  - demo/reveal/keynote
+- remote 方案
+  - [](https://github.com/dmitry-korolev/remeal)
 - [中文参考](https://vxhly.github.io/archives/8bdf06de.html)
+- [reveal 案例](https://github.com/hakimel/reveal.js/wiki/Example-Presentations)
 - demo, reveal3 效果不是很好
 
   ```
