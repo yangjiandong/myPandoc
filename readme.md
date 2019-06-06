@@ -19,22 +19,25 @@ make docx(pdf) f=xx
 - 中文pandoc
     - demo/pandoc
 
-## ppt, reveal
+### ppt, reveal
 
 - reveal.md
 
-## other markdown tools
+### cssprint
+
+- use phantomjs and price, create html,pdf book
+- [cssprint-sample's github](https://github.com/Shyujikou/cssprint-sample)
+    - use [han.js](https://github.com/ethantw/Han)
+- from html to pdf
+- demo/cssprint
+- ? 没有提供 markdown 格式文档，只能编辑 html
+
+### other markdown tools
 
 - [git book](https://github.com/liuhui998/gitbook), use `rake`, `price` create pdf
 - [distsysbook](https://github.com/mixu/distsysbook/
 ), 比较简洁
 
-## use phantomjs and price
-
-- [cssprint-sample's github](https://github.com/Shyujikou/cssprint-sample)
-    - use [han.js](https://github.com/ethantw/Han)
-- from html to pdf
-- ? 还做不到 markdown to html 的工具
 
 05.17
 ---

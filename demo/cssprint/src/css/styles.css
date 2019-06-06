@@ -1,0 +1,579 @@
+/* 字体定义 */
+
+/* 数学公式字体，用于正文中的数字 */
+@font-face {
+  font-family: "TeX";
+  src: url("../fonts/MathJax_Main-Regular.otf");
+  unicode-range: U+2E, U+30-39; /* 只使用字体中的数字和小数点 */
+}
+
+/* 西文字体，使用系统字体Times或Times New Roman */
+@font-face {
+  font-family: "Latin";
+  src: local(Times), local("Times New Roman");
+
+  /* 对字体截取子集，使得非西文字符回退到后面的中文字体，
+  避免部分字符显示异常，如省略号、破折号等。
+  其中特别排除了U+00B7，即中点“·”，该字符需要回退到中文字体 */
+  unicode-range: U+0000-00B6, U+00B8-1FFF;
+}
+
+/* 以下方正字体均由人民邮电出版社获得授权，可用于该社出版的图书 */
+
+/* 方正书宋 */
+@font-face {
+  font-family: "SongTi";
+  src: url("../fonts/FZSSJW.TTF");
+}
+
+/* 方正宋黑，用作书宋的粗体字 */
+@font-face {
+  font-family: "SongTi";
+  src: url("../fonts/FZSHJW.TTF");
+  font-weight: bold;
+}
+
+/* 方正楷体 */
+@font-face {
+  font-family: "KaiTi";
+  src: url("../fonts/FZKTJW.TTF");
+}
+
+/* 方正仿宋 */
+@font-face {
+  font-family: "FangSong";
+  src: url("../fonts/FZFSJW.TTF");
+}
+
+/* 方正黑体 */
+@font-face {
+  font-family: "HeiTi";
+  src: url("../fonts/FZHTJW.TTF");
+}
+
+/* 方正细黑 */
+@font-face {
+  font-family: "XiHei";
+  src: url("../fonts/FZHTJW.TTF");
+}
+@font-face {
+  font-family: "XiHei2";
+  src: url("../fonts/FZXHGBK.TTF");
+}
+
+/* 页面样式 */
+
+/* 基础页面样式 */
+@page {
+  size: 145mm 210mm; /* 32开 */
+  margin-top: 20mm;
+  margin-bottom: 15mm;
+  margin-inside: 21mm;
+  margin-outside: 16mm;
+  marks: crop cross;
+  prince-bleed: 3mm;
+  prince-trim: 10mm;
+
+  /* 如果要每页重置脚注号可以使用以下样式 */
+  /* counter-reset: footnote; */
+}
+
+/* 正文页面，左侧页样式 */
+@page main:left {
+  /* 左上角显示页码 */
+  @top-left-corner {
+   content: counter(page) "　";
+   font-family: XiHei;
+   font-size: 8pt;
+   color: cmyk(0,0,0,0.8); /* 颜色需使用CMYK色空间 */
+  }
+
+  /* 左上方显示章标题 */
+  @top-left {
+   content: "|　" string(chaptitle);
+   font-family: XiHei;
+   font-size: 8pt;
+   color: cmyk(0,0,0,0.8);
+  }
+}
+
+/* 正文页面，右侧页样式 */
+@page main:right {
+  /* 右上角显示页码 */
+  @top-right-corner {
+   content: "　" counter(page);
+   font-family: XiHei;
+   font-size: 8pt;
+   color: cmyk(0,0,0,0.8);
+  }
+
+  /* 右上方显示节标题 */
+  @top-right {
+   content: string(sectitle) "　|";
+   font-family: XiHei;
+   font-size: 8pt;
+   color: cmyk(0,0,0,0.8);
+  }
+}
+
+/* 序章没有节标题，因此左右均显示章标题 */
+/* 序章正文，左侧页样式 */
+@page main-chap-title-only:left {
+   @top-left-corner {
+     content: counter(page) "　";
+     font-family: XiHei;
+     font-size: 8pt;
+     color: cmyk(0,0,0,0.8);
+   }
+
+   @top-left {
+     content: "|　" string(chaptitle);
+     font-family: XiHei;
+     font-size: 8pt;
+     color: cmyk(0,0,0,0.8);
+   }
+}
+
+/* 序章正文，右侧页样式 */
+@page main-chap-title-only:right {
+   @top-right-corner {
+     content: "　" counter(page);
+     font-family: XiHei;
+     font-size: 8pt;
+     color: cmyk(0,0,0,0.8);
+   }
+
+   @top-right {
+     content: string(chaptitle) "　|";
+     font-family: XiHei;
+     font-size: 8pt;
+     color: cmyk(0,0,0,0.8);
+   }
+}
+
+/* 章标题单独占一页，纵向居中（近似） */
+@page chapter-title {
+  margin-top: 40%;
+}
+
+/* 正文空白页面，清除所有页边框内容 */
+@page main:blank {
+  @top-left {
+    content: normal;
+  }
+
+  @top-right {
+    content: normal;
+  }
+
+  @top-right-corner {
+    content: normal;
+  }
+
+  @top-left-corner {
+    content: normal;
+  }
+}
+
+/* 序章正文空白页面，清除所有页边框内容 */
+@page main-chap-title-only:blank {
+  @top-left {
+    content: normal;
+  }
+
+  @top-right {
+    content: normal;
+  }
+
+  @top-right-corner {
+    content: normal;
+  }
+
+  @top-left-corner {
+    content: normal;
+  }
+}
+
+/* 文字样式 */
+
+html {
+  font-size: 10pt; /* 基准正文字号 */
+}
+
+body {
+  counter-reset: chapternum figurenum; /* 重置章号和图号计数器 */
+  font-family: TeX, Latin, SongTi; /* 按数字、西文、中文的顺序回退 */
+  line-height: 2.0;
+  font-size: 1rem;
+
+  /* 中文排版对页面段落孤行的控制没有特殊要求，将允许的孤行设置为1 */
+  orphans: 1;
+  widows: 1;
+}
+
+/* 正文容器，指定相应的页面样式 */
+article {
+  page: main;
+}
+
+/* 序章的正文容器类 */
+article.chap-title-only {
+  page: main-chap-title-only;
+}
+
+/* 统一所有等级标题的字体 */
+h1, h2, h3, h4, h5, h6 {
+  font-family: HeiTi; /* 黑体不需要回退 */
+}
+
+/* 章标题 */
+h1 {
+  string-set: chaptitle content(); /* 对chaptitle变量赋值用于页眉显示 */
+
+  page: chapter-title;
+
+  /* 强制分页逻辑 */
+  page-break-before: right; /* 章标题必须为右侧页，按需要在前后插入空白页 */
+  page-break-after: right;
+
+  /* 每章开头重置图号和脚注号计数器 */
+  counter-reset: figurenum;
+  counter-reset: footnote;
+  counter-increment: chapternum; /* 章号计数器+1 */
+
+  bookmark-level: 1; /* 设置书签等级 */
+
+  font-size: 2.6rem;
+  text-align: right;
+}
+
+/* 序章章标题 */
+h1#ch0 {
+  /* 重置页码计数器。内文页码从序章开始为第1页，前面目录不算 */
+  counter-reset: page 1;
+  counter-increment: none;
+}
+
+/* 节标题 */
+h2 {
+  string-set: sectitle counter(chapternum) "-" content(); /* 对sectitle变量赋值用于页眉显示 */
+  page-break-before: always; /* 节标题必须另起一页（前方强制换页） */
+  bookmark-level: 2;
+
+  font-size: 1.6rem;
+
+  margin-bottom: 1.5em;
+}
+
+/* 小节标题 */
+h3 {
+  bookmark-level: 3;
+
+  font-weight: 300;
+  font-size: 1.2rem;
+
+  margin-top: 2em;
+
+  /* 避免在小节标题之后立即换页，如换页把小节标题一起换到下一页 */
+  page-break-after: avoid;
+}
+
+/* 取消h3以下标题的书签级别 */
+h4, h5, h6 {
+  bookmark-level: none;
+}
+
+/* 正文中的黑体小标题 */
+h5 {
+  font-weight: 600;
+  font-size: 1rem;
+
+  margin-bottom: 0.5em;
+  margin-top: 0em;
+}
+
+/* 正文段落 */
+p {
+  text-indent: 2em;
+  text-align: justify; /* 中文排版规范为左右对齐 */
+  prince-text-justify: prince-cjk; /* 使用中日韩字符左右对齐逻辑 */
+  prince-footnote-policy: keep-with-line; /* 避免脚注和对应正文不在同一页 */
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+/* 首行不缩进的段落 */
+p.ni {
+  text-indent: 0em;
+}
+
+/* 各种不同悬挂缩进的样式类 */
+p.hang2em {
+  text-indent: -2em;
+  margin-left: 4em;
+}
+
+p.hang2-5em {
+  text-indent: -2.3em;
+  margin-left: 4.3em;
+}
+
+p.hang3em {
+  text-indent: -3em;
+  margin-left: 5em;
+}
+
+p.hang4em {
+  text-indent: -4em;
+  margin-left: 6em;
+}
+
+p.hang5em {
+  text-indent: -5em;
+  margin-left: 7em;
+}
+
+/* 上方增加一个空行的段落 */
+p.mt {
+  margin-top: 2em;
+}
+
+/* 需要右对齐的段落 */
+p.right {
+  text-align: right;
+}
+
+/* 超链接
+印刷排版中的超链接用来自动生成目录和正文中被引用的页码 */
+a {
+  color: inherit; /* 使用和正文一样的颜色和样式 */
+  text-decoration: inherit;
+}
+
+/* 交叉引用1：第X页 */
+a.xref:after{
+  content: "第 " target-counter(attr(href), page) " 页";
+}
+
+/* 交叉引用2：第X～X页 */
+a.xref-p1:after{
+  content: "第 " target-counter(attr(href), page);
+}
+
+a.xref-p2:after{
+  content: target-counter(attr(href), page) " 页";
+}
+
+/* 引用段落样式 */
+.quote {
+  font-family: TeX, Latin, FangSong;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* 正文注释段落样式 */
+.notes {
+  font-family: TeX, Latin, KaiTi;
+  line-height: 1.5;
+  background-color: cmyk(0,0,0,0.05);
+  padding: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* 插图 */
+figure {
+  page-break-inside: avoid; /* 插图避免在中间换页 */
+}
+
+/* 插图下方的图注 */
+figcaption {
+  text-align: center;
+  font-family: HeiTi;
+}
+
+/* 插图下方的小字注释，仅图10使用 */
+p.fignotes {
+  font-family: TeX, Latin, KaiTi;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  text-indent: 0;
+  margin-top: 1em;
+}
+
+/* 有序列表 */
+ol {
+  counter-reset: o-counter;
+  text-align: justify;
+  prince-text-justify: prince-cjk;
+  prince-footnote-policy: keep-with-line;
+}
+
+/* 有序列表，序号为带括号的数字 */
+ol.bracket li::marker {
+  content: "(" counter(list-item) ")";
+}
+
+/* b标签自动使用黑体 */
+b {
+  font-family: HeiTi;
+  font-style: inherit;
+  font-size: inherit;
+}
+
+/* em标签使用粗体，下方加着重号 */
+em {
+  font-family: inherit;
+  font-weight: bold;
+  font-style: inherit;
+
+  /* 着重号在Webkit浏览器中可显示，但Prince不支持
+  因此正文中无法渲染出着重号，且没有找到有效的替代方案 */
+  text-emphasis: filled dot;
+  text-emphasis-position: under;
+  -webkit-text-emphasis: filled dot;
+  -webkit-text-emphasis-position: under;
+}
+
+/* 临时楷体 */
+span.kai {
+  font-family: TeX, Latin, KaiTi;
+}
+
+/* 临时黑体 */
+span.hei {
+  font-family: HeiTi;
+}
+
+/* 只使用宋体，排除西文字体
+用于某些特定符号显示异常的情况 */
+span.song-only {
+  font-family: SongTi;
+}
+
+/* 小字 */
+span.small {
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+span.xxsmall {
+  font-size: 0.45em;
+  font-weight: 300;
+}
+
+/* 用这个类包裹的文字会尽量避免换行，用于版式微调 */
+span.nowrap {
+  white-space: nowrap;
+}
+
+/* MathJax公式样式，用于覆盖默认样式 */
+
+/* 行内公式两边加上0.25em的空白 */
+.MathJax, .MathJax_CHTML, .MathJax_SVG {
+  margin-left: 0.25em !important;
+  margin-right: 0.25em !important;
+}
+
+/* 单行公式左侧会有额外留白（和SVG的定位机制有关）
+这个样式用于消除额外留白 */
+.MathJax_SVG_Display {
+  text-indent: -2.2em !important;
+}
+
+/* 单行公式中的元素左右不保留空白 */
+.MathJax_SVG_Display .MathJax_SVG {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* 脚注样式 */
+
+/* 脚注文字样式 */
+.fn {
+  float: footnote; /* 将脚注填充到脚注区域 */
+  counter-increment: footnote; /* 脚注号计数器+1 */
+  font-family: TeX, Latin, KaiTi;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  text-indent: 0;
+}
+
+/* 正文中脚注标号的样式 */
+.fn::footnote-call {
+  content: counter(footnote);
+  font-size: 0.8rem;
+  vertical-align: super; /* 上标 */
+  line-height: none; /* 避免上标对正文行距的影响 */
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+}
+
+/* 脚注区域样式 */
+@page {
+  @footnotes {
+    border-top: thin solid black; /* 脚注区域顶分割线 */
+    border-clip: 6em; /* 顶分割线裁切到6em长度 */
+    padding-top: 0.5em;
+    padding-left: 1em;
+    margin-top: 1em;
+  }
+}
+
+/* 目录样式 */
+
+/* 目录容器 */
+div.toc {
+  /* 目录必须从右侧页开始 */
+  page-break-before: right;
+  page-break-after: right;
+}
+
+/* 目录的大标题，即“目录”两个字 */
+div.toc h1 {
+  /* 重置一般h1的换页规则和样式 */
+  page: initial;
+  page-break-before: initial;
+  page-break-after: initial;
+  text-align: initial;
+  counter-increment: none;
+  margin-left: 0;
+  margin-bottom: 1.5em;
+}
+
+/* 一级目录 */
+div.toc ul {
+  list-style: none;
+
+  font-family: XiHei;
+  font-size: 1.2rem;
+  margin-left: 0;
+}
+
+/* 二级目录 */
+div.toc ul ul {
+  font-size: 1rem;
+  margin-left: 4em;
+}
+
+/* 三级目录 */
+div.toc ul ul ul {
+  font-size: 0.8rem;
+  margin-left: 1.5em;
+}
+
+/* 二级目录的末尾边距 */
+div.toc ul li.sublevel {
+  margin-bottom: 1em;
+}
+
+/* 一级/二级目录页码，中间用句点“.”填充 */
+div.toc ul a::after {
+  content: leader('.') '　' target-counter(attr(href), page);
+  margin-left: 1em;
+}
+
+/* 三级目录的页码，空一个格用括号包围 */
+div.toc ul ul ul a::after {
+  content: '　(' target-counter(attr(href), page) ')';
+}

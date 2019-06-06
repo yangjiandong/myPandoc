@@ -1,0 +1,4 @@
+#! /bin/bash
+
+phantomjs scripts/render.js src/main.html >out/out.html
+prince out/out.html -o out/book.pdf
