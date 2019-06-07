@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.title = queryObj['title'];
   node.dataset.markdown = path;
   Reveal.initialize({
-    width: 960,
-    height: 700,
-	  //theme: Reveal.getQueryHash().theme || "sky" , 
-	  transition: Reveal.getQueryHash().transition || "cube", //
+    width: 1366, //960,
+    height: 768,
+	  // theme: Reveal.getQueryHash().theme || "sky" ,
+	  transition: "concave", // default/cube/page/concave/zoom/linear/fade/none
 
     // Factor of the display size that should remain empty around the content
     margin: 0.1,
@@ -33,7 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     dependencies: [
       {src: 'tools/plugin/markdown/marked.js'},
-      {src: 'tools/plugin/markdown/markdown.js'}
+      {src: 'tools/plugin/markdown/markdown.js'},
+      { src: 'tools/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      {src: 'tools/plugin/notes/notes.js'},
+      {src: 'tools/plugin/zoom-js/zoom.js'}
     ]
   });
 }, false);

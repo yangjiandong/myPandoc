@@ -1,0 +1,21 @@
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  text-transform: none;
+}
+.reveal table{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+tr.header{
+  /* background-color: white; */
+  display: block;
+  border-top: 1px solid #bfbfbf;
+  border-bottom: 1px solid #bfbfbf;
+}
+tr.odd, tr.even{display: block;}
+tr.last-row{  border-bottom: 1px solid #bfbfbf;}
