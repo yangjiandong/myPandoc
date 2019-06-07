@@ -17,8 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.title = queryObj['title'];
   node.dataset.markdown = path;
   Reveal.initialize({
-    width: 1366, //960,
-    height: 768,
+    slideNumber: true,
+    width: "100%", //1366, 960,
+    height: "100%", //768,
 	  // theme: Reveal.getQueryHash().theme || "sky" ,
 	  transition: "concave", // default/cube/page/concave/zoom/linear/fade/none
 
@@ -32,11 +33,20 @@ document.addEventListener('DOMContentLoaded', () => {
     history: true,
 
     dependencies: [
+      // { src: 'tools/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      // { src: 'tools/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      // { src: 'tools/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      // { src: 'tools/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      // { src: 'tools/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      // { src: 'tools/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
       {src: 'tools/plugin/markdown/marked.js'},
       {src: 'tools/plugin/markdown/markdown.js'},
       { src: 'tools/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
       {src: 'tools/plugin/notes/notes.js'},
-      {src: 'tools/plugin/zoom-js/zoom.js'}
+      {src: 'tools/plugin/zoom-js/zoom.js'},
+      // MathJax
+      { src: 'tools/plugin/math/math.js', async: true }
     ]
   });
 }, false);
