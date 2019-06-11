@@ -45,7 +45,18 @@ make docx(pdf) f=xx
 - relaxedjs
   - install Chromium, edit .npmrc, `puppeteer_download_host=https://npm.taobao.org/mirrors`
   - install `npm i -g relaxedjs`
-  - 可以采用 docker 方案
+  - 可以采用 docker 方案, `one/relaxedjs:node10-stable`
+    - use
+    - create alias
+
+    ```
+    alias relaxed-docker="docker run -it --rm -u $(id -u):$(id -g) -v $(pwd):$(pwd) -w $(pwd) --name relaxed one/relaxedjs:node10-stable $@"
+    ```
+    - goto examples dir
+
+    ```
+    relaxed-docker book.pug
+    ```
   - 主要解决 html 演示文档，其他支持的格式不多
 
 03.10
