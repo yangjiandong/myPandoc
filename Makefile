@@ -29,13 +29,13 @@ ls_epub:
 hisnew:
 	pandoc demo/his_new.md -o out/demo/his_new_reveal.html \
 	-t revealjs -s -V theme=night \
-	--template=templates/reveal/template-revealjs.html \
+	--template=templates/reveal/reveal.js/template-revealjs.html \
 	-i
 
 hisupdate:
 	pandoc demo/his_update.md -o out/demo/his_update_reveal.html \
 	-t revealjs -s -V theme=night \
-	--template=templates/reveal/template-revealjs.html \
+	--template=templates/reveal/reveal.js/template-revealjs.html \
 	-i
 
 html_github:${f}
@@ -77,7 +77,9 @@ reveal3:${f}
 reveal:${f}
 	pandoc ${f} -o out/demo/out_reveal.html \
 		-t revealjs -s -V theme=night \
-		--template=templates/reveal/template-revealjs.html \
+		--self-contained \
+		--resource-path=templates/reveal/reveal.js \
+		--template=templates/reveal/reveal.js/template-revealjs.html \
 		-i
 
 reveal2:${f}
