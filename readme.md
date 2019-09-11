@@ -14,10 +14,11 @@ make docx(pdf) f=xx
 - make html_re(html_github)
 - make reveal(reveal2)
 - sdcamp
-    - ./mmd2bok
-    - or use contents/make
+  - ./mmd2bok
+  - or use contents/make
 - 中文pandoc
-    - demo/pandoc
+  - demo/pandoc
+- demo/git-book
 
 ### ppt, reveal
 
@@ -38,6 +39,12 @@ make docx(pdf) f=xx
 - [distsysbook](https://github.com/mixu/distsysbook/
 ), 比较简洁
 
+
+09.11
+---
+
+- demo/git-book
+  - rake, prince
 
 05.17
 ---
