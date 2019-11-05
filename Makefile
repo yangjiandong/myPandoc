@@ -53,12 +53,17 @@ html_re:${f}
 	# add style to table
 	sed -i '' 's/<table>/<table class="table table-bordered table-condensed">/' out/out.html
 
+book:
+	pandoc $(TOC) $(TITLE) $(CHAPTERS) --pdf-engine=xelatex \
+	-o out/book.pdf \
+	--template=templates/my2.tex
+
 latex:
 	pandoc $(TOC) $(TITLE) $(CHAPTERS) --pdf-engine=xelatex \
 	-V documentclass=$(LATEX_CLASS) \
 	-V papersize=a4paper \
 	-o out/latex2.pdf \
-	--template=templates/my2.tex
+	--template=templates/my.tex
 
 # --template=./mytemplate.tex
 

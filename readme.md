@@ -9,12 +9,12 @@ make docx(pdf) f=xx
 
 ## 推荐方案
 
-- make latex(latex_bysj)
+- make book,latex, latex_bysj
 
   ```
   sh run-docker.sh
   cd source
-  make latex
+  make book
   ```
 
   LATEX_CLASS = book # report, article, book, memoir

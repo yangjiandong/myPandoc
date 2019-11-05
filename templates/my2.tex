@@ -1,4 +1,18 @@
-\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(papersize)$$papersize$paper,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(papersize)$$papersize$paper,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{book}
+\usepackage{titlesec} % 标题设置
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}%清空页眉页脚
+\fancyhead[LE,RO]{\thepage}%页码位置：偶数页居左，奇数页居右
+\fancyhead[RE]{\leftmark}%在偶数页显示\leftmark，通常为章标题
+\fancyhead[LO]{\rightmark}%在奇数页左边显示\rightmark，通常为节标题
+\fancypagestyle{plain}{%重新定义plain样式，在章的首页使用plain样式
+\fancyhf{}
+\cfoot{\thepage}
+\renewcommand\headrulewidth{0pt}
+}
+
 $if(beamerarticle)$
 \usepackage{beamerarticle} % needs to be loaded first
 $endif$
@@ -252,8 +266,8 @@ $endif$
 \renewcommand{\indexname}{索~引}
 % \renewcommand{\abstractname}{\Large{摘~要}}
 \newcommand{\keywords}[1]{\\ \\ \textbf{关~键~词}：#1}
-% \titleformat{\chapter}[block]{\center\Large\bf}{\chaptername}{20pt}{}
-% \titleformat{\section}[block]{\large\bf}{\thesection}{10pt}{}
+\titleformat{\chapter}[block]{\Large\bf}{\chaptername}{20pt}{}
+\titleformat{\section}[block]{\large\bf}{\thesection}{10pt}{}
 
 
 $for(include-before)$
