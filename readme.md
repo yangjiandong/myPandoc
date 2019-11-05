@@ -10,6 +10,15 @@ make docx(pdf) f=xx
 ## 推荐方案
 
 - make latex(latex_bysj)
+
+  ```
+  sh run-docker.sh
+  cd source
+  make latex
+  ```
+
+  LATEX_CLASS = book # report, article, book, memoir
+
 - make docx_code
 - make html_re(html_github)
 - make reveal(reveal2)
@@ -18,7 +27,7 @@ make docx(pdf) f=xx
   - or use contents/make
 - 中文pandoc
   - demo/pandoc
-- demo/git-book
+- demo/git-book, use docker one/pandoc
 
 ### ppt, reveal
 

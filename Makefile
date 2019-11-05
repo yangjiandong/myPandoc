@@ -4,7 +4,7 @@ BOOKNAME = my-book
 TITLE = title.txt
 METADATA = metadata.xml
 CHAPTERS2 = ch01.md ch02.md
-CHAPTERS = demo/devs/devs.md
+CHAPTERS = demo/my.md demo/devs/devs.md demo/SpringBootwithRedis.md
 #demo/pandoc/pandoc.markdown
 #demo/SpringBootwithRedis.md
 TOC = --toc --toc-depth=3
@@ -56,13 +56,14 @@ html_re:${f}
 latex:
 	pandoc $(TOC) $(TITLE) $(CHAPTERS) --pdf-engine=xelatex \
 	-V documentclass=$(LATEX_CLASS) \
-	-o out/latex.pdf \
+	-V papersize=a4paper \
+	-o out/latex2.pdf \
 	--template=templates/my2.tex
 
 # --template=./mytemplate.tex
 
-latex_bysj:
-	pandoc $(TOC) $(TITLE) $(CHAPTERS) --pdf-engine=xelatex  \
+latex_bysj:${f}
+	pandoc $(TOC) $(TITLE) ${f} --pdf-engine=xelatex  \
 	-o out/latex_bysj.pdf \
 	--template=templates/bysj2.latex
 

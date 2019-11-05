@@ -114,7 +114,7 @@ Spring Boot使用一个非常特别的PropertySource来允许对值进行合理�
     ```
 
 - 编写CacheConfig
-    
+
     ```
     @Configuration
     @PropertySource(value = "classpath:/redis.properties")
@@ -175,7 +175,7 @@ Spring Boot使用一个非常特别的PropertySource来允许对值进行合理�
     ```
 
 - 启动缓存，使用@Cacheable注解在需要缓存的接口上即可
-    
+
     ```
     @Service
     public class ReportService {
@@ -186,7 +186,7 @@ Spring Boot使用一个非常特别的PropertySource来允许对值进行合理�
       }
     }
     ```
-    
+
 #### 测试验证
 
 运行方法如下：

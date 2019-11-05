@@ -11,7 +11,7 @@
 
 在追求开发体验的提升方面，Spring Boot，甚至可以说整个Spring生态系统都使用到了Groovy编程语言。Boot所提供的众多便捷功能，都是借助于Groovy强大的MetaObject协议、可插拔的AST转换过程以及内置的依赖解决方案引擎所实现的。在其核心的编译模型之中，Boot使用Groovy来构建工程文件，所以它可以使用通用的导入和样板方法（如类的main方法）对类所生成的字节码进行装饰（decorate）。这样使用Boot编写的应用就能保持非常简洁，却依然可以提供众多的功能。
 
-# 安装Boot
+## 安装Boot
 
 从最根本上来讲，Spring Boot就是一些库的集合，它能够被任意项目的构建系统所使用。简便起见，该框架也提供了命令行界面，它可以用来运行和测试Boot应用。框架的发布版本，包括集成的CLI（命令行界面），可以在Spring仓库中手动下载和安装。一种更为简便的方式是使用Groovy环境管理器（Groovy enVironment Manager，GVM），它会处理Boot版本的安装和管理。Boot及其CLI可以通过GVM的命令行gvm install springboot进行安装。在OS X上安装Boot可以使用Homebrew包管理器。为了完成安装，首先要使用brew tap pivotal/tap切换到Pivotal仓库中，然后执行brew install springboot命令。
 
@@ -19,7 +19,7 @@
 
 程序清单1
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -77,7 +77,7 @@
 
 程序清单1.1
 
-```
+```js
 buildscript {
   repositories {
     maven { url "http://repo.spring.io/libs-snapshot" }
@@ -103,7 +103,7 @@ dependencies {
 
 为了快速地搭建和运行Boot工程，Pivotal提供了称之为“Spring Initializr” 的web界面，用于下载预先定义好的Maven或Gradle构建配置。我们也可以使用Lazybones模板实现快速起步，在执行lazybones create spring-boot-actuator my-app命令后，它会为Boot应用创建必要的工程结构以及gradle构建文件。
 
-# 开发Spring Boot应用
+## 开发Spring Boot应用
 
 Spring Boot[^1] 在刚刚公开宣布之后就将一个样例发布到了Twitter上，它目前成为了最流行的一个应用样例。它的全部描述如程序清单1.2所示，一个非常简单的Groovy文件可以生成功能强大的以Spring为后端的web应用。
 
@@ -121,10 +121,10 @@ Boot能够自动确定类所需的功能，这一点使其成为了强大的快�
 
 [^4]: For readings of *Odes* 1.24, [see @Commager_1995 p. 287-90; @Khan_1967; @Nisbet-Hubbard_1970 p. 279-89; @Lowrie_1994 p. 377-94; @Putnam_1992; @Horace_1995 p. 112-15]. For the Epicurean, and specifically Philodeman, influence on the ode, [@Thibodeau_2003 pp. 243-56, and @Armstrong_2008 p. 97-99].
 
-# 延伸阅读
+## 延伸阅读
 
 Spring Boot团队已经编写了完整的指导和样例来阐述框架的功能。Blog文章、参考资料以及API文档都可以在Spring.IO网站上找到。项目的GitHub页面上可以找到示例的工程，更为具体的细节可以阅读Spring Boot的参考手册。SpringSourceDev YouTube频道有一个关于Spring Boot的webinar，它概述了这个项目的目标和功能。在去年在伦敦举行的Groovy & Grails Exchange上，David Dawson做了一个使用Spring Boot开发微服务的演讲。
 
-# 关于作者
+## 关于作者
 
 Daniel Woods是Netflix的高级软件工程师，负责开发持续交付和云部署工具。他擅长JVM栈相关的技术，活跃在Groovy、Grails和Spring社区。可以通过电子邮件地址danielpwoods@gmail.com或Twitter @danveloper联系到Daniel。

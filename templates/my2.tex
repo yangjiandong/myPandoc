@@ -29,6 +29,7 @@ $endif$
 
   % SUPPORT for Chinese
   \usepackage[boldfont,slantfont,CJKchecksingle]{xeCJK}
+  \usepackage{CJKnumb}
   \usepackage{fontspec,xltxtra,xunicode}
   \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
   \punctstyle{quanjiao}
@@ -239,6 +240,21 @@ $if(abstract)$
 $abstract$
 \end{abstract}
 $endif$
+
+\renewcommand{\chaptername}{第\CJKnumber{\thechapter}章}
+\newcommand{\sectionname}{节}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\bibname}{参考文献}
+\renewcommand{\contentsname}{目~录}
+\renewcommand{\listfigurename}{图~目~录}
+\renewcommand{\listtablename}{表~目~录}
+\renewcommand{\indexname}{索~引}
+% \renewcommand{\abstractname}{\Large{摘~要}}
+\newcommand{\keywords}[1]{\\ \\ \textbf{关~键~词}：#1}
+% \titleformat{\chapter}[block]{\center\Large\bf}{\chaptername}{20pt}{}
+% \titleformat{\section}[block]{\large\bf}{\thesection}{10pt}{}
+
 
 $for(include-before)$
 $include-before$
