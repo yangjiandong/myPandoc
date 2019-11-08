@@ -256,6 +256,7 @@ $abstract$
 $endif$
 
 \renewcommand{\chaptername}{第\CJKnumber{\thechapter}章}
+\renewcommand{\chaptermark}[1]{\markboth{第~\thechapter~章~~~#1~}{}}
 \newcommand{\sectionname}{节}
 \renewcommand{\figurename}{图}
 \renewcommand{\tablename}{表}
@@ -266,8 +267,8 @@ $endif$
 \renewcommand{\indexname}{索~引}
 % \renewcommand{\abstractname}{\Large{摘~要}}
 \newcommand{\keywords}[1]{\\ \\ \textbf{关~键~词}：#1}
-\titleformat{\chapter}[block]{\Large\bf}{\chaptername}{20pt}{}
-\titleformat{\section}[block]{\large\bf}{\thesection}{10pt}{}
+\titleformat{\chapter}[display]{\Large\bf}{\chaptername}{20pt}{}
+\titleformat{\section}[display]{\large\bf}{\thesection}{10pt}{}
 
 
 $for(include-before)$
