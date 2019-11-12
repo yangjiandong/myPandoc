@@ -15,6 +15,8 @@ sh install.sh
 
 ```shell
 sudo gem install rake ultraviolet discount rdiscount builder
+# if show error: can't find header files for ruby...
+# xcode-select --install
 rake html
 rake pdf
 ```

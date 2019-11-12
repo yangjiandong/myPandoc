@@ -22,7 +22,7 @@ make docx(pdf) f=xx
 - make docx_code
 - make html_re(html_github)
 - make reveal(reveal2)
-- sdcamp
+- sdcamp, use docker, 安装参考 (https://github.com/larrycai/sdcamp)
   - ./mmd2bok
   - or use contents/make
 - 中文pandoc
