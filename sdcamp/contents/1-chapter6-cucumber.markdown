@@ -8,7 +8,7 @@
 
 ## 环境准备 ##
  * Windows下的Ruby <http://rubyinstaller.org>
- 
+
 ## Cucumber 简介 ##
 Cucumber（英文：黄瓜）(官方网站是<http://cukes.info/>)是一个实例化需求的极佳实现伴侣。它是基于Ruby的开源测试工具，得益于Ruby便于创建和使用DSL的特性，它可以通过自然语言（文本文字）来描述需求（业务层），并通过关键字驱动和正则表达式匹配告诉去做哪些事情（驱动层），在运行自动化测试结束以后，还会给出详细的报告。
 
@@ -24,7 +24,7 @@ Feature: Adding
   In order to avoid silly mistakes
   As a math idiot
   I want to be told the sum of two numbers
-  
+
   Scenario: Add two numbers
     Given the input "2+2"
     When the calculator is run
@@ -53,7 +53,7 @@ Feature: Adding
 
   $ gem install cucumber # 如果需要配代理，-p http://<proxyserver>:<port>
   $ gem install rspec # cucumber 需要
-    
+
 ## 运行Cucumber ##
 
 一旦Cucumber装好了，我们就可以使用 cucumber 命令来运行feature文件。
@@ -108,9 +108,9 @@ feature文件放在`features`目录下，如果cucumber命令后不跟任何东�
  5. 后面的以**Given/When/Then/And/But**开头（这些也是关键字）的都是步骤（步骤后面不需要跟冒号），用来阐述到底要的是什么样的需求。
  6. `Scenario Outline: Add two numbers`: 关键字Scenario Outline，和Scenario不同的是它是支持表格的形式。
  7. **Scenario** 和 **Scenario Outline**提供了特性的多个场景，可以出现多次。**Scenario Outline**提供了表格的形式，适合批量数据的处理。
- 
+
 具体怎么连到被测系统就靠驱动层了。
- 
+
 ## 驱动层 ##
 驱动层的主要目的就是把业务层中的数据（如上“2+2”，“加”）提取出来，通过于应用程序进行交互，最后把返回结果和预期的值（“4”）进行比对，得出测试结果。
 
@@ -148,22 +148,23 @@ calculator/step_definitions/calculator_steps.rb
 
  1. `features`下面按功能放置各个业务。
  2. `step_definitions`存放驱动层的脚本。
- 
-## 继续网上书店的例子 ## 
+
+## 继续网上书店的例子 ##
 Cucumber虽然上是支持多语言包括中文[^61]的，但还是建议关键字用英文来写，以免其他工具的不支持。
 
 用Cucumber重写的话，下面是一种方案。
 
-  # book.feature
+book.feature
+
   Feature: 买书免运费
     提供读者(不管普通还是VIP客户）买书优惠活动，
     买书超过（含）6本以上的，可以免费送货到除西藏省，青海省的大陆地区。
-    Scenario Outline: 
+    Scenario Outline:
       Given 一个客户买了 <几本书>
       And 买了 <其他类别> 的东西
       When 选好 <送货地址>
       Then 看见 <运费为0>
-      
+
       Examples:
       | 几本书| 其他类别 | 送货地址 | 运费为0 |
       |  6    | n/a      | 上海     |  yes    |
@@ -194,7 +195,7 @@ Cucumber虽然上是支持多语言包括中文[^61]的，但还是建议关键�
     else
       @result.should == 1
     end
-  end    
+  end
 ```
 所以运行后，你应该能够从输出结果中看到3个Scenario测试通过了。
 
@@ -241,7 +242,7 @@ Cucumber虽然上是支持多语言包括中文[^61]的，但还是建议关键�
  2. 阅读参考书，了解更多的Cucumber知识。
  2. 了解Gherkin语言的详细内容，如**tag**，并结合Cucumber去执行。
  3. 看看如何能够实施Cucumber，使它能够整合到持续集成中去。
- 
+
 ## 小结 ##
 
 Cucumber也只是一种工具，如果不理解实例化需求说明的真正意义，它会被用得很累，好自为之。
@@ -252,6 +253,6 @@ Cucumber也只是一种工具，如果不理解实例化需求说明的真正意
  3. Cucumber <http://cukes.info>
  4. Gherkin语言：<https://github.com/cucumber/cucumber/wiki/Gherkin>
  5. Book: The Secret Ninja Cucumber Scrolls: <http://cuke4ninja.com/>
- 
- [gherkin]: https://github.com/cucumber/cucumber/wiki/Gherkin 
+
+ [gherkin]: https://github.com/cucumber/cucumber/wiki/Gherkin
 

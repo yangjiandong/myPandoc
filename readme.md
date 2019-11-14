@@ -49,6 +49,30 @@ make docx(pdf) f=xx
 ), 比较简洁
 
 
+11.13
+---
+
+- sdcamp
+
+  ```
+  \lstset{
+  %language=C++,
+  basicstyle=\small\ttfamily,
+  numbers=left,
+  numbersep=5pt,
+  xleftmargin=20pt,
+  frame=tb,
+  framexleftmargin=20pt,
+  keywordstyle=\color{blue}
+  }
+  ```
+
+  多层缩进会出现 `\begin{lstlisting}[language=```python]`，采用替换脚本
+
+  ```
+  find ./chapters.tex -type f -exec sed -i 's/```//g' {} \;
+  ```
+
 09.11
 ---
 

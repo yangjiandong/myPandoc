@@ -37,9 +37,9 @@ docx:
 		# --filter filter-pagebreak.hs \
 
 docx_twocolumn:
-	pandoc -r markdown -w docx -s -S --csl=csl/chicago-author-date.csl $(CHAPTERS) \
-	    --reference-docx=templates/twocolumns.docx --output=out/out.docx
+	pandoc -r markdown -w docx --csl=csl/chicago-author-date.csl $(CHAPTERS) \
+	    --reference-doc=templates/twocolumns.docx --output=out/out.docx
 
 html:
-	pandoc $(TOC) $(CHAPTERS) -t html5 -o out/out.html --toc --toc-depth 2 --template=templates/pm-template
+	pandoc $(TOC) $(CHAPTERS) -t html5 -o out/out.html -V pagetitle=x --template=templates/pm-template
 
