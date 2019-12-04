@@ -49,6 +49,14 @@ make docx(pdf) f=xx
 ), 比较简洁
 
 
+12.04
+---
+
+- latex 打水印, templates/my2.tex
+- markdown css
+  - han.css
+  - markdownhere.css, 李笑来提供，可以用于 chrome 插件
+  
 11.13
 ---
 

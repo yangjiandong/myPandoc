@@ -13,6 +13,16 @@
 \renewcommand\headrulewidth{0pt}
 }
 
+% 制作水印
+\usepackage[firstpage]{draftwatermark} %此处可选项为firstpage表只有第一页有，若为空则表示所有页面都有水印
+\SetWatermarkText{此处为水印内容}%若要多行显示可以用
+\SetWatermarkColor{red}
+\SetWatermarkColor[rgb]{0,1,0}
+\SetWatermarkText{\shortstack{鑫亿技术文档\\注意保密}}
+%此WatermarkText作用范围为所在页到下一个\SetWatermarkText设置的页
+\SetWatermarkScale{0.3}          %设定大小
+\SetWatermarkLightness{0.88}%defaultis0.8
+
 $if(beamerarticle)$
 \usepackage{beamerarticle} % needs to be loaded first
 $endif$
