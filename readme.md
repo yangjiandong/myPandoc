@@ -52,11 +52,13 @@ make docx(pdf) f=xx
 12.04
 ---
 
+- add jgm templates
+  - jgm-templates
 - latex 打水印, templates/my2.tex
 - markdown css
   - han.css
   - markdownhere.css, 李笑来提供，可以用于 chrome 插件
-  
+
 11.13
 ---
 
