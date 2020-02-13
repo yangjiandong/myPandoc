@@ -7,5 +7,6 @@
 docker run \
   --rm -it \
   -v ${PWD}:/source \
-  one/pandoc:2.0 \
+  -v ${PWD}/font/Songti.ttc:/usr/share/fonts/Songti.ttc \
+  one/pandoc:2.x \
   /bin/bash

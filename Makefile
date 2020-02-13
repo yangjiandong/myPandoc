@@ -4,18 +4,44 @@ BOOKNAME = my-book
 TITLE = title.txt
 METADATA = metadata.xml
 CHAPTERS2 = ch01.md ch02.md
-CHAPTERS = demo/my.md demo/devs/devs.md demo/SpringBootwithRedis.md
+CHAPTERS = works/01.md works/02.md
+# CHAPTERS = demo/my.md demo/devs/devs.md demo/SpringBootwithRedis.md
 #demo/pandoc/pandoc.markdown
 #demo/SpringBootwithRedis.md
 TOC = --toc --toc-depth=3
 COVER_IMAGE = cover.jpg
-LATEX_CLASS = book
+LATEX_CLASS = article
 # report, article, book, memoir
 
 #cat 00*.md > xxx.md
 
 md22pdf:${f}
 	./md2pdf ${f} -o out/md2.pdf
+
+work-pdf:
+	pandoc $(CHAPTERS) --pdf-engine=xelatex \
+	-o out/work.pdf \
+	--template=templates/my2.tex
+
+book:
+	pandoc $(TOC) $(TITLE) $(CHAPTERS) --pdf-engine=xelatex \
+	-o out/book.pdf \
+	--template=templates/my2.tex
+
+latex:
+	pandoc $(TOC) $(TITLE) $(CHAPTERS) --pdf-engine=xelatex \
+	-V documentclass=$(LATEX_CLASS) \
+	-V papersize=a4paper \
+	-o out/$(LATEX_CLASS).pdf \
+	--template=./mytemplate.tex
+
+# --template=./mytemplate.tex
+# --template=templates/my.tex
+
+article:
+	pandoc $(TOC) $(TITLE) $(CHAPTERS) --pdf-engine=xelatex  \
+	-o out/article_bysj.pdf \
+	--template=templates/bysj2.latex
 
 ls:
 	pandoc --toc --toc-depth=3  demo/ls.md --pdf-engine=xelatex \
@@ -52,25 +78,6 @@ html_re:${f}
 	--template=templates/pm-template
 	# add style to table
 	sed -i '' 's/<table>/<table class="table table-bordered table-condensed">/' out/out.html
-
-book:
-	pandoc $(TOC) $(TITLE) $(CHAPTERS) --pdf-engine=xelatex \
-	-o out/book.pdf \
-	--template=templates/my2.tex
-
-latex:
-	pandoc $(TOC) $(TITLE) $(CHAPTERS) --pdf-engine=xelatex \
-	-V documentclass=$(LATEX_CLASS) \
-	-V papersize=a4paper \
-	-o out/latex2.pdf \
-	--template=templates/my.tex
-
-# --template=./mytemplate.tex
-
-latex_bysj:${f}
-	pandoc $(TOC) $(TITLE) ${f} --pdf-engine=xelatex  \
-	-o out/latex_bysj.pdf \
-	--template=templates/bysj2.latex
 
 #
 reveal3:${f}

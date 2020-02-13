@@ -1,5 +1,5 @@
-pandoc2.x - docs
-===
+# pandoc2.x - docs
+
 
 pandoc to docx, html, pdf
 
@@ -9,7 +9,7 @@ make docx(pdf) f=xx
 
 ## 推荐方案
 
-- make book,latex, latex_bysj
+- make book,latex, article
 
   ```
   sh run-docker.sh
@@ -17,7 +17,10 @@ make docx(pdf) f=xx
   make book
   ```
 
-  LATEX_CLASS = book # report, article, book, memoir
+  注意风格
+  - book, 书籍风格
+  - article
+  - latex, 需指定 LATEX_CLASS = book # report, article, book, memoir
 
 - make docx_code
 - make html_re(html_github)
@@ -48,6 +51,17 @@ make docx(pdf) f=xx
 - [distsysbook](https://github.com/mixu/distsysbook/
 ), 比较简洁
 
+
+2020.02.13
+---
+
+- one/pandoc:2.x, 中文字体采用 `Songti TC`，也可以动态加载字体
+
+  run-docker.sh
+
+  ```
+  -v ${PWD}/font/Songti.ttc:/usr/share/fonts/Songti.ttc \
+  ```
 
 11.13
 ---

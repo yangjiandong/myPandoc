@@ -13,12 +13,12 @@ fontsize=12pt
 #fontsize=11pt
 #fontsize=12pt
 # PingFang SC
-mainfont="Adobe Fangsong Std"
+# mainfont="Adobe Fangsong Std"
 # sansfont=Corbel
 # monofont=Consolas
-# mainfont="WenQuanYi Zen Hei Sharp"
-sansfont="PingFang SC"
-monofont="PingFang SC"
+mainfont="Songti TC"
+sansfont="WenQuanYi Zen Hei Sharp"
+monofont="WenQuanYi Zen Hei Sharp"
 language=english
 #language=swedish
 nohyphenation=false
