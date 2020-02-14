@@ -76,7 +76,7 @@
   \RequirePackage{fontspec,xltxtra,xunicode}% 这里使用 xetex 相应的宏包
    \RequirePackage{zhfont,zhmath}        % 中文支持使用zhspacing
    \zhspacing
-   \setzhmainfont[BoldFont=冬青黑体简体中文]{WenQuanYi Zen Hei}%这里设置中文粗体和普通字体
+   \setzhmainfont[Songti TC]{WenQuanYi Zen Hei}%这里设置中文粗体和普通字体
    \setmainfont{Times New Roman}       %这里设置英文衬线字体
    \setmonofont{FreeMono}              %英文等宽字体
    \setsansfont{FreeMono}              %英文无衬线字体
@@ -87,7 +87,7 @@
      \RequirePackage[CJKnumber,CJKtextspaces,CJKmathspaces]{xeCJK}
      \punctstyle{kaiming} %标点格式 or kaiming
      \defaultfontfeatures{Mapping=tex-text} % after fontspec
-     \setCJKmainfont[BoldFont={冬青黑体简体中文}]{WenQuanYi Zen Hei}
+     \setCJKmainfont{WenQuanYi Zen Hei}
      \setCJKsansfont{冬青黑体简体中文}
      \setCJKmonofont{AR PL KaitiM GB}
      \setCJKfamilyfont{song}{WenQuanYi Zen Hei}
