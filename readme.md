@@ -54,6 +54,11 @@ make docx(pdf) f=xx
 
 - [重庆大学论文](demo/Academia-Writing-with-Markdown-Using-Pandoc)
 
+2021.05.15
+---
+
+- [编写高质量Python 的九个建议](http://58.216.212.154:10080/yangjiandong/writing_solid_python_code_gitbook.git)
+
 2020.02.13
 ---
 

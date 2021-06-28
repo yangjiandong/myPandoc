@@ -1,3 +1,5 @@
+.PHONY: phony
+
 # use pandoc 2.x
 BUILD = build
 BOOKNAME = my-book
