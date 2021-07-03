@@ -1,0 +1,58 @@
+{
+    "author": "鑫亿",
+    "title": "技术手册",
+    "description": "鑫亿开发技术资料",
+    "generator": "site",
+    "links": {
+        "sharing": {
+            "all": false
+        }
+    },
+    "styles": {
+        "website": "styles/website.css"
+    },
+    "language" : "zh-hans",
+    "plugins": [
+        "-sharing",
+        "-lunr",
+        "-search",
+        "search-plus",
+        "simple-page-toc",
+        "tbfed-pagefooter",
+        "splitter",
+        "copy-code-button",
+        "expandable-chapters-small"
+    ],
+    "pluginsConfig": {
+        "tbfed-pagefooter": {
+             "copyright":"&copy 鑫亿智慧医疗开发团队",
+             "modify_label": "该文件修订时间：",
+             "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "simple-page-toc": {
+            "maxDepth": 3,
+            "skipFirstH1": true
+        },
+        "anchor-navigation-ex": {
+            "isShowTocTitleIcon": true,
+            "tocLevel1Icon": "fa fa-hand-o-right",
+            "tocLevel2Icon": "fa fa-hand-o-right",
+            "tocLevel3Icon": "fa fa-hand-o-right"
+        },
+        "expandable-chapters":{}
+    },
+    "pdf": {
+      "toc": true,
+      "pageNumbers": true,
+      "fontSize": 12,
+      "fontFamily": "WenQuanYi Micro Hei",
+      "paperSize": "a4",
+      "margin": {
+        "right": 26,
+        "left": 26,
+        "top": 36,
+        "bottom": 36
+      }
+    }
+  }
+  

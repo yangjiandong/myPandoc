@@ -1,0 +1,36 @@
+#!/bin/bash
+rm -rf latex
+mkdir latex
+cd latex
+cp -rf ../template/* .
+# cp -rf ../contents/img .
+#ls -al img
+# multimarkdown -t latex meta.txt ../contents/0-preface*.markdown -o preface.tex
+multimarkdown -t latex meta.txt \
+	../../'第 1 章 引论'/readme.md \
+	../../'第 2 章 编程惯用法'/readme.md \
+	../../'第 3 章 基础语法'/readme.md \
+	../../'第 4 章 库'/readme.md \
+	../../'第 5 章 设计模式'/readme.md \
+	../../'第 6 章 内部机制'/readme.md \
+	../../'第 7 章 使用工具辅助开发'/readme.md \
+	../../'第 8 章 性能剖析与优化'/readme.md \
+	-o chapters.tex
+# remove ``` 
+find ./chapters.tex -type f -exec sed -i 's/```python/python/g' {} \;
+# multimarkdown -t latex meta.txt ../contents/2-appendix*.markdown -o appendix.tex
+if [ "X$OS" == "XWindows_NT" ]; then
+	echo "windows platform"
+	cp template-win.tex book.tex
+else
+	echo "unix platform"
+	cp template.tex book.tex
+fi
+#exit
+xelatex book.tex
+xelatex book.tex
+# xelatex sdcamp.tex
+cp book.pdf ..
+echo
+echo
+echo "Done!"

@@ -30,6 +30,20 @@ make docx(pdf) f=xx
   - demo/pandoc
 - demo/git-book, use docker one/pandoc
 
+### PanBook
+
+- [PanBook](https://github.com/annProg/PanBook)，Pandoc LaTeX，Epub模板，用于生成书籍，幻灯片(beamer)，简历，论文等（cv, thesis, ebook, beamer)，pdf 效果可比印刷
+	参考 [PanBook-Demo](http://58.216.212.154:10080/yangjiandong/PanBook-Demo) 网上示例项目
+	```shell
+  docker run \
+    --rm -it \
+    -v ${PWD}/:/data \
+    one/panbook%
+  # in container
+  cd article
+  make
+  ```
+
 ### ppt, reveal
 
 - reveal.md
@@ -74,16 +88,19 @@ make docx(pdf) f=xx
 ---
 
 - [编写高质量Python 的九个建议](http://58.216.212.154:10080/yangjiandong/writing_solid_python_code_gitbook.git)
-
-  TODO, one/pandoc:2.x 有问题
+  - writing_solid_python_code_gitbook
+     use ebook, no gitbook
+     ```
+     sh run-docker.sh
+     cd /source/ebook
+     sh mmd2bok
+     ```
 
 2020.02.13
 ---
 
 - one/pandoc:2.x, 中文字体采用 `Songti TC`，也可以动态加载字体
-
   run-docker.sh
-
   ```
   -v ${PWD}/font/Songti.ttc:/usr/share/fonts/Songti.ttc \
   ```
