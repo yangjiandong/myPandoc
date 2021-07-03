@@ -8,6 +8,6 @@
 docker run \
   --rm -it \
   -v ${PWD}:/source \
-  -v ${PWD}/font/simsun.ttc:/usr/share/fonts/simsun.ttc \
+  -v ${PWD}/font/PingFang.ttc:/usr/share/fonts/PingFang.ttc \
   one/pandoc:2.x \
   /bin/bash

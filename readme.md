@@ -8,6 +8,8 @@ make docx(pdf) f=xx
 
 ## 推荐方案
 
+- mindoc 通过 pandoc 导出方案
+  - make work-pdf, work-html
 - make book,latex, article
 
   ```
@@ -24,9 +26,6 @@ make docx(pdf) f=xx
 - make docx_code
 - make html_re(html_github)
 - make reveal(reveal2)
-- sdcamp, use docker, 安装参考 (https://github.com/larrycai/sdcamp)
-  - ./mmd2bok
-  - or use contents/make
 - 中文pandoc
   - demo/pandoc
 - demo/git-book, use docker one/pandoc
@@ -50,14 +49,33 @@ make docx(pdf) f=xx
 - [distsysbook](https://github.com/mixu/distsysbook/
 ), 比较简洁
 
+### sdcamp
+
+- ./sdcamp, use docker, 安装参考 (https://github.com/larrycai/sdcamp)
+  - ./mmd2bok
+  - use pandoc
+
+    ```
+    cd contents
+    make pdf
+    ```
+
 ## 论文
 
 - [重庆大学论文](demo/Academia-Writing-with-Markdown-Using-Pandoc)
+
+
+07.03
+---
+
+- ThinkPython2-CN
 
 2021.05.15
 ---
 
 - [编写高质量Python 的九个建议](http://58.216.212.154:10080/yangjiandong/writing_solid_python_code_gitbook.git)
+
+  TODO, one/pandoc:2.x 有问题
 
 2020.02.13
 ---
@@ -83,7 +101,7 @@ make docx(pdf) f=xx
 ---
 
 - add jgm templates
-  - jgm-templates
+  - ./jgm-templates
 - latex 打水印, templates/my2.tex
 - markdown css
   - han.css

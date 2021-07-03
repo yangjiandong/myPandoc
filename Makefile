@@ -6,11 +6,11 @@ BOOKNAME = my-book
 TITLE = title.txt
 METADATA = metadata.xml
 CHAPTERS2 = ch01.md ch02.md
-CHAPTERS = works/01.md works/02.md
+CHAPTERS = works/20.md works/21.md
 # CHAPTERS = demo/my.md demo/devs/devs.md demo/SpringBootwithRedis.md
 #demo/pandoc/pandoc.markdown
 #demo/SpringBootwithRedis.md
-TOC = --toc --toc-depth=3
+TOC = --toc --toc-depth=2
 COVER_IMAGE = cover.jpg
 LATEX_CLASS = article
 # report, article, book, memoir
@@ -20,8 +20,15 @@ LATEX_CLASS = article
 md22pdf:${f}
 	./md2pdf ${f} -o out/md2.pdf
 
+work-html:
+	pandoc $(CHAPTERS) -t html5 -o out/out_work.html \
+	--toc --toc-depth 2 \
+	-s --self-contained \
+	--metadata pagetitle="github" \
+	--template=templates/GitHub.html5
+
 work-pdf:
-	pandoc $(CHAPTERS) --pdf-engine=xelatex \
+	pandoc $(TOC) $(CHAPTERS) --pdf-engine=xelatex \
 	-o out/work.pdf \
 	--template=templates/my2.tex
 
@@ -44,6 +51,7 @@ article:
 	pandoc $(TOC) $(TITLE) $(CHAPTERS) --pdf-engine=xelatex  \
 	-o out/article_bysj.pdf \
 	--template=templates/bysj2.latex
+
 
 ls:
 	pandoc --toc --toc-depth=3  demo/ls.md --pdf-engine=xelatex \
@@ -68,7 +76,7 @@ hisupdate:
 
 html_github:${f}
 	pandoc ${f} -t html5 -o out/out_github.html \
-	--toc --toc-depth 4 \
+	--toc --toc-depth 2 \
 	-s --self-contained \
 	--metadata pagetitle="github" \
 	--template=templates/GitHub.html5
