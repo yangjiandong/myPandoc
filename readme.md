@@ -79,6 +79,12 @@ make docx(pdf) f=xx
 - [重庆大学论文](demo/Academia-Writing-with-Markdown-Using-Pandoc)
 
 
+07.12
+---
+
+- znd
+  `make znd f=demo/znd/znd-01.md`
+
 07.03
 ---
 

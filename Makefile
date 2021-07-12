@@ -52,6 +52,8 @@ article:
 	-o out/article_bysj.pdf \
 	--template=templates/bysj2.latex
 
+znd:${f}
+	pandoc -r markdown -w docx --csl=csl/chicago-author-date.csl ${f} --output=out/znd.docx
 
 ls:
 	pandoc --toc --toc-depth=3  demo/ls.md --pdf-engine=xelatex \
