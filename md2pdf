@@ -35,12 +35,13 @@ alignment=flushleft
 #alignment=flushright
 #alignment=center
 #-V CJKmainfont=SimSun
-
 toc=3
-pandoc --pdf-engine=xelatex --template=$template_home/default.latex \
+
+pandoc --pdf-engine=xelatex  \
+-V documentclass=book \
 -V language=$language \
 -V paper=$paper -V hmargin=$hmargin -V vmargin=$vmargin \
--V mainfont="$mainfont" -V sansfont="$sansfont" -V monofont="$monofont" \
+-V CJKmainfont="$mainfont" \
 -V geometry=$geometry -V alignment=$alignment -V columns=$columns \
 -V fontsize=$fontsize -V nohyphenation=$nohyphenation \
 -V toc=$toc \

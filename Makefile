@@ -5,15 +5,18 @@ BUILD = build
 BOOKNAME = my-book
 TITLE = title.txt
 METADATA = metadata.xml
-CHAPTERS2 = ch01.md ch02.md
-CHAPTERS = works/20.md works/21.md
+CHAPTERS2 = works/20.md works/21.md
+CHAPTERS = demo/ls.md
 # CHAPTERS = demo/my.md demo/devs/devs.md demo/SpringBootwithRedis.md
 #demo/pandoc/pandoc.markdown
 #demo/SpringBootwithRedis.md
-TOC = --toc --toc-depth=2
+TOC = --toc --toc-depth=3
 COVER_IMAGE = cover.jpg
-LATEX_CLASS = article
+LATEX_CLASS = book
 # report, article, book, memoir
+mainfont="LXGWWenKai-Regular.ttf"
+sansfont="LXGWWenKai-Light.ttf"
+monofont="LXGWWenKai-Light.ttf"
 
 #cat 00*.md > xxx.md
 
@@ -37,12 +40,19 @@ book:
 	-o out/book.pdf \
 	--template=templates/my2.tex
 
+book-usefont:
+	pandoc $(TOC) $(TITLE) $(CHAPTERS) --pdf-engine=xelatex \
+	-V CJKmainfont=$(mainfont) \
+	-o out/book-usefont.pdf \
+	--template=templates/my2.tex
+
 latex:
 	pandoc $(TOC) $(TITLE) $(CHAPTERS) --pdf-engine=xelatex \
 	-V documentclass=$(LATEX_CLASS) \
 	-V papersize=a4paper \
+	-V mainfont=$(mainfont) -V sansfont=$(sansfont) -V monofont=$(monofont) \
 	-o out/$(LATEX_CLASS).pdf \
-	--template=./mytemplate.tex
+	--template=templates/mytemplate.tex
 
 # --template=./mytemplate.tex
 # --template=templates/my.tex

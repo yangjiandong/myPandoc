@@ -1,7 +1,3 @@
----
-fontsize: 20pt
-documentclass: book
----
 
 历 史 重 新 评 说
 

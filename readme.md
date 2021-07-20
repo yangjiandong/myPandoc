@@ -10,19 +10,17 @@ make docx(pdf) f=xx
 
 - mindoc 通过 pandoc 导出方案
   - make work-pdf, work-html
-- make book,latex, article
-
+- make book，注意这个方案没有 make latex 方案完美，页眉显示的章节有问题，偶书页一直显示目录
   ```
   sh run-docker.sh
   cd source
   make book
   ```
-
-  注意风格
+- make latex，注意风格
   - book, 书籍风格
   - article, 文档
-  - latex, 需指定 LATEX_CLASS = book # report, article, book, memoir
-
+  - latex, 需指定 LATEX_CLASS = book # report, article, book,
+  - memoir 有问题
 - make docx_code
 - make html_re(html_github)
 - make reveal(reveal2)
@@ -32,7 +30,7 @@ make docx(pdf) f=xx
 
 ### PanBook
 
-- [PanBook](https://github.com/annProg/PanBook)，Pandoc LaTeX，Epub模板，用于生成书籍，幻灯片(beamer)，简历，论文等（cv, thesis, ebook, beamer)，pdf 效果可比印刷
+- 最完美的 BOOK 方案。[PanBook](https://github.com/annProg/PanBook)，Pandoc LaTeX，Epub模板，用于生成书籍，幻灯片(beamer)，简历，论文等（cv, thesis, ebook, beamer)，pdf 效果可比印刷
 	参考 [PanBook-Demo](http://58.216.212.154:10080/yangjiandong/PanBook-Demo) 网上示例项目
 	```shell
   docker run \
@@ -78,6 +76,14 @@ make docx(pdf) f=xx
 
 - [重庆大学论文](demo/Academia-Writing-with-Markdown-Using-Pandoc)
 
+07.20
+---
+
+- 中文字体，`-V CJKmainfont=$(mainfont) \`
+  - make book-usefont
+- md2pdf，取消 `--template=$template_home/default.latex`
+- my2.tex 目录后增加分页
+
 07.19
 ---
 
@@ -90,6 +96,7 @@ make docx(pdf) f=xx
     sansfont="LXGWWenKai-Light.ttf"
     monofont="LXGWWenKai-Light.ttf"
     ```
+  - make md22pdf f=demo/ls.md
 
 07.12
 ---
