@@ -16,12 +16,17 @@ fontsize=12pt
 # mainfont="Adobe Fangsong Std"
 # sansfont=Corbel
 # monofont=Consolas
-mainfont="Songti TC"
-sansfont="WenQuanYi Zen Hei Sharp"
-monofont="WenQuanYi Zen Hei Sharp"
-language=english
-#language=swedish
-nohyphenation=false
+# Songti
+# mainfont="Songti TC"
+# sansfont="WenQuanYi Zen Hei Sharp"
+# monofont="WenQuanYi Zen Hei Sharp"
+# LXGWWenKai
+mainfont="LXGWWenKai-Regular.ttf"
+sansfont="LXGWWenKai-Light.ttf"
+monofont="LXGWWenKai-Light.ttf"
+# language=english
+language=chinese
+nohyphenation=true
 columns=onecolumn
 #columns=twocolumn
 geometry=portrait

@@ -78,6 +78,18 @@ make docx(pdf) f=xx
 
 - [重庆大学论文](demo/Academia-Writing-with-Markdown-Using-Pandoc)
 
+07.19
+---
+
+- my2.tex 取消水纹，docker 没有安装
+- use [LXGW WenKa 中文字体](https://github.com/lxgw/LxgwWenKai)
+  - in docker container, use `fc-list :lang=zh-cn` show font name
+  - font
+  ```
+    mainfont="LXGWWenKai-Regular.ttf"
+    sansfont="LXGWWenKai-Light.ttf"
+    monofont="LXGWWenKai-Light.ttf"
+    ```
 
 07.12
 ---
