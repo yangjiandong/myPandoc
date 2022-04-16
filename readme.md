@@ -25,19 +25,20 @@ make docx(pdf) f=xx
 - make docx_code
 - make html_re(html_github)
 - make reveal(reveal2)
-- 中文pandoc
+- 中文 pandoc
   - demo/pandoc
 - demo/git-book, use docker one/pandoc
 
 ### PanBook
 
-- 最完美的 BOOK 方案。[PanBook](https://github.com/annProg/PanBook)，Pandoc LaTeX，Epub模板，用于生成书籍，幻灯片(beamer)，简历，论文等（cv, thesis, ebook, beamer)，pdf 效果可比印刷
-	参考 [PanBook-Demo](http://58.216.212.154:10080/yangjiandong/PanBook-Demo) 网上示例项目
-	```shell
+- 最完美的 BOOK 方案
+  - [PanBook](https://github.com/annProg/PanBook)，Pandoc LaTeX，Epub 模板，用于生成书籍，幻灯片(beamer)，简历，论文等（cv, thesis, ebook, beamer)，pdf 效果可比印刷
+  - 参考 [PanBook-Demo](http://58.216.212.154:10080/yangjiandong/PanBook-Demo) 网上示例项目
+  ```shell
   docker run \
     --rm -it \
     -v ${PWD}/:/data \
-    one/panbook%
+    one/panbook
   # in container
   cd article
   make
@@ -51,7 +52,7 @@ make docx(pdf) f=xx
 
 - use phantomjs and price, create html,pdf book
 - [cssprint-sample's github](https://github.com/Shyujikou/cssprint-sample)
-    - use [han.js](https://github.com/ethantw/Han)
+  - use [han.js](https://github.com/ethantw/Han)
 - from html to pdf
 - demo/cssprint
 - ? 没有提供 markdown 格式文档，只能编辑 html
@@ -59,12 +60,12 @@ make docx(pdf) f=xx
 ### other markdown tools
 
 - [git book](https://github.com/liuhui998/gitbook), use `rake`, `price` create pdf
-- [distsysbook](https://github.com/mixu/distsysbook/
-), 比较简洁
+- [distsysbook](https://github.com/mixu/distsysbook/), 比较简洁
 
 ### sdcamp
 
 - ./sdcamp, use docker, 安装参考 (https://github.com/larrycai/sdcamp)
+
   - ./mmd2bok
   - use pandoc
 
@@ -77,8 +78,12 @@ make docx(pdf) f=xx
 
 - [重庆大学论文](demo/Academia-Writing-with-Markdown-Using-Pandoc)
 
-07.20
----
+## 2022.04.16
+
+- add pandoc-latex-template [Eisvogel template](https://github.com/Wandmalfarbe/pandoc-latex-template)
+  - make eisvogel
+
+## 07.20
 
 - 中文字体，`-V CJKmainfont=$(mainfont) \`
   - make book-usefont
@@ -86,54 +91,49 @@ make docx(pdf) f=xx
 - md2pdf，取消 `--template=$template_home/default.latex`
 - my2.tex 目录后增加分页
 
-07.19
----
+## 07.19
 
 - my2.tex 取消水纹，docker 没有安装
-- use [LXGW WenKa 中文字体](https://github.com/lxgw/LxgwWenKai)
+- use [LXGW WenKai/霞鹜文楷](https://github.com/lxgw/LxgwWenKai)
+
   - in docker container, use `fc-list :lang=zh-cn` show font name
   - font
-  ```
+
+  ````
     mainfont="LXGWWenKai-Regular.ttf"
     sansfont="LXGWWenKai-Light.ttf"
     monofont="LXGWWenKai-Light.ttf"
     ```
   - make md22pdf f=demo/ls.md
+  ````
 
-07.12
----
+## 07.12
 
 - znd
   `make znd f=demo/znd/znd-01.md`
 
-07.03
----
+## 07.03
 
 - ThinkPython2-CN
 
-2021.05.15
----
+## 2021.05.15
 
-- [编写高质量Python 的九个建议](http://58.216.212.154:10080/yangjiandong/writing_solid_python_code_gitbook.git)
+- [编写高质量 Python 的九个建议](http://58.216.212.154:10080/yangjiandong/writing_solid_python_code_gitbook.git)
+
   - writing_solid_python_code_gitbook
-     use ebook, no gitbook
-     ```
-     sh run-docker.sh
-     cd /source/ebook
-     sh mmd2bok
-     ```
+    use ebook, no gitbook
+    `sh run-docker.sh cd /source/ebook sh mmd2bok`
 
-2020.02.13
----
+## 2020.02.13
 
 - one/pandoc:2.x, 中文字体采用 `Songti TC`，也可以动态加载字体
   run-docker.sh
+
   ```
   -v ${PWD}/font/Songti.ttc:/usr/share/fonts/Songti.ttc \
   ```
 
-2020.01.17
----
+## 2020.01.17
 
 - [Wandmalfarbe latext template](https://github.com/Wandmalfarbe/pandoc-latex-template)
 
@@ -141,18 +141,17 @@ make docx(pdf) f=xx
 
   感觉这个比较强
 
-12.04
----
+## 12.04
 
 - add jgm templates
   - ./jgm-templates
 - latex 打水印, templates/my2.tex
 - markdown css
+
   - han.css
   - markdownhere.css, 李笑来提供，可以用于 chrome 插件
 
-11.13
----
+## 11.13
 
 - sdcamp
 
@@ -169,20 +168,19 @@ make docx(pdf) f=xx
   }
   ```
 
-  多层缩进会出现 `\begin{lstlisting}[language=```python]`，采用替换脚本
+  多层缩进会出现 ` \begin{lstlisting}[language=```python] `，采用替换脚本
 
-  ```
+  ````
   find ./chapters.tex -type f -exec sed -i 's/```//g' {} \;
-  ```
+  ````
 
-09.11
----
+## 09.11
 
 - demo/git-book
+
   - rake, prince
 
-05.17
----
+## 05.17
 
 - relaxedjs
   - install Chromium, edit .npmrc, `puppeteer_download_host=https://npm.taobao.org/mirrors`
@@ -190,19 +188,16 @@ make docx(pdf) f=xx
   - 可以采用 docker 方案, `one/relaxedjs:node10-stable`
     - use
     - create alias
-
     ```
     alias relaxed-docker="docker run -it --rm -u $(id -u):$(id -g) -v $(pwd):$(pwd) -w $(pwd) --name relaxed one/relaxedjs:node10-stable $@"
     ```
     - goto examples dir
-
     ```
     relaxed-docker book.pug
     ```
   - 主要解决 html 演示文档，其他支持的格式不多
 
-03.10
----
+## 03.10
 
 - `demo/academic_test.txt`, 采用引用
 
@@ -213,23 +208,21 @@ make docx(pdf) f=xx
   ```
   pandoc -s --bibliography "/home/sd44/xueshu/dingjia/ref/refs.bib" --filter pandoc-citeproc --csl "/home/sd44/.cls/chinese-gb7714-2005-numeric.csl" --metadata link-citations=true --metadata reference-section-title="参考文献" test.tex -o test.md
   ```
-03.07
----
+
+## 03.07
 
 ### pandoc to docx
 
 - [](https://zhuanlan.zhihu.com/p/49530707)
 
-02.28
----
+## 02.28
 
 ### github html template
 
 - [Pandoc-Goodies](https://github.com/tajmone/pandoc-goodies)
 - run, `make html_github f=demo/my.md`
 
-2019.02.26
----
+## 2019.02.26
 
 ### use docker, one/pandoc:2.0
 
@@ -242,13 +235,9 @@ make docx(pdf) f=xx
   ```
 
 - 取消 `PingFang` 字体
-- 中文字体
-    - `WenQuanYi Zen Hei` - zhhei
-    - `AR PL UMing CN` - zhsong
-    - `AR PL UKai CN` - zhkai
+- 中文字体 - `WenQuanYi Zen Hei` - zhhei - `AR PL UMing CN` - zhsong - `AR PL UKai CN` - zhkai
 
-06.02
----
+## 06.02
 
 ### 傲慢与偏见
 
@@ -259,12 +248,11 @@ demo/pandoc-ebook
 - `brew intall multimarkdown`
 - 保持原有 文鼎ＰＬ简报宋 字体
 
-    ```
-    \setromanfont[Mapping=tex-text,BoldFont=WenQuanYi Micro Hei]{AR PL SungtiL GB}
-    ```
+      ```
+      \setromanfont[Mapping=tex-text,BoldFont=WenQuanYi Micro Hei]{AR PL SungtiL GB}
+      ```
 
-05.28
----
+## 05.28
 
 ### 字体
 
@@ -276,7 +264,7 @@ fc-list :lang=zh-cn
 
 ### 更新 pandoc2.x template
 
-### mac下利用Pandoc、LaTeX 转换markdown成html,pdf
+### mac 下利用 Pandoc、LaTeX 转换 markdown 成 html,pdf
 
 - [参考](https://my.oschina.net/u/923974/blog/495733)
 - `make md22pdf f=demo/pandoc.md`
@@ -288,16 +276,15 @@ fc-list :lang=zh-cn
 - 仿 pandoc 文档
 - demo/devs
 
-05.24
----
+## 05.24
 
-### ieee-pandoc-template, IEEE latex模板
+### ieee-pandoc-template, IEEE latex 模板
 
 - [github](https://github.com/stsewd/ieee-pandoc-template)
 - demo/ieee-pandoc-template
 - 支持中文，专门设置 `-V CJKmainfont=SimSun`
 
-### pandoc-academic-publication, IEEE latex模板
+### pandoc-academic-publication, IEEE latex 模板
 
 - [github](https://github.com/claymcleod/pandoc-academic-publication)
 - demo/pandoc-academic-publication
@@ -312,8 +299,7 @@ sudo cp -R ./IEEEtran /usr/local/texlive/2017basic/texmf-dist/tex/latex
 sudo texhash
 ```
 
-05.23
----
+## 05.23
 
 ### [中文竖排](https://www.zhihu.com/question/20544732/answer/376414732)
 
@@ -335,9 +321,7 @@ sudo tlmgr install cjkpunct, algorithmicx, algorithms, boondox
 
 run: `sh artratex.sh xa`
 
-
-05.19
----
+## 05.19
 
 ### resume 个人简历中文字体问题
 
@@ -349,66 +333,63 @@ run: `sh artratex.sh xa`
 
 - [github markdown-resume](https://github.com/there4/markdown-resume)
 - docker run
-    ```
-    docker run \
-        -v ${PWD}:/resume \
-        there4/markdown-resume \
-        md2resume html demo/markdown-resume/sample.md out/
-    ```
 
-    - pdf 有点问题，暂时采用进入 docker 容器
+  ```
+  docker run \
+      -v ${PWD}:/resume \
+      there4/markdown-resume \
+      md2resume html demo/markdown-resume/sample.md out/
+  ```
 
-    ```
-    xvfb-run md2resume pdf demo/markdown-resume/sample.md out/
-    ```
+  - pdf 有点问题，暂时采用进入 docker 容器
+
+  ```
+  xvfb-run md2resume pdf demo/markdown-resume/sample.md out/
+  ```
+
 - pdf 中文有问题
 
-05.18
----
+## 05.18
 
 ### error
 
-- `--latex-engine has been removed.  Use --pdf-engine instead`
+- `--latex-engine has been removed. Use --pdf-engine instead`
 
-    是 pandoc 升级到 2.2 后发生的问题
+  是 pandoc 升级到 2.2 后发生的问题
 
 - `sudo tlmgr update --self --all`, 提示升级 2018
 
-    ```
-    tlmgr: Remote repository is newer than local (2017 < 2018)
-    Cross release updates are only supported with
-    update-tlmgr-latest(.sh/.exe) --update
-    Please see https://tug.org/texlive/upgrade.html for details.
-    ```
+  ```
+  tlmgr: Remote repository is newer than local (2017 < 2018)
+  Cross release updates are only supported with
+  update-tlmgr-latest(.sh/.exe) --update
+  Please see https://tug.org/texlive/upgrade.html for details.
+  ```
 
-    误删除，只能重新安装 2018 版
+  误删除，只能重新安装 2018 版
 
 ### markdown-latex-boilerplate
 
 - [github](https://github.com/davecap/markdown-latex-boilerplate)
 
-05.02
----
+## 05.02
 
-### NUDT硕士博士论文Latex模板
+### NUDT 硕士博士论文 Latex 模板
 
 - [github](https://github.com/TomHeaven/nudt_thesis)
 - word 模版, demo/nudt/word
 
-03.26
-----
+## 03.26
 
 解决重庆论文中文字体问题
 
-02.10
----
+## 02.10
 
 ### rfc 草稿文档制作
 
 [pandoc2rfc](https://github.com/miekg/pandoc2rfc)
 
-2018.01.22
----
+## 2018.01.22
 
 ### 历史重现评说
 
@@ -416,15 +397,13 @@ ls.md
 
 自动增加回车行 `awk '{print $0 "\n"}' ls.md>ls2.md`
 
-09.22
----
+## 09.22
 
 ### reveal font
 
-07.19
----
+## 07.19
 
-### 中文pandoc
+### 中文 pandoc
 
 demo/pandoc
 
@@ -452,17 +431,15 @@ or
 fc-list :outline -f "%{family}\n"
 ```
 
-06.16
----
+## 06.16
 
 ### [pandoc demo](http://pandoc.org/demos.html)
 
 ### simple.md
 
-[完整的template](https://github.com/lauritzsh/pandoc-markdown-template)
+[完整的 template](https://github.com/lauritzsh/pandoc-markdown-template)
 
-06.14
----
+## 06.14
 
 ### phD 论文
 
@@ -470,8 +447,7 @@ fc-list :outline -f "%{family}\n"
 
 demo/phd_thesis_markdown, 可以用
 
-2017.06.12
----
+## 2017.06.12
 
 ### 一个不错的样式, 个人简历
 
@@ -516,15 +492,16 @@ install context
   ```
 
 - 字体
+
   - Adobe 的四款字体(AdobeFangsongStd-Regular.otf AdobeHeitiStd-Regular.otf AdobeKaitiStd-Regular.otf AdobeSongStd-Light.otf)
   - `luatools --generate`
   - ? `export OSFONTDIR=/Library/Fonts:/System/Library/Fonts:~/Library/Fonts`
 
+    2017.06.09
 
-2017.06.09
 ---
 
-### 技术docx 样式
+### 技术 docx 样式
 
 templates/code.docx
 
@@ -548,13 +525,11 @@ latex_bysj:
 
 pandoc 默认幻灯片
 
-07.16
----
+## 07.16
 
 [letter](http://mrzool.cc/writing/typesetting-automation/) `demo/letter`
 
-07.14
----
+## 07.14
 
 [1](https://github.com/kjhealy/pandoc-templates)
 
@@ -562,8 +537,7 @@ pandoc 默认幻灯片
 make html_mark f=xx
 ```
 
-07.02
----
+## 07.02
 
 ## docx pagebreak
 
@@ -582,16 +556,15 @@ pandoc -s -r html http://www.gnu.org/software/make/ -o example12.text
 
 [pandoc demo](http://pandoc.org/demos.html)
 
-## sdcamp 增加双列docx
+## sdcamp 增加双列 docx
 
-07.01
----
+## 07.01
 
 ## markdown 人员简历模板
 
 https://github.com/geekcompany/ResumeSample.git
 
-## DeerResume：在线MarkDown简历工具
+## DeerResume：在线 MarkDown 简历工具
 
 https://github.com/geekcompany/DeerResume.git
 
@@ -601,14 +574,13 @@ https://github.com/geekcompany/DeerResume.git
 sed -i '' 's/<table>/<table class="table table-bordered table-condensed">/' out/out.html
 ```
 
-## 增加docx 标准模版
+## 增加 docx 标准模版
 
 ```
 make docx_base f=xxx
 ```
 
-06.30
----
+## 06.30
 
 ## [plain text, papers, pandoc](https://kieranhealy.org/blog/archives/2014/01/23/plain-text/)
 
@@ -624,8 +596,7 @@ demo/workflow-paper
 
 增加 docx, html 输出
 
-06.29
----
+## 06.29
 
 ## pnadoc to docx style
 
@@ -635,8 +606,7 @@ templates/reference.docx
 
 docx 样式主要通过 reference 控制
 
-06.27
---
+## 06.27
 
 ## 增加 sdcamp 示例
 
@@ -647,12 +617,11 @@ cd sdcamp
 
 [参考](https://github.com/larrycai/kaiyuanbook/wiki)
 
-06.25
----
+## 06.25
 
 ## md.css
 
-另一个html 样式
+另一个 html 样式
 
 ```
 make html_md f=xx
@@ -666,8 +635,7 @@ make html_md f=xx
 make html_yi f=xx
 ```
 
-2016.06.24
----
+## 2016.06.24
 
 ## latex pdf
 
@@ -687,8 +655,7 @@ make latex
 
 `make bootstrap f=xx`
 
-q
----
+## q
 
 error:
 

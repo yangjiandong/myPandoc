@@ -46,6 +46,12 @@ book-usefont:
 	-o out/book-usefont.pdf \
 	--template=templates/my2.tex
 
+eisvogel:
+	pandoc $(TOC) $(TITLE) $(CHAPTERS) --pdf-engine=xelatex \
+	-V CJKmainfont=$(mainfont) \
+	-o out/book-e.pdf \
+	--template=templates/eisvogel.latex
+
 latex:
 	pandoc $(TOC) $(TITLE) $(CHAPTERS) --pdf-engine=xelatex \
 	-V documentclass=$(LATEX_CLASS) \
