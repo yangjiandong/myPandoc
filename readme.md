@@ -10,7 +10,7 @@ make docx(pdf) f=xx
 
 - mindoc 通过 pandoc 导出方案
   - make work-pdf, work-html
-- make book，注意这个方案没有 make latex 方案完美，页眉显示的章节有问题，偶书页一直显示目录
+- make book
   ```
   sh run-docker.sh
   cd source
@@ -21,6 +21,7 @@ make docx(pdf) f=xx
   - article, 文档
   - latex, 需指定 LATEX_CLASS = book # report, article, book,
   - memoir 有问题
+- make article
 - make docx_code
 - make html_re(html_github)
 - make reveal(reveal2)
@@ -81,6 +82,7 @@ make docx(pdf) f=xx
 
 - 中文字体，`-V CJKmainfont=$(mainfont) \`
   - make book-usefont
+  - make ls
 - md2pdf，取消 `--template=$template_home/default.latex`
 - my2.tex 目录后增加分页
 

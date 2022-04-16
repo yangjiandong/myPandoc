@@ -11,7 +11,7 @@ pdf-ieee:
 	--pdf-engine=xelatex \
 	--highlight-style pygments \
 	--standalone \
-	--variable CJKmainfont=STFangsong \
+	--variable CJKmainfont=LXGWWenKai-Regular.ttf \
 	--variable documentclass=assets/latex/ieee \
 	--csl=assets/csl/ieee.csl \
 	-o out/paper-ieee.pdf paper.md

@@ -67,6 +67,7 @@ znd:${f}
 
 ls:
 	pandoc --toc --toc-depth=3  demo/ls.md --pdf-engine=xelatex \
+	-V CJKmainfont=$(mainfont) \
 	-o out/ls.pdf \
 	--template=templates/my2.tex
 
