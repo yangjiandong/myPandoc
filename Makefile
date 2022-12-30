@@ -6,7 +6,7 @@ BOOKNAME = my-book
 TITLE = title.txt
 METADATA = metadata.xml
 CHAPTERS2 = works/20.md works/21.md
-CHAPTERS = demo/ls.md
+CHAPTERS = demo/docker.md
 # CHAPTERS = demo/my.md demo/devs/devs.md demo/SpringBootwithRedis.md
 #demo/pandoc/pandoc.markdown
 #demo/SpringBootwithRedis.md
