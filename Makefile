@@ -6,11 +6,12 @@ BOOKNAME = my-book
 TITLE = title.txt
 METADATA = metadata.xml
 CHAPTERS2 = works/20.md works/21.md
-CHAPTERS = demo/docker.md
+CHAPTERS3 = demo/ls.md
+CHAPTERS = geek/00.md geek/01.md geek/02.md geek/03.md geek/04.md geek/05.md geek/06.md geek/07.md geek/08.md geek/09.md geek/10.md geek/11.md geek/12.md geek/13.md geek/14.md geek/15.md geek/16.md geek/17.md geek/18.md geek/19.md geek/20.md
 # CHAPTERS = demo/my.md demo/devs/devs.md demo/SpringBootwithRedis.md
 #demo/pandoc/pandoc.markdown
 #demo/SpringBootwithRedis.md
-TOC = --toc --toc-depth=3
+TOC = --toc --toc-depth=1
 COVER_IMAGE = cover.jpg
 LATEX_CLASS = book
 # report, article, book, memoir

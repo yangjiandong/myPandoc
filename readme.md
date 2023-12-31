@@ -6,7 +6,7 @@ use
 - pandbook (use docker)
 - bookdown (R)
 
-pandoc to docx, html, pdf
+Pandoc Markdown 文档方案，to docx, html, pdf
 
 ```
 make docx(pdf) f=xx
@@ -72,10 +72,8 @@ make docx(pdf) f=xx
 ### sdcamp
 
 - ./sdcamp, use docker, 安装参考 (https://github.com/larrycai/sdcamp)
-
   - ./mmd2bok
   - use pandoc
-
     ```
     cd contents
     make pdf
@@ -84,6 +82,10 @@ make docx(pdf) f=xx
 ## 论文
 
 - [重庆大学论文](demo/Academia-Writing-with-Markdown-Using-Pandoc)
+
+## 05.03
+
+- geek 摄影小白
 
 ## 2024.03.06
 
@@ -95,7 +97,7 @@ make docx(pdf) f=xx
 ## 2022.04.16
 
 - add pandoc-latex-template [Eisvogel template](https://github.com/Wandmalfarbe/pandoc-latex-template)
-  - make eisvogel
+  - use `make eisvogel`
 
 ## 07.20
 
