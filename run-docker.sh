@@ -9,8 +9,8 @@ docker run \
   --rm -it \
   -v ${PWD}:/source \
   -v ${PWD}/font/PingFang.ttc:/usr/share/fonts/PingFang.ttc \
-  -v ${PWD}/klee/LXGWWenKai-Bold.ttf:/usr/share/fonts/LXGWWenKai-Bold.ttf \
-  -v ${PWD}/klee/LXGWWenKai-Light.ttf:/usr/share/fonts/LXGWWenKai-Light.ttf \
-  -v ${PWD}/klee/LXGWWenKai-Regular.ttf:/usr/share/fonts/LXGWWenKai-Regular.ttf \
+  -v ${PWD}/Klee/LXGWWenKai-Bold.ttf:/usr/share/fonts/LXGWWenKai-Bold.ttf \
+  -v ${PWD}/Klee/LXGWWenKai-Light.ttf:/usr/share/fonts/LXGWWenKai-Light.ttf \
+  -v ${PWD}/Klee/LXGWWenKai-Regular.ttf:/usr/share/fonts/LXGWWenKai-Regular.ttf \
   one/pandoc:2.xx \
   /bin/bash

@@ -90,7 +90,7 @@ hisnew:
 hisupdate:
 	pandoc demo/his_update.md -o out/demo/his_update_reveal.html \
 	-t revealjs -s -V theme=night \
-	--template=templates/reveal/reveal.js/template-revealjs.html \
+	--template=templates/reveal/reveal.js/template-revealjs-2.html \
 	-i
 
 html_github:${f}
