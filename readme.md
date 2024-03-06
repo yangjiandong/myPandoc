@@ -87,8 +87,9 @@ make docx(pdf) f=xx
 
 ## 2024.03.06
 
-- add bookdown
-  - ./bookdown
+- add bookdown，mac install R v4.3.3
+  - bookdown, error `Library not loaded: '/opt/X11/lib/libSM.6.dylib'`，install `brew install xquartz --cask`
+  - ./bookdown，暂时取消 search，使用了 fuse.js，但从默认的 cdn 下载不下来
   - run `make 2e` create html
 
 ## 2022.04.16

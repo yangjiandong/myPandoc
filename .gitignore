@@ -17,4 +17,6 @@ font
 
 myPandoc.zip
 bookdown/_book
-bookdown/bookdown_files
+bookdown/_bookdown_files
+bookdown/bookdown.Rmd
+bookdown/bookdown.tex
