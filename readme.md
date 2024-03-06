@@ -83,8 +83,9 @@ make docx(pdf) f=xx
 
 - [重庆大学论文](demo/Academia-Writing-with-Markdown-Using-Pandoc)
 
-## 05.03
+## 文档
 
+- ls.md 毛泽东、邓小平重大过错与决策失误
 - geek 摄影小白
 
 ## 2024.03.06
