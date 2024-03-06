@@ -20,6 +20,10 @@ monofont="LXGWWenKai-Light.ttf"
 
 #cat 00*.md > xxx.md
 
+2e:
+	cd bookdown &&\
+	Rscript --vanilla -e 'bookdown::render_book("index.Rmd", encoding="UTF-8")'
+
 md22pdf:${f}
 	./md2pdf ${f} -o out/md2.pdf
 

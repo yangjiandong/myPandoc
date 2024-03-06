@@ -1,4 +1,10 @@
-# pandoc2.x - docs
+# MarkDown Docs
+
+use
+
+- pandoc2.x(use docker)
+- pandbook (use docker)
+- bookdown (R)
 
 pandoc to docx, html, pdf
 
@@ -61,6 +67,7 @@ make docx(pdf) f=xx
 
 - [git book](https://github.com/liuhui998/gitbook), use `rake`, `price` create pdf
 - [distsysbook](https://github.com/mixu/distsysbook/), 比较简洁
+- bookdown, 应该是编写技术文档最强的方案
 
 ### sdcamp
 
@@ -77,6 +84,12 @@ make docx(pdf) f=xx
 ## 论文
 
 - [重庆大学论文](demo/Academia-Writing-with-Markdown-Using-Pandoc)
+
+## 2024.03.06
+
+- add bookdown
+  - ./bookdown
+  - run `make 2e` create html
 
 ## 2022.04.16
 
